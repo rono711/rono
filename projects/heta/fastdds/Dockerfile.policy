@@ -1,0 +1,17 @@
+FROM rono/fastdds-python:2.6.2
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    openjdk-17-jdk-headless \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /opt/fastdds-python/src/fastddsgen
+
+RUN git submodule update --init --recursive \
+    && ./gradlew --no-daemon assemble
+
+ENV PATH="/opt/fastdds-python/src/fastddsgen/scripts:${PATH}"
+
+RUN fastddsgen -version
+
+WORKDIR /opt/rono
+CMD ["bash"]

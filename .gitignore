@@ -16,3 +16,9 @@ containerlab/clab-*/
 **/__pycache__/
 **/build/
 *.pyc
+# Regenerated DDS type sources
+/projects/heta/fastdds/generated/
+/projects/heta/fastdds/idl/*.hpp
+/projects/heta/fastdds/idl/*.cxx
+/projects/heta/fastdds/idl/*.ipp
+/projects/heta/fastdds/idl/*.i

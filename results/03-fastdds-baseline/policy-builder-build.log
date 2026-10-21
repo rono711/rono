@@ -1,0 +1,41 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.policy
+#1 transferring dockerfile: 458B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rono/fastdds-python:2.6.2
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/rono/fastdds-python:2.6.2@sha256:165ccdffa47e99e87095bc70ff7973707228e8f9beb5cfb1caa0aa4de9f663e6
+#4 resolve docker.io/rono/fastdds-python:2.6.2@sha256:165ccdffa47e99e87095bc70ff7973707228e8f9beb5cfb1caa0aa4de9f663e6 0.0s done
+#4 DONE 0.0s
+
+#5 [2/6] RUN apt-get update && apt-get install -y --no-install-recommends     openjdk-17-jdk-headless     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [3/6] WORKDIR /opt/fastdds-python/src/fastddsgen
+#6 CACHED
+
+#7 [4/6] RUN git submodule update --init --recursive     && ./gradlew --no-daemon assemble
+#7 CACHED
+
+#8 [5/6] RUN fastddsgen -version
+#8 CACHED
+
+#9 [6/6] WORKDIR /opt/rono
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 exporting manifest sha256:2966aa9994a4a63e61769e506a0ce69ab896b71f040ccc63e90e43756d24be8c done
+#10 exporting config sha256:68ac2278cde2c7e666cbdc94e0ba2c4ad0060f321405ca65d192fd054c35b35b done
+#10 exporting attestation manifest sha256:26228e472a211b10fc514f42f4e6cc4aad975dea4c919352766f1c8aedcf7165 0.0s done
+#10 exporting manifest list sha256:dde608300d8030a21cf6dc835c2481fdfb3a146242d93087190a1bdaab7a1fcb done
+#10 naming to docker.io/rono/policy-builder:0.1 done
+#10 unpacking to docker.io/rono/policy-builder:0.1 done
+#10 DONE 0.1s
