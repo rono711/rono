@@ -1,0 +1,105 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.python
+#1 transferring dockerfile: 1.37kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rono/fastdds-builder:jammy
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/8] FROM docker.io/rono/fastdds-builder:jammy@sha256:d861dc7a45db574be057335440abaa5acaa009c87d6734e0016adcf881ed8598
+#4 resolve docker.io/rono/fastdds-builder:jammy@sha256:d861dc7a45db574be057335440abaa5acaa009c87d6734e0016adcf881ed8598 0.0s done
+#4 DONE 0.0s
+
+#5 [2/8] RUN apt-get update && apt-get install -y --no-install-recommends     swig libpython3-dev     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [3/8] RUN pip install --no-cache-dir cmake==3.28.4
+#6 CACHED
+
+#7 [6/8] RUN colcon build     --packages-up-to fastdds_python     --parallel-workers 2     --event-handlers console_direct+     --cmake-args -DCMAKE_BUILD_TYPE=Release                  -DBUILD_TESTING=OFF                  -DPython3_EXECUTABLE=/usr/bin/python3
+#7 CACHED
+
+#8 [5/8] RUN curl -fL --retry 3       https://raw.githubusercontent.com/eProsima/Fast-DDS-python/647d9f42d077a10268bfabd795890e7e4e2b3558/fastdds_python.repos       -o fastdds_python.repos     && mkdir -p src     && vcs import src < fastdds_python.repos     && vcs export --exact src > source-lock.repos     && pip freeze > build-tools-lock.txt
+#8 CACHED
+
+#9 [4/8] WORKDIR /opt/fastdds-python
+#9 CACHED
+
+#10 [7/8] RUN source install/setup.bash     && /usr/bin/python3 -c "import fastdds; print('Fast DDS Python import OK')"
+#10 CACHED
+
+#11 [8/8] RUN source /opt/fastdds-python/install/setup.bash     && colcon build        --packages-select fastdds_python_examples        --event-handlers console_direct+        --cmake-args -DCMAKE_BUILD_TYPE=Release                     -DBUILD_TESTING=OFF                     -DPython3_EXECUTABLE=/usr/bin/python3
+#11 0.352 Starting >>> fastdds_python_examples
+#11 0.418 -- The C compiler identification is GNU 11.4.0
+#11 0.462 -- The CXX compiler identification is GNU 11.4.0
+#11 0.474 -- Detecting C compiler ABI info
+#11 0.522 -- Detecting C compiler ABI info - done
+#11 0.531 -- Check for working C compiler: /usr/bin/cc - skipped
+#11 0.531 -- Detecting C compile features
+#11 0.531 -- Detecting C compile features - done
+#11 0.538 -- Detecting CXX compiler ABI info
+#11 0.594 -- Detecting CXX compiler ABI info - done
+#11 0.603 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#11 0.603 -- Detecting CXX compile features
+#11 0.603 -- Detecting CXX compile features - done
+#11 0.604 -- Configuring python wrapper for types in HelloWorld...
+#11 0.614 -- Found SWIG: /usr/bin/swig4.0 (found version "4.0.2")  
+#11 0.731 -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development Development.Module Development.Embed 
+#11 0.744 -- Configuring done (0.4s)
+#11 0.749 -- Generating done (0.0s)
+#11 0.749 CMake Warning:
+#11 0.749   Manually-specified variables were not used by the project:
+#11 0.749 
+#11 0.749     BUILD_TESTING
+#11 0.749 
+#11 0.749 
+#11 0.750 -- Build files have been written to: /opt/fastdds-python/build/fastdds_python_examples
+#11 0.791 [ 16%] Building CXX object HelloWorldExample/generated_code/CMakeFiles/HelloWorld.dir/HelloWorldTypeObjectSupport.cxx.o
+#11 0.791 [ 33%] Building CXX object HelloWorldExample/generated_code/CMakeFiles/HelloWorld.dir/HelloWorldPubSubTypes.cxx.o
+#11 0.791 [ 50%] Swig compile HelloWorld.i for python
+#11 0.937 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableTypedCollection.hpp:68: Warning 389: operator[] ignored (consider using %extend)
+#11 0.937 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableTypedCollection.hpp:93: Warning 389: operator[] ignored (consider using %extend)
+#11 0.942 /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicDataType.hpp:73: Warning 325: Nested struct not currently supported (Context ignored)
+#11 1.016 [ 50%] Built target HelloWorldWrapper_swig_compilation
+#11 2.710 [ 66%] Linking CXX shared library libHelloWorld.so
+#11 2.838 [ 66%] Built target HelloWorld
+#11 2.845 [ 83%] Building CXX object HelloWorldExample/generated_code/CMakeFiles/HelloWorldWrapper.dir/CMakeFiles/HelloWorldWrapper.dir/HelloWorldPYTHON_wrap.cxx.o
+#11 4.878 [100%] Linking CXX shared library _HelloWorldWrapper.so
+#11 5.002 [100%] Built target HelloWorldWrapper
+#11 5.050 -- Install configuration: "Release"
+#11 5.050 -- Installing: /opt/fastdds-python/install/fastdds_python_examples/lib/libHelloWorld.so
+#11 5.050 -- Set non-toolchain portion of runtime path of "/opt/fastdds-python/install/fastdds_python_examples/lib/libHelloWorld.so" to ""
+#11 5.050 -- Installing: /opt/fastdds-python/install/fastdds_python_examples/local/lib/python3.10/dist-packages/HelloWorld/_HelloWorldWrapper.so
+#11 5.051 -- Set non-toolchain portion of runtime path of "/opt/fastdds-python/install/fastdds_python_examples/local/lib/python3.10/dist-packages/HelloWorld/_HelloWorldWrapper.so" to ""
+#11 5.051 -- Installing: /opt/fastdds-python/install/fastdds_python_examples/local/lib/python3.10/dist-packages/HelloWorld/__init__.py
+#11 5.066 --- stderr: fastdds_python_examples
+#11 5.066 CMake Warning:
+#11 5.066   Manually-specified variables were not used by the project:
+#11 5.066 
+#11 5.066     BUILD_TESTING
+#11 5.066 
+#11 5.066 
+#11 5.066 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableTypedCollection.hpp:68: Warning 389: operator[] ignored (consider using %extend)
+#11 5.066 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableTypedCollection.hpp:93: Warning 389: operator[] ignored (consider using %extend)
+#11 5.066 /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicDataType.hpp:73: Warning 325: Nested struct not currently supported (Context ignored)
+#11 5.066 ---
+#11 5.066 Finished <<< fastdds_python_examples [4.71s]
+#11 5.077 
+#11 5.077 Summary: 1 package finished [4.83s]
+#11 5.077   1 package had stderr output: fastdds_python_examples
+#11 DONE 5.1s
+
+#12 exporting to image
+#12 exporting layers 0.1s done
+#12 exporting manifest sha256:c2a6cd35322fbd5be163e44683d832e8697f9d6fbd3c76ccaabb828893cdfda4 0.0s done
+#12 exporting config sha256:91487d4b6ba20374dcacca45a1cf36bac4f965a5c392c2fe041e113a904e2734 0.0s done
+#12 exporting attestation manifest sha256:ce1cad14d8f46f18806ba5323d90369b81143ba9cb062cb517691e5d5084c40e 0.0s done
+#12 exporting manifest list sha256:165ccdffa47e99e87095bc70ff7973707228e8f9beb5cfb1caa0aa4de9f663e6 0.0s done
+#12 naming to docker.io/rono/fastdds-python:2.6.2 done
+#12 unpacking to docker.io/rono/fastdds-python:2.6.2 0.0s done
+#12 DONE 0.2s

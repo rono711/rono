@@ -1,0 +1,116 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.python
+#1 transferring dockerfile: 883B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rono/fastdds:3.6.1
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/rono/fastdds:3.6.1@sha256:b3d04ba8477887240cd87ee0df950bd0a2d55a356e1033dae5eaa9925cb29907
+#4 resolve docker.io/rono/fastdds:3.6.1@sha256:b3d04ba8477887240cd87ee0df950bd0a2d55a356e1033dae5eaa9925cb29907 0.0s done
+#4 DONE 0.0s
+
+#5 [2/6] RUN apt-get update && apt-get install -y --no-install-recommends     swig libpython3-dev     && rm -rf /var/lib/apt/lists/*
+#5 0.264 Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#5 0.402 Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#5 0.631 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#5 0.720 Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#5 0.814 Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+#5 1.026 Get:6 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#5 1.028 Get:7 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#5 1.039 Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#5 1.054 Get:9 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.8 kB]
+#5 1.252 Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1628 kB]
+#5 1.258 Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+#5 1.258 Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4759 kB]
+#5 1.263 Get:13 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4430 kB]
+#5 1.275 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8243 kB]
+#5 1.308 Get:15 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#5 1.308 Get:16 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#5 1.974 Get:17 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [7955 kB]
+#5 2.176 Get:18 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1325 kB]
+#5 2.840 Fetched 49.0 MB in 3s (18.1 MB/s)
+#5 2.840 Reading package lists...
+#5 3.874 Reading package lists...
+#5 4.888 Building dependency tree...
+#5 5.081 Reading state information...
+#5 5.258 The following additional packages will be installed:
+#5 5.259   libexpat1-dev libpython3.10 libpython3.10-dev swig4.0 zlib1g-dev
+#5 5.260 Suggested packages:
+#5 5.260   swig-doc swig-examples swig4.0-examples swig4.0-doc
+#5 5.334 The following NEW packages will be installed:
+#5 5.335   libexpat1-dev libpython3-dev libpython3.10 libpython3.10-dev swig swig4.0
+#5 5.335   zlib1g-dev
+#5 5.621 0 upgraded, 7 newly installed, 0 to remove and 3 not upgraded.
+#5 5.621 Need to get 8153 kB of archives.
+#5 5.621 After this operation, 34.0 MB of additional disk space will be used.
+#5 5.621 Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libexpat1-dev amd64 2.4.7-1ubuntu0.9 [151 kB]
+#5 6.254 Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10 amd64 3.10.12-1~22.04.18 [1950 kB]
+#5 6.805 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-2ubuntu9.2 [164 kB]
+#5 6.820 Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10-dev amd64 3.10.12-1~22.04.18 [4765 kB]
+#5 7.048 Get:5 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3-dev amd64 3.10.6-1~22.04.1 [7064 B]
+#5 7.048 Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 swig4.0 amd64 4.0.2-1ubuntu1 [1110 kB]
+#5 7.074 Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 swig all 4.0.2-1ubuntu1 [5632 B]
+#5 7.173 debconf: delaying package configuration, since apt-utils is not installed
+#5 7.204 Fetched 8153 kB in 2s (4705 kB/s)
+#5 7.220 Selecting previously unselected package libexpat1-dev:amd64.
+#5 7.220 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 17393 files and directories currently installed.)
+#5 7.227 Preparing to unpack .../0-libexpat1-dev_2.4.7-1ubuntu0.9_amd64.deb ...
+#5 7.230 Unpacking libexpat1-dev:amd64 (2.4.7-1ubuntu0.9) ...
+#5 7.262 Selecting previously unselected package libpython3.10:amd64.
+#5 7.263 Preparing to unpack .../1-libpython3.10_3.10.12-1~22.04.18_amd64.deb ...
+#5 7.270 Unpacking libpython3.10:amd64 (3.10.12-1~22.04.18) ...
+#5 7.315 Selecting previously unselected package zlib1g-dev:amd64.
+#5 7.316 Preparing to unpack .../2-zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu9.2_amd64.deb ...
+#5 7.319 Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+#5 7.343 Selecting previously unselected package libpython3.10-dev:amd64.
+#5 7.344 Preparing to unpack .../3-libpython3.10-dev_3.10.12-1~22.04.18_amd64.deb ...
+#5 7.347 Unpacking libpython3.10-dev:amd64 (3.10.12-1~22.04.18) ...
+#5 7.454 Selecting previously unselected package libpython3-dev:amd64.
+#5 7.455 Preparing to unpack .../4-libpython3-dev_3.10.6-1~22.04.1_amd64.deb ...
+#5 7.457 Unpacking libpython3-dev:amd64 (3.10.6-1~22.04.1) ...
+#5 7.479 Selecting previously unselected package swig4.0.
+#5 7.480 Preparing to unpack .../5-swig4.0_4.0.2-1ubuntu1_amd64.deb ...
+#5 7.483 Unpacking swig4.0 (4.0.2-1ubuntu1) ...
+#5 7.593 Selecting previously unselected package swig.
+#5 7.594 Preparing to unpack .../6-swig_4.0.2-1ubuntu1_all.deb ...
+#5 7.597 Unpacking swig (4.0.2-1ubuntu1) ...
+#5 7.625 Setting up libpython3.10:amd64 (3.10.12-1~22.04.18) ...
+#5 7.637 Setting up libexpat1-dev:amd64 (2.4.7-1ubuntu0.9) ...
+#5 7.646 Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+#5 7.656 Setting up swig4.0 (4.0.2-1ubuntu1) ...
+#5 7.666 Setting up swig (4.0.2-1ubuntu1) ...
+#5 7.677 Setting up libpython3.10-dev:amd64 (3.10.12-1~22.04.18) ...
+#5 7.687 Setting up libpython3-dev:amd64 (3.10.6-1~22.04.1) ...
+#5 7.698 Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+#5 DONE 7.8s
+
+#6 [3/6] WORKDIR /opt/fastdds-python
+#6 DONE 0.0s
+
+#7 [4/6] RUN git clone --depth 1 --branch v3.6.1     https://github.com/eProsima/Fast-DDS-python.git     src/Fast-DDS-python     && vcs export --exact src > source-lock.repos
+#7 0.117 Cloning into 'src/Fast-DDS-python'...
+#7 0.364 warning: Could not find remote branch v3.6.1 to clone.
+#7 0.364 fatal: Remote branch v3.6.1 not found in upstream origin
+#7 ERROR: process "/bin/bash -o pipefail -c git clone --depth 1 --branch v3.6.1     https://github.com/eProsima/Fast-DDS-python.git     src/Fast-DDS-python     && vcs export --exact src > source-lock.repos" did not complete successfully: exit code: 128
+------
+ > [4/6] RUN git clone --depth 1 --branch v3.6.1     https://github.com/eProsima/Fast-DDS-python.git     src/Fast-DDS-python     && vcs export --exact src > source-lock.repos:
+0.117 Cloning into 'src/Fast-DDS-python'...
+0.364 warning: Could not find remote branch v3.6.1 to clone.
+0.364 fatal: Remote branch v3.6.1 not found in upstream origin
+------
+Dockerfile.python:9
+--------------------
+   8 |     
+   9 | >>> RUN git clone --depth 1 --branch v3.6.1 \
+  10 | >>>     https://github.com/eProsima/Fast-DDS-python.git \
+  11 | >>>     src/Fast-DDS-python \
+  12 | >>>     && vcs export --exact src > source-lock.repos
+  13 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/bash -o pipefail -c git clone --depth 1 --branch v3.6.1     https://github.com/eProsima/Fast-DDS-python.git     src/Fast-DDS-python     && vcs export --exact src > source-lock.repos" did not complete successfully: exit code: 128

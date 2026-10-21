@@ -1,0 +1,39 @@
+FROM rono/fastdds-builder:jammy
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    swig libpython3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir cmake==3.28.4
+
+ENV CMAKE_BUILD_PARALLEL_LEVEL=2
+WORKDIR /opt/fastdds-python
+
+RUN curl -fL --retry 3 \
+      https://raw.githubusercontent.com/eProsima/Fast-DDS-python/647d9f42d077a10268bfabd795890e7e4e2b3558/fastdds_python.repos \
+      -o fastdds_python.repos \
+    && mkdir -p src \
+    && vcs import src < fastdds_python.repos \
+    && vcs export --exact src > source-lock.repos \
+    && pip freeze > build-tools-lock.txt
+
+RUN colcon build \
+    --packages-up-to fastdds_python \
+    --parallel-workers 2 \
+    --event-handlers console_direct+ \
+    --cmake-args -DCMAKE_BUILD_TYPE=Release \
+                 -DBUILD_TESTING=OFF \
+                 -DPython3_EXECUTABLE=/usr/bin/python3
+
+RUN source install/setup.bash \
+    && /usr/bin/python3 -c "import fastdds; print('Fast DDS Python import OK')"
+
+CMD ["bash"]
+
+RUN source /opt/fastdds-python/install/setup.bash \
+    && colcon build \
+       --packages-select fastdds_python_examples \
+       --event-handlers console_direct+ \
+       --cmake-args -DCMAKE_BUILD_TYPE=Release \
+                    -DBUILD_TESTING=OFF \
+                    -DPython3_EXECUTABLE=/usr/bin/python3

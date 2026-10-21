@@ -1,0 +1,1262 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.python
+#1 transferring dockerfile: 1.05kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rono/fastdds-builder:jammy
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/rono/fastdds-builder:jammy@sha256:d861dc7a45db574be057335440abaa5acaa009c87d6734e0016adcf881ed8598
+#4 resolve docker.io/rono/fastdds-builder:jammy@sha256:d861dc7a45db574be057335440abaa5acaa009c87d6734e0016adcf881ed8598 0.0s done
+#4 DONE 0.0s
+
+#5 [2/7] RUN apt-get update && apt-get install -y --no-install-recommends     swig libpython3-dev     && rm -rf /var/lib/apt/lists/*
+#5 0.454 Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#5 0.465 Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#5 1.233 Get:3 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [7955 kB]
+#5 1.402 Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#5 1.629 Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#5 1.856 Get:6 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#5 1.938 Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+#5 2.396 Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#5 2.409 Get:9 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4430 kB]
+#5 2.423 Get:10 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#5 2.472 Get:11 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.8 kB]
+#5 2.473 Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1325 kB]
+#5 2.954 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8243 kB]
+#5 3.027 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4759 kB]
+#5 3.060 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1628 kB]
+#5 3.071 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+#5 3.071 Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#5 3.072 Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#5 4.049 Fetched 49.0 MB in 4s (12.5 MB/s)
+#5 4.049 Reading package lists...
+#5 5.090 Reading package lists...
+#5 6.111 Building dependency tree...
+#5 6.313 Reading state information...
+#5 6.492 The following additional packages will be installed:
+#5 6.492   libexpat1-dev libpython3.10 libpython3.10-dev swig4.0 zlib1g-dev
+#5 6.493 Suggested packages:
+#5 6.493   swig-doc swig-examples swig4.0-examples swig4.0-doc
+#5 6.567 The following NEW packages will be installed:
+#5 6.568   libexpat1-dev libpython3-dev libpython3.10 libpython3.10-dev swig swig4.0
+#5 6.568   zlib1g-dev
+#5 6.751 0 upgraded, 7 newly installed, 0 to remove and 3 not upgraded.
+#5 6.751 Need to get 8153 kB of archives.
+#5 6.751 After this operation, 34.0 MB of additional disk space will be used.
+#5 6.751 Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libexpat1-dev amd64 2.4.7-1ubuntu0.9 [151 kB]
+#5 7.142 Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10 amd64 3.10.12-1~22.04.18 [1950 kB]
+#5 7.483 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-2ubuntu9.2 [164 kB]
+#5 7.491 Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3.10-dev amd64 3.10.12-1~22.04.18 [4765 kB]
+#5 7.631 Get:5 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpython3-dev amd64 3.10.6-1~22.04.1 [7064 B]
+#5 7.631 Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 swig4.0 amd64 4.0.2-1ubuntu1 [1110 kB]
+#5 7.648 Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 swig all 4.0.2-1ubuntu1 [5632 B]
+#5 7.746 debconf: delaying package configuration, since apt-utils is not installed
+#5 7.780 Fetched 8153 kB in 1s (7594 kB/s)
+#5 7.795 Selecting previously unselected package libexpat1-dev:amd64.
+#5 7.795 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 17393 files and directories currently installed.)
+#5 7.802 Preparing to unpack .../0-libexpat1-dev_2.4.7-1ubuntu0.9_amd64.deb ...
+#5 7.805 Unpacking libexpat1-dev:amd64 (2.4.7-1ubuntu0.9) ...
+#5 7.835 Selecting previously unselected package libpython3.10:amd64.
+#5 7.836 Preparing to unpack .../1-libpython3.10_3.10.12-1~22.04.18_amd64.deb ...
+#5 7.844 Unpacking libpython3.10:amd64 (3.10.12-1~22.04.18) ...
+#5 7.894 Selecting previously unselected package zlib1g-dev:amd64.
+#5 7.895 Preparing to unpack .../2-zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu9.2_amd64.deb ...
+#5 7.898 Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+#5 7.920 Selecting previously unselected package libpython3.10-dev:amd64.
+#5 7.921 Preparing to unpack .../3-libpython3.10-dev_3.10.12-1~22.04.18_amd64.deb ...
+#5 7.923 Unpacking libpython3.10-dev:amd64 (3.10.12-1~22.04.18) ...
+#5 8.028 Selecting previously unselected package libpython3-dev:amd64.
+#5 8.029 Preparing to unpack .../4-libpython3-dev_3.10.6-1~22.04.1_amd64.deb ...
+#5 8.032 Unpacking libpython3-dev:amd64 (3.10.6-1~22.04.1) ...
+#5 8.056 Selecting previously unselected package swig4.0.
+#5 8.057 Preparing to unpack .../5-swig4.0_4.0.2-1ubuntu1_amd64.deb ...
+#5 8.060 Unpacking swig4.0 (4.0.2-1ubuntu1) ...
+#5 8.171 Selecting previously unselected package swig.
+#5 8.173 Preparing to unpack .../6-swig_4.0.2-1ubuntu1_all.deb ...
+#5 8.176 Unpacking swig (4.0.2-1ubuntu1) ...
+#5 8.209 Setting up libpython3.10:amd64 (3.10.12-1~22.04.18) ...
+#5 8.216 Setting up libexpat1-dev:amd64 (2.4.7-1ubuntu0.9) ...
+#5 8.224 Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu9.2) ...
+#5 8.234 Setting up swig4.0 (4.0.2-1ubuntu1) ...
+#5 8.243 Setting up swig (4.0.2-1ubuntu1) ...
+#5 8.253 Setting up libpython3.10-dev:amd64 (3.10.12-1~22.04.18) ...
+#5 8.263 Setting up libpython3-dev:amd64 (3.10.6-1~22.04.1) ...
+#5 8.273 Processing triggers for libc-bin (2.35-0ubuntu3.15) ...
+#5 DONE 8.4s
+
+#6 [3/7] RUN pip install --no-cache-dir cmake==3.28.4
+#6 0.697 Collecting cmake==3.28.4
+#6 0.762   Downloading cmake-3.28.4-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (26.3 MB)
+#6 1.125      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.3/26.3 MB 146.4 MB/s eta 0:00:00
+#6 1.347 Installing collected packages: cmake
+#6 2.049 Successfully installed cmake-3.28.4
+#6 DONE 2.2s
+
+#7 [4/7] WORKDIR /opt/fastdds-python
+#7 DONE 0.0s
+
+#8 [5/7] RUN curl -fL --retry 3       https://raw.githubusercontent.com/eProsima/Fast-DDS-python/647d9f42d077a10268bfabd795890e7e4e2b3558/fastdds_python.repos       -o fastdds_python.repos     && mkdir -p src     && vcs import src < fastdds_python.repos     && vcs export --exact src > source-lock.repos     && pip freeze > build-tools-lock.txt
+#8 0.118   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#8 0.118                                  Dload  Upload   Total   Spent    Left  Speed
+#8 0.118   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   611  100   611    0     0   2610      0 --:--:-- --:--:-- --:--:--  2611
+#8 1.401 .....
+#8 9.024 === src/fastcdr (git) ===
+#8 9.024 Cloning into '.'...
+#8 9.024 Note: switching to 'v2.3.6'.
+#8 9.024 
+#8 9.024 You are in 'detached HEAD' state. You can look around, make experimental
+#8 9.024 changes and commit them, and you can discard any commits you make in this
+#8 9.024 state without impacting any branches by switching back to a branch.
+#8 9.024 
+#8 9.024 If you want to create a new branch to retain commits you create, you may
+#8 9.024 do so (now or later) by using -c with the switch command. Example:
+#8 9.024 
+#8 9.024   git switch -c <new-branch-name>
+#8 9.024 
+#8 9.024 Or undo this operation with:
+#8 9.024 
+#8 9.024   git switch -
+#8 9.024 
+#8 9.024 Turn off this advice by setting config variable advice.detachedHead to false
+#8 9.024 
+#8 9.024 HEAD is now at d721939 Set versions in fastcdr.repos
+#8 9.024 === src/fastdds (git) ===
+#8 9.024 Cloning into '.'...
+#8 9.024 Note: switching to 'v3.6.2'.
+#8 9.024 
+#8 9.024 You are in 'detached HEAD' state. You can look around, make experimental
+#8 9.024 changes and commit them, and you can discard any commits you make in this
+#8 9.024 state without impacting any branches by switching back to a branch.
+#8 9.024 
+#8 9.024 If you want to create a new branch to retain commits you create, you may
+#8 9.024 do so (now or later) by using -c with the switch command. Example:
+#8 9.024 
+#8 9.024   git switch -c <new-branch-name>
+#8 9.024 
+#8 9.024 Or undo this operation with:
+#8 9.024 
+#8 9.024   git switch -
+#8 9.024 
+#8 9.024 Turn off this advice by setting config variable advice.detachedHead to false
+#8 9.024 
+#8 9.024 HEAD is now at 39303846f Update .repos
+#8 9.024 === src/fastdds_python (git) ===
+#8 9.024 Cloning into '.'...
+#8 9.024 Note: switching to 'v2.6.2'.
+#8 9.024 
+#8 9.024 You are in 'detached HEAD' state. You can look around, make experimental
+#8 9.024 changes and commit them, and you can discard any commits you make in this
+#8 9.024 state without impacting any branches by switching back to a branch.
+#8 9.024 
+#8 9.024 If you want to create a new branch to retain commits you create, you may
+#8 9.024 do so (now or later) by using -c with the switch command. Example:
+#8 9.024 
+#8 9.024   git switch -c <new-branch-name>
+#8 9.024 
+#8 9.024 Or undo this operation with:
+#8 9.024 
+#8 9.024   git switch -
+#8 9.024 
+#8 9.024 Turn off this advice by setting config variable advice.detachedHead to false
+#8 9.024 
+#8 9.024 HEAD is now at 647d9f4 Update .repos
+#8 9.024 === src/fastddsgen (git) ===
+#8 9.024 Cloning into '.'...
+#8 9.024 Note: switching to 'v4.3.0'.
+#8 9.024 
+#8 9.024 You are in 'detached HEAD' state. You can look around, make experimental
+#8 9.024 changes and commit them, and you can discard any commits you make in this
+#8 9.024 state without impacting any branches by switching back to a branch.
+#8 9.024 
+#8 9.024 If you want to create a new branch to retain commits you create, you may
+#8 9.024 do so (now or later) by using -c with the switch command. Example:
+#8 9.024 
+#8 9.024   git switch -c <new-branch-name>
+#8 9.024 
+#8 9.024 Or undo this operation with:
+#8 9.024 
+#8 9.024   git switch -
+#8 9.024 
+#8 9.024 Turn off this advice by setting config variable advice.detachedHead to false
+#8 9.024 
+#8 9.024 HEAD is now at cc0072b Refactor RPC over DDS code generation (#561)
+#8 9.024 === src/foonathan_memory_vendor (git) ===
+#8 9.024 Cloning into '.'...
+#8 9.024 Note: switching to 'v1.4.1'.
+#8 9.024 
+#8 9.024 You are in 'detached HEAD' state. You can look around, make experimental
+#8 9.024 changes and commit them, and you can discard any commits you make in this
+#8 9.024 state without impacting any branches by switching back to a branch.
+#8 9.024 
+#8 9.024 If you want to create a new branch to retain commits you create, you may
+#8 9.024 do so (now or later) by using -c with the switch command. Example:
+#8 9.024 
+#8 9.024   git switch -c <new-branch-name>
+#8 9.024 
+#8 9.024 Or undo this operation with:
+#8 9.024 
+#8 9.024   git switch -
+#8 9.024 
+#8 9.024 Turn off this advice by setting config variable advice.detachedHead to false
+#8 9.024 
+#8 9.024 HEAD is now at 347cb67 Bump version to 1.4.1 (#81)
+#8 DONE 9.8s
+
+#9 [6/7] RUN colcon build     --packages-up-to fastdds_python     --parallel-workers 2     --event-handlers console_direct+     --cmake-args -DCMAKE_BUILD_TYPE=Release                  -DBUILD_TESTING=OFF                  -DPython3_EXECUTABLE=/usr/bin/python3
+#9 0.395 Starting >>> fastcdr
+#9 0.401 Starting >>> foonathan_memory_vendor
+#9 0.432 -- Tests not compiled by default
+#9 0.468 -- The C compiler identification is GNU 11.4.0
+#9 0.476 -- The CXX compiler identification is GNU 11.4.0
+#9 0.487 -- Detecting CXX compiler ABI info
+#9 0.510 -- The CXX compiler identification is GNU 11.4.0
+#9 0.522 -- Detecting C compiler ABI info
+#9 0.542 -- Detecting CXX compiler ABI info - done
+#9 0.551 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#9 0.551 -- Detecting CXX compile features
+#9 0.552 -- Detecting CXX compile features - done
+#9 0.552 -- Configuring Fast CDR
+#9 0.552 -- Version: 2.3.6
+#9 0.554 -- Performing Test SUPPORTS_NOTFOUND
+#9 0.566 -- Detecting C compiler ABI info - done
+#9 0.575 -- Check for working C compiler: /usr/bin/cc - skipped
+#9 0.575 -- Detecting C compile features
+#9 0.575 -- Detecting C compile features - done
+#9 0.582 -- Detecting CXX compiler ABI info
+#9 0.605 -- Performing Test SUPPORTS_NOTFOUND - Success
+#9 0.605 -- Enforced cxx_std_11 CMake feature
+#9 0.605 -- Looking for C++ include sys/types.h
+#9 0.636 -- Detecting CXX compiler ABI info - done
+#9 0.645 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#9 0.645 -- Detecting CXX compile features
+#9 0.645 -- Detecting CXX compile features - done
+#9 0.655 foonathan_memory not found.
+#9 0.659 -- Looking for C++ include sys/types.h - found
+#9 0.659 -- Looking for C++ include stdint.h
+#9 0.673 -- Configuring done (0.2s)
+#9 0.675 -- Generating done (0.0s)
+#9 0.676 CMake Warning:
+#9 0.676   Manually-specified variables were not used by the project:
+#9 0.676 
+#9 0.676     Python3_EXECUTABLE
+#9 0.676 
+#9 0.676 
+#9 0.676 -- Build files have been written to: /opt/fastdds-python/build/foonathan_memory_vendor
+#9 0.711 -- Looking for C++ include stdint.h - found
+#9 0.711 -- Looking for C++ include stddef.h
+#9 0.715 [ 12%] Creating directories for 'foo_mem-ext'
+#9 0.721 [ 25%] Performing download step (git clone) for 'foo_mem-ext'
+#9 0.726 Cloning into 'foo_mem-ext'...
+#9 0.763 -- Looking for C++ include stddef.h - found
+#9 0.763 -- Check size of long double
+#9 0.821 -- Check size of long double - done
+#9 0.821 -- Check size of __float128
+#9 0.876 -- Check size of __float128 - done
+#9 0.913 -- The C compiler identification is GNU 11.4.0
+#9 0.922 -- Detecting C compiler ABI info
+#9 0.971 -- Detecting C compiler ABI info - done
+#9 0.980 -- Check for working C compiler: /usr/bin/cc - skipped
+#9 0.980 -- Detecting C compile features
+#9 0.980 -- Detecting C compile features - done
+#9 0.982 -- Configuring done (0.6s)
+#9 0.987 -- Generating done (0.0s)
+#9 0.987 CMake Warning:
+#9 0.987   Manually-specified variables were not used by the project:
+#9 0.987 
+#9 0.987     Python3_EXECUTABLE
+#9 0.987 
+#9 0.987 
+#9 0.988 -- Build files have been written to: /opt/fastdds-python/build/fastcdr
+#9 1.028 [ 10%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/Cdr.cpp.o
+#9 1.028 [ 30%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/FastCdr.cpp.o
+#9 1.028 [ 30%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/CdrSizeCalculator.cpp.o
+#9 1.029 [ 40%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/FastBuffer.cpp.o
+#9 1.029 [ 50%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/exceptions/BadOptionalAccessException.cpp.o
+#9 1.029 [ 60%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/exceptions/BadParamException.cpp.o
+#9 1.029 [ 70%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/exceptions/Exception.cpp.o
+#9 1.029 [ 80%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/exceptions/LockedExternalAccessException.cpp.o
+#9 1.102 [ 90%] Building CXX object src/cpp/CMakeFiles/fastcdr.dir/exceptions/NotEnoughMemoryException.cpp.o
+#9 1.322 HEAD is now at 1de8562 Avoid using `__func__`
+#9 1.346 [ 37%] No update step for 'foo_mem-ext'
+#9 1.352 [ 50%] No patch step for 'foo_mem-ext'
+#9 1.357 [ 62%] Performing configure step for 'foo_mem-ext'
+#9 1.395 -- The C compiler identification is GNU 11.4.0
+#9 1.445 -- The CXX compiler identification is GNU 11.4.0
+#9 1.461 -- Detecting C compiler ABI info
+#9 1.511 -- Detecting C compiler ABI info - done
+#9 1.526 -- Check for working C compiler: /usr/bin/cc - skipped
+#9 1.526 -- Detecting C compile features
+#9 1.526 -- Detecting C compile features - done
+#9 1.535 -- Detecting CXX compiler ABI info
+#9 1.597 -- Detecting CXX compiler ABI info - done
+#9 1.613 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#9 1.613 -- Detecting CXX compile features
+#9 1.613 -- Detecting CXX compile features - done
+#9 1.618 -- Performing Test HAVE_CXX_ATOMIC_NOFLAG
+#9 1.700 -- Performing Test HAVE_CXX_ATOMIC_NOFLAG - Success
+#9 1.701 -- Getting container node sizes
+#9 2.041 [100%] Linking CXX shared library libfastcdr.so
+#9 2.096 [100%] Built target fastcdr
+#9 2.142 -- Install configuration: "Release"
+#9 2.142 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr
+#9 2.142 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/FastBuffer.h
+#9 2.142 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/CdrSizeCalculator.hpp
+#9 2.142 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/eProsima_auto_link.h
+#9 2.143 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/fastcdr_dll.h
+#9 2.143 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/config
+#9 2.143 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/config/doxygen_modules.h
+#9 2.143 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/Cdr.h
+#9 2.143 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/exceptions
+#9 2.143 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/exceptions/BadOptionalAccessException.hpp
+#9 2.144 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/exceptions/Exception.h
+#9 2.144 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/exceptions/BadParamException.h
+#9 2.144 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/exceptions/NotEnoughMemoryException.h
+#9 2.144 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/exceptions/LockedExternalAccessException.hpp
+#9 2.144 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/CdrEncoding.hpp
+#9 2.144 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/FastCdr.h
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/cdr
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/cdr/fixed_size_string.hpp
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/xcdr
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/xcdr/optional.hpp
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/xcdr/external.hpp
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/xcdr/MemberId.hpp
+#9 2.145 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/xcdr/detail
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/xcdr/detail/optional.hpp
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/detail
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/detail/container_recursive_inspector.hpp
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/include/fastcdr/config.h
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/libfastcdr.so.2.3.6
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/libfastcdr.so.2
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/libfastcdr.so
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/cmake/fastcdr/fastcdr-shared-targets.cmake
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/cmake/fastcdr/fastcdr-shared-targets-release.cmake
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/cmake/fastcdr/fastcdr-config.cmake
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/lib/cmake/fastcdr/fastcdr-config-version.cmake
+#9 2.146 -- Installing: /opt/fastdds-python/install/fastcdr/share/fastcdr/LICENSE
+#9 2.169 --- stderr: fastcdr
+#9 2.169 CMake Warning:
+#9 2.169   Manually-specified variables were not used by the project:
+#9 2.169 
+#9 2.169     Python3_EXECUTABLE
+#9 2.169 
+#9 2.169 
+#9 2.169 ---
+#9 2.169 Finished <<< fastcdr [1.77s]
+#9 6.817 -- Configuring done (5.5s)
+#9 6.825 -- Generating done (0.0s)
+#9 6.825 -- Build files have been written to: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem-ext-prefix/src/foo_mem-ext-build
+#9 6.833 [ 75%] Performing build step for 'foo_mem-ext'
+#9 6.847 [  4%] Building CXX object tool/CMakeFiles/foonathan_memory_node_size_debugger.dir/node_size_debugger.cpp.o
+#9 6.848 [ 13%] Building CXX object src/CMakeFiles/foonathan_memory.dir/detail/align.cpp.o
+#9 6.849 [ 13%] Building CXX object src/CMakeFiles/foonathan_memory.dir/detail/debug_helpers.cpp.o
+#9 6.849 [ 18%] Building CXX object src/CMakeFiles/foonathan_memory.dir/detail/assert.cpp.o
+#9 6.849 [ 22%] Building CXX object src/CMakeFiles/foonathan_memory.dir/detail/free_list.cpp.o
+#9 6.849 [ 27%] Building CXX object src/CMakeFiles/foonathan_memory.dir/detail/free_list_array.cpp.o
+#9 6.849 [ 31%] Building CXX object src/CMakeFiles/foonathan_memory.dir/debugging.cpp.o
+#9 6.850 [ 36%] Building CXX object src/CMakeFiles/foonathan_memory.dir/detail/small_free_list.cpp.o
+#9 6.888 [ 40%] Building CXX object src/CMakeFiles/foonathan_memory.dir/error.cpp.o
+#9 6.899 [ 45%] Building CXX object src/CMakeFiles/foonathan_memory.dir/heap_allocator.cpp.o
+#9 6.923 [ 50%] Building CXX object src/CMakeFiles/foonathan_memory.dir/iteration_allocator.cpp.o
+#9 6.928 [ 54%] Building CXX object src/CMakeFiles/foonathan_memory.dir/malloc_allocator.cpp.o
+#9 6.957 [ 59%] Building CXX object src/CMakeFiles/foonathan_memory.dir/memory_arena.cpp.o
+#9 7.010 [ 63%] Building CXX object src/CMakeFiles/foonathan_memory.dir/memory_pool.cpp.o
+#9 7.139 [ 68%] Building CXX object src/CMakeFiles/foonathan_memory.dir/memory_pool_collection.cpp.o
+#9 7.165 [ 72%] Building CXX object src/CMakeFiles/foonathan_memory.dir/memory_stack.cpp.o
+#9 7.183 [ 77%] Building CXX object src/CMakeFiles/foonathan_memory.dir/new_allocator.cpp.o
+#9 7.231 [ 81%] Building CXX object src/CMakeFiles/foonathan_memory.dir/static_allocator.cpp.o
+#9 7.241 [ 86%] Building CXX object src/CMakeFiles/foonathan_memory.dir/temporary_allocator.cpp.o
+#9 7.429 [ 90%] Building CXX object src/CMakeFiles/foonathan_memory.dir/virtual_memory.cpp.o
+#9 8.422 [ 95%] Linking CXX static library libfoonathan_memory-0.7.4.a
+#9 8.441 [ 95%] Built target foonathan_memory
+#9 10.54 [100%] Linking CXX executable nodesize_dbg
+#9 10.59 [100%] Built target foonathan_memory_node_size_debugger
+#9 10.60 [ 87%] Performing install step for 'foo_mem-ext'
+#9 10.61 [  9%] Built target foonathan_memory_node_size_debugger
+#9 10.62 [100%] Built target foonathan_memory
+#9 10.63 Install the project...
+#9 10.63 -- Install configuration: "Release"
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/lib/libfoonathan_memory-0.7.4.a
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/config_impl.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/container_node_sizes_impl.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/aligned_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/allocator_storage.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/allocator_traits.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/config.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/container.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/debugging.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/default_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/deleter.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/error.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/fallback_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/malloc_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/heap_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/iteration_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/joint_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/memory_arena.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/memory_pool.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/memory_pool_collection.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/memory_pool_type.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/memory_resource_adapter.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/memory_stack.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/namespace_alias.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/new_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/segregator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/smart_ptr.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/static_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/std_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/temporary_allocator.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/threading.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/tracking.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/virtual_memory.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/container_node_sizes_impl.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/align.hpp
+#9 10.63 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/assert.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/container_node_sizes.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/debug_helpers.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/ebo_storage.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/free_list.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/free_list_array.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/ilog2.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/lowlevel_allocator.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/memory_stack.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/small_free_list.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/include/foonathan/memory/detail/utility.hpp
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/bin/nodesize_dbg
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/share/foonathan_memory/LICENSE
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/share/foonathan_memory/README.md
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/lib/foonathan_memory/cmake/foonathan_memory-config.cmake
+#9 10.64 -- Installing: /opt/fastdds-python/build/foonathan_memory_vendor/foo_mem_ext_prj_install/lib/foonathan_memory/cmake/foonathan_memory-config-release.cmake
+#9 10.64 [100%] Completed 'foo_mem-ext'
+#9 10.65 [100%] Built target foo_mem-ext
+#9 10.67 -- Install configuration: "Release"
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share/foonathan_memory
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share/foonathan_memory/README.md
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share/foonathan_memory/LICENSE
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/bin
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/bin/nodesize_dbg
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib/libfoonathan_memory-0.7.4.a
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib/foonathan_memory
+#9 10.67 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib/foonathan_memory/cmake
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib/foonathan_memory/cmake/foonathan_memory-config-release.cmake
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib/foonathan_memory/cmake/foonathan_memory-config.cmake
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/tracking.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/memory_arena.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/allocator_storage.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/memory_pool_collection.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/container.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/iteration_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/namespace_alias.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/aligned_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/debugging.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/memory_stack.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/config_impl.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/error.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/std_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/static_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/segregator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/new_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/memory_pool_type.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/smart_ptr.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/deleter.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/memory_pool.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/container_node_sizes_impl.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/heap_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/malloc_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/memory_resource_adapter.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/threading.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/default_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/config.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/fallback_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/temporary_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/virtual_memory.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/assert.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/free_list.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/small_free_list.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/container_node_sizes.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/memory_stack.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/lowlevel_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/align.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/container_node_sizes_impl.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/ilog2.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/debug_helpers.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/ebo_storage.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/utility.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/detail/free_list_array.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/allocator_traits.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/include/foonathan/memory/joint_allocator.hpp
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share/foonathan_memory_vendor/package.xml
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share/foonathan_memory_vendor/cmake/foonathan_memory_vendorConfig.cmake
+#9 10.68 -- Installing: /opt/fastdds-python/install/foonathan_memory_vendor/share/foonathan_memory_vendor/cmake/foonathan_memory_vendorConfig-version.cmake
+#9 10.70 --- stderr: foonathan_memory_vendor
+#9 10.70 CMake Warning:
+#9 10.70   Manually-specified variables were not used by the project:
+#9 10.70 
+#9 10.70     Python3_EXECUTABLE
+#9 10.70 
+#9 10.70 
+#9 10.70 Cloning into 'foo_mem-ext'...
+#9 10.70 HEAD is now at 1de8562 Avoid using `__func__`
+#9 10.70 ---
+#9 10.70 Finished <<< foonathan_memory_vendor [10.3s]
+#9 10.70 Starting >>> fastdds
+#9 10.76 -- The C compiler identification is GNU 11.4.0
+#9 10.80 -- The CXX compiler identification is GNU 11.4.0
+#9 10.81 -- Detecting C compiler ABI info
+#9 10.86 -- Detecting C compiler ABI info - done
+#9 10.87 -- Check for working C compiler: /usr/bin/cc - skipped
+#9 10.87 -- Detecting C compile features
+#9 10.87 -- Detecting C compile features - done
+#9 10.88 -- Detecting CXX compiler ABI info
+#9 10.93 -- Detecting CXX compiler ABI info - done
+#9 10.94 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#9 10.94 -- Detecting CXX compile features
+#9 10.94 -- Detecting CXX compile features - done
+#9 10.94 -- Version: 3.6.2.0
+#9 10.94 -- Performing Test SUPPORTS_NOTFOUND
+#9 11.00 -- Performing Test SUPPORTS_NOTFOUND - Success
+#9 11.00 -- Enforced cxx_std_11 CMake feature
+#9 11.00 -- Setting warnings as errors...
+#9 11.00 -- Found fastcdr
+#9 11.00 -- Found Asio 1.18.1: /usr/include
+#9 11.00 -- Found Asio
+#9 11.01 -- Found TinyXML2
+#9 11.01 -- Found foonathan_memory: /opt/fastdds-python/install/foonathan_memory_vendor/lib/foonathan_memory/cmake
+#9 11.01 -- Looking for pthread.h
+#9 11.06 -- Looking for pthread.h - found
+#9 11.06 -- Looking for pthread_kill
+#9 11.08 -- Looking for pthread_kill - not found
+#9 11.08 -- Looking for pthread_create in pthreads
+#9 11.11 -- Looking for pthread_create in pthreads - not found
+#9 11.11 -- Looking for pthread_create in pthread
+#9 11.16 -- Looking for pthread_create in pthread - found
+#9 11.16 -- Found Threads: TRUE  
+#9 12.07 -- Thirdparty/boost compiled OK
+#9 12.07 -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+#9 12.07 -- OpenSSL library 3.0.2 found...
+#9 12.07 -- Not using a GNU compiler on Windows.
+#9 12.08 -- Performing Test ATOMIC_WITHOUT_LIB
+#9 12.16 -- Performing Test ATOMIC_WITHOUT_LIB - Success
+#9 12.39 -- Forcing third party shared_mutex
+#9 12.39 -- Performing Test HAS_VERSION_SCRIPT_SUPPORT
+#9 12.45 -- Performing Test HAS_VERSION_SCRIPT_SUPPORT - Success
+#9 12.45 -- Using linker version script to select exported symbols
+#9 12.45 -- Enforced cxx_std_14 CMake feature
+#9 12.46 -- EPROSIMA_TEST_DNS_NOT_SET_UP: '2'
+#9 12.46 -- Configuring done (1.7s)
+#9 12.50 -- Generating done (0.0s)
+#9 12.51 -- Build files have been written to: /opt/fastdds-python/build/fastdds
+#9 12.56 [  0%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterCompoundCondition.cpp.o
+#9 12.56 [  1%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterExpressionParser.cpp.o
+#9 12.56 [  1%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterFactory.cpp.o
+#9 12.56 [  2%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterField.cpp.o
+#9 12.56 [  1%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterExpression.cpp.o
+#9 12.56 [  2%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterParameter.cpp.o
+#9 12.56 [  3%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterPredicate.cpp.o
+#9 12.56 [  3%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/DDSSQLFilter/DDSFilterValue.cpp.o
+#9 12.82 [  4%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/builtin/type_lookup_service/detail/rpc_typesPubSubTypes.cxx.o
+#9 13.16 [  4%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/builtin/type_lookup_service/detail/TypeLookupTypesPubSubTypes.cxx.o
+#9 14.58 [  4%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/builtin/type_lookup_service/TypeLookupManager.cpp.o
+#9 14.67 [  5%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/builtin/type_lookup_service/TypeLookupRequestListener.cpp.o
+#9 14.87 [  5%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/builtin/type_lookup_service/TypeLookupReplyListener.cpp.o
+#9 15.07 [  6%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/Condition.cpp.o
+#9 15.73 [  6%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/ConditionNotifier.cpp.o
+#9 16.45 [  6%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/GuardCondition.cpp.o
+#9 17.05 [  7%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/StatusCondition.cpp.o
+#9 17.60 [  7%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/StatusConditionImpl.cpp.o
+#9 17.61 [  8%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/WaitSet.cpp.o
+#9 18.20 [  8%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/condition/WaitSetImpl.cpp.o
+#9 18.30 [  9%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/Entity.cpp.o
+#9 18.91 [  9%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/policy/ParameterList.cpp.o
+#9 19.08 [  9%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/policy/QosPolicyUtils.cpp.o
+#9 19.11 [ 10%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/core/Time_t.cpp.o
+#9 19.43 [ 10%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/domain/DomainParticipant.cpp.o
+#9 19.86 [ 11%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/domain/DomainParticipantFactory.cpp.o
+#9 20.09 [ 11%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/domain/DomainParticipantImpl.cpp.o
+#9 20.38 [ 11%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/domain/qos/DomainParticipantFactoryQos.cpp.o
+#9 20.42 [ 12%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/domain/qos/DomainParticipantQos.cpp.o
+#9 20.89 [ 12%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/log/FileConsumer.cpp.o
+#9 21.49 [ 13%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/log/Log.cpp.o
+#9 21.73 [ 13%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/log/OStreamConsumer.cpp.o
+#9 22.11 [ 14%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/log/StdoutConsumer.cpp.o
+#9 22.19 [ 14%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/log/StdoutErrConsumer.cpp.o
+#9 22.24 [ 14%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/DataWriter.cpp.o
+#9 22.49 [ 15%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/DataWriterHistory.cpp.o
+#9 22.63 [ 15%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/DataWriterImpl.cpp.o
+#9 22.73 [ 16%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/Publisher.cpp.o
+#9 23.43 [ 16%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/PublisherImpl.cpp.o
+#9 24.64 [ 16%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/qos/DataWriterQos.cpp.o
+#9 25.08 [ 17%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/qos/PublisherQos.cpp.o
+#9 25.38 [ 17%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/publisher/qos/WriterQos.cpp.o
+#9 25.49 [ 18%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/rpc/RPCTypeObjectSupport.cpp.o
+#9 25.95 [ 18%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/rpc/ServiceTypeSupport.cpp.o
+#9 26.95 [ 19%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/DataReader.cpp.o
+#9 27.22 [ 19%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/DataReaderImpl.cpp.o
+#9 27.59 [ 19%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/history/DataReaderHistory.cpp.o
+#9 27.94 [ 20%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/qos/DataReaderQos.cpp.o
+#9 28.24 [ 20%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/qos/ReaderQos.cpp.o
+#9 29.89 [ 21%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/qos/SubscriberQos.cpp.o
+#9 30.61 [ 21%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/ReadCondition.cpp.o
+#9 30.87 [ 21%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/Subscriber.cpp.o
+#9 31.29 [ 22%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/subscriber/SubscriberImpl.cpp.o
+#9 31.78 [ 22%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/ContentFilteredTopic.cpp.o
+#9 32.25 [ 23%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/ContentFilteredTopicImpl.cpp.o
+#9 32.50 [ 23%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/qos/TopicQos.cpp.o
+#9 32.61 [ 24%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/Topic.cpp.o
+#9 32.94 [ 24%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/TopicImpl.cpp.o
+#9 33.62 [ 24%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/TopicProxyFactory.cpp.o
+#9 34.35 [ 25%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/topic/TypeSupport.cpp.o
+#9 34.58 [ 25%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/utils/QosConverters.cpp.o
+#9 34.73 [ 26%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/utils/TypePropagation.cpp.o
+#9 35.58 [ 26%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/AnnotationDescriptorImpl.cpp.o
+#9 36.07 [ 26%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicDataFactory.cpp.o
+#9 36.32 [ 27%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicDataImpl.cpp.o
+#9 36.41 [ 27%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicDataFactoryImpl.cpp.o
+#9 36.46 [ 28%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicPubSubType.cpp.o
+#9 36.54 [ 28%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicTypeImpl.cpp.o
+#9 36.55 [ 29%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicTypeBuilderFactory.cpp.o
+#9 37.00 [ 29%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicTypeBuilderImpl.cpp.o
+#9 37.06 [ 29%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicTypeBuilderFactoryImpl.cpp.o
+#9 37.72 [ 30%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/DynamicTypeMemberImpl.cpp.o
+#9 37.77 [ 30%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/MemberDescriptorImpl.cpp.o
+#9 38.21 [ 31%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/TypeDescriptorImpl.cpp.o
+#9 38.48 [ 31%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/dynamic_types/VerbatimTextDescriptorImpl.cpp.o
+#9 38.51 [ 31%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/exception/Exception.cpp.o
+#9 38.70 [ 32%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/serializers/idl/dynamic_type_idl.cpp.o
+#9 38.93 [ 32%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/serializers/json/dynamic_data_json.cpp.o
+#9 39.33 [ 33%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/serializers/json/json_dynamic_data.cpp.o
+#9 39.69 [ 33%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/type_representation/dds_xtypes_typeobjectPubSubTypes.cxx.o
+#9 39.69 [ 34%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/type_representation/TypeObjectRegistry.cpp.o
+#9 40.52 [ 34%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/type_representation/TypeObjectUtils.cpp.o
+#9 41.41 [ 34%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/fastdds/xtypes/utils.cpp.o
+#9 43.15 [ 35%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/attributes/EndpointSecurityAttributes.cpp.o
+#9 43.19 [ 35%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/attributes/PropertyPolicy.cpp.o
+#9 43.20 [ 36%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/attributes/RTPSParticipantAttributes.cpp.o
+#9 43.85 [ 36%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/attributes/ServerAttributes.cpp.o
+#9 45.85 [ 36%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/attributes/ThreadSettings.cpp.o
+#9 45.89 [ 37%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/BuiltinProtocols.cpp.o
+#9 46.19 [ 37%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/data/ParticipantBuiltinTopicData.cpp.o
+#9 48.11 [ 38%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/data/ParticipantProxyData.cpp.o
+#9 48.47 [ 38%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/data/PublicationBuiltinTopicData.cpp.o
+#9 49.27 [ 39%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/data/SubscriptionBuiltinTopicData.cpp.o
+#9 49.37 [ 39%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/data/ReaderProxyData.cpp.o
+#9 50.54 [ 39%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/data/WriterProxyData.cpp.o
+#9 51.64 [ 40%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/database/backup/SharedBackupFunctions.cpp.o
+#9 52.33 [ 40%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/database/DiscoveryDataBase.cpp.o
+#9 53.06 [ 41%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/database/DiscoveryParticipantInfo.cpp.o
+#9 54.28 [ 41%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/database/DiscoveryParticipantsAckStatus.cpp.o
+#9 54.97 [ 41%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/database/DiscoverySharedInfo.cpp.o
+#9 55.15 [ 42%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDP.cpp.o
+#9 56.11 [ 42%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDPClient.cpp.o
+#9 56.81 [ 43%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDPServer.cpp.o
+#9 57.83 [ 43%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDPServerListeners.cpp.o
+#9 58.94 [ 44%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDPSimple.cpp.o
+#9 59.00 [ 44%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDPSimpleListeners.cpp.o
+#9 60.23 [ 44%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/endpoint/EDPStatic.cpp.o
+#9 60.44 [ 45%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/DirectMessageSender.cpp.o
+#9 61.28 [ 45%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDP.cpp.o
+#9 61.86 [ 46%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDPClient.cpp.o
+#9 63.17 [ 46%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDPClientListener.cpp.o
+#9 63.27 [ 46%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDPListener.cpp.o
+#9 63.65 [ 47%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDPServer.cpp.o
+#9 64.03 [ 47%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDPServerListener.cpp.o
+#9 64.57 [ 48%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/PDPSimple.cpp.o
+#9 65.85 [ 48%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/simple/PDPStatelessWriter.cpp.o
+#9 66.77 [ 49%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/timedevent/DSClientEvent.cpp.o
+#9 67.01 [ 49%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/discovery/participant/timedevent/DServerEvent.cpp.o
+#9 67.58 [ 49%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/liveliness/WLP.cpp.o
+#9 68.11 [ 50%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/builtin/liveliness/WLPListener.cpp.o
+#9 68.82 [ 50%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/common/GuidPrefix_t.cpp.o
+#9 68.91 [ 51%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/common/SerializedPayload.cpp.o
+#9 69.28 [ 51%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/common/LocatorWithMask.cpp.o
+#9 69.78 [ 51%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/common/Time_t.cpp.o
+#9 69.89 [ 52%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/common/Token.cpp.o
+#9 69.99 [ 52%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/DataSharing/DataSharingListener.cpp.o
+#9 70.13 [ 53%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/DataSharing/DataSharingNotification.cpp.o
+#9 70.25 [ 53%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/DataSharing/DataSharingPayloadPool.cpp.o
+#9 70.32 [ 54%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/exceptions/Exception.cpp.o
+#9 70.48 [ 54%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/flowcontrol/FlowControllerConsts.cpp.o
+#9 70.50 [ 54%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/flowcontrol/FlowControllerFactory.cpp.o
+#9 70.56 [ 55%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/history/CacheChangePool.cpp.o
+#9 71.54 [ 55%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/history/History.cpp.o
+#9 71.57 [ 56%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/history/ReaderHistory.cpp.o
+#9 72.65 [ 56%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/history/TopicPayloadPool.cpp.o
+#9 73.58 [ 56%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/history/TopicPayloadPoolRegistry.cpp.o
+#9 73.80 [ 57%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/history/WriterHistory.cpp.o
+#9 73.91 [ 57%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/messages/CDRMessage.cpp.o
+#9 74.24 [ 58%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/messages/MessageReceiver.cpp.o
+#9 74.58 [ 58%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/messages/RTPSGapBuilder.cpp.o
+#9 74.78 [ 59%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/messages/RTPSMessageCreator.cpp.o
+#9 75.08 [ 59%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/messages/RTPSMessageGroup.cpp.o
+#9 75.45 [ 59%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/messages/SendBuffersManager.cpp.o
+#9 75.74 [ 60%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/NetworkBuffer.cpp.o
+#9 76.00 [ 60%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/NetworkConfiguration.cpp.o
+#9 76.24 [ 61%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/NetworkFactory.cpp.o
+#9 76.58 [ 61%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/ReceiverResource.cpp.o
+#9 76.90 [ 61%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/utils/external_locators.cpp.o
+#9 77.00 [ 62%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/utils/netmask_filter.cpp.o
+#9 77.00 [ 62%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/network/utils/network.cpp.o
+#9 77.10 [ 63%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/participant/RTPSParticipant.cpp.o
+#9 77.68 [ 63%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/participant/RTPSParticipantImpl.cpp.o
+#9 78.37 [ 64%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/persistence/PersistenceFactory.cpp.o
+#9 78.55 [ 64%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/BaseReader.cpp.o
+#9 78.57 [ 64%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/reader_utils.cpp.o
+#9 79.13 [ 65%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/RTPSReader.cpp.o
+#9 79.21 [ 65%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/StatefulPersistentReader.cpp.o
+#9 79.28 [ 66%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/StatefulReader.cpp.o
+#9 79.81 [ 66%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/StatelessPersistentReader.cpp.o
+#9 79.99 [ 66%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/StatelessReader.cpp.o
+#9 80.71 [ 67%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/reader/WriterProxy.cpp.o
+#9 81.55 [ 67%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/resources/ResourceEvent.cpp.o
+#9 82.14 [ 68%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/resources/TimedEvent.cpp.o
+#9 82.21 [ 68%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/resources/TimedEventImpl.cpp.o
+#9 82.62 [ 69%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/domain/RTPSDomain.cpp.o
+#9 82.64 [ 69%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/ChainingTransport.cpp.o
+#9 82.70 [ 69%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/ChannelResource.cpp.o
+#9 83.30 [ 70%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/MulticastTransportInterface.cpp.o
+#9 83.49 [ 70%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/network/NetmaskFilterKind.cpp.o
+#9 83.72 [ 71%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/network/NetworkInterface.cpp.o
+#9 83.82 [ 71%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/network/NetworkInterfaceWithFilter.cpp.o
+#9 83.92 [ 71%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/PortBasedTransportDescriptor.cpp.o
+#9 84.32 [ 72%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/shared_mem/SharedMemTransportDescriptor.cpp.o
+#9 84.36 [ 72%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/tcp/RTCPMessageManager.cpp.o
+#9 84.42 [ 73%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/tcp/TCPControlMessage.cpp.o
+#9 84.58 [ 73%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPAcceptor.cpp.o
+#9 85.02 [ 74%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPAcceptorBasic.cpp.o
+#9 85.14 [ 74%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPChannelResource.cpp.o
+#9 85.21 [ 74%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPChannelResourceBasic.cpp.o
+#9 85.35 [ 75%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPTransportInterface.cpp.o
+#9 89.06 [ 75%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPv4Transport.cpp.o
+#9 89.45 [ 76%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPv6Transport.cpp.o
+#9 89.56 [ 76%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/test_UDPv4Transport.cpp.o
+#9 90.50 [ 76%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TransportInterface.cpp.o
+#9 91.30 [ 77%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/UDPChannelResource.cpp.o
+#9 91.37 [ 77%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/UDPTransportInterface.cpp.o
+#9 91.99 [ 78%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/UDPv4Transport.cpp.o
+#9 92.82 [ 78%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/UDPv6Transport.cpp.o
+#9 92.83 [ 79%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/BaseWriter.cpp.o
+#9 93.85 [ 79%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/LivelinessManager.cpp.o
+#9 94.29 [ 79%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/LocatorSelectorSender.cpp.o
+#9 94.61 [ 80%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/PersistentWriter.cpp.o
+#9 94.78 [ 80%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/ReaderLocator.cpp.o
+#9 96.14 [ 81%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/ReaderProxy.cpp.o
+#9 96.25 [ 81%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/RTPSWriter.cpp.o
+#9 96.44 [ 81%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/StatefulPersistentWriter.cpp.o
+#9 97.18 [ 82%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/StatefulWriter.cpp.o
+#9 97.95 [ 82%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/StatelessPersistentWriter.cpp.o
+#9 98.01 [ 83%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/writer/StatelessWriter.cpp.o
+#9 98.63 [ 83%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/fastdds/domain/DomainParticipant.cpp.o
+#9 99.35 [ 84%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/fastdds/publisher/qos/DataWriterQos.cpp.o
+#9 99.53 [ 84%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/fastdds/subscriber/qos/DataReaderQos.cpp.o
+#9 100.0 [ 84%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/Host.cpp.o
+#9 100.1 [ 85%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/IPFinder.cpp.o
+#9 100.4 [ 85%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/IPLocator.cpp.o
+#9 100.7 [ 86%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/md5.cpp.o
+#9 101.1 [ 86%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/StringMatching.cpp.o
+#9 101.3 [ 86%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/SystemInfo.cpp.o
+#9 101.3 [ 87%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/TimedConditionVariable.cpp.o
+#9 101.4 [ 87%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/utils/UnitsParser.cpp.o
+#9 101.6 [ 88%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/attributes/TopicAttributes.cpp.o
+#9 101.7 [ 88%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLDynamicParser.cpp.o
+#9 102.0 [ 89%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLElementParser.cpp.o
+#9 102.1 [ 89%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLEndpointParser.cpp.o
+#9 103.5 [ 89%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLParser.cpp.o
+#9 103.9 [ 90%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLParserCommon.cpp.o
+#9 103.9 [ 90%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLProfileManager.cpp.o
+#9 104.9 [ 91%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/fastdds/domain/DomainParticipantImpl.cpp.o
+#9 105.7 [ 91%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/fastdds/domain/DomainParticipantStatisticsListener.cpp.o
+#9 105.8 [ 91%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/rtps/monitor-service/MonitorService.cpp.o
+#9 107.8 [ 92%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/rtps/monitor-service/MonitorServiceListener.cpp.o
+#9 108.0 [ 92%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/rtps/reader/StatisticsReaderImpl.cpp.o
+#9 110.1 [ 93%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/rtps/StatisticsBase.cpp.o
+#9 110.2 [ 93%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/rtps/writer/StatisticsWriterImpl.cpp.o
+#9 110.2 [ 94%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/types/monitorservice_typesPubSubTypes.cxx.o
+#9 111.1 [ 94%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/types/monitorservice_typesTypeObjectSupport.cxx.o
+#9 111.5 [ 94%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/types/typesPubSubTypes.cxx.o
+#9 112.6 [ 95%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/statistics/types/typesTypeObjectSupport.cxx.o
+#9 112.8 [ 95%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/shared_mem/test_SharedMemTransport.cpp.o
+#9 113.0 [ 96%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/shared_mem/SharedMemTransport.cpp.o
+#9 113.2 [ 96%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPChannelResourceSecure.cpp.o
+#9 113.7 [ 96%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/transport/TCPAcceptorSecure.cpp.o
+#9 114.8 [ 97%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/persistence/SQLite3PersistenceService.cpp.o
+#9 115.7 [ 97%] Building C object src/cpp/CMakeFiles/fastdds.dir/rtps/persistence/sqlite3.c.o
+#9 116.5 [ 98%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/rtps/domain/RTPSDomainExtras.cpp.o
+#9 116.5 [ 98%] Building CXX object src/cpp/CMakeFiles/fastdds.dir/xmlparser/XMLParserExtras.cpp.o
+#9 142.3 [ 99%] Linking CXX shared library libfastdds.so
+#9 142.9 [ 99%] Built target fastdds
+#9 143.0 [ 99%] Building CXX object tools/fds/CMakeFiles/fast-discovery-server.dir/CliDiscoveryEntrypoint.cpp.o
+#9 143.0 [ 99%] Building CXX object tools/fds/CMakeFiles/fast-discovery-server.dir/CliDiscoveryManager.cpp.o
+#9 148.9 [100%] Linking CXX executable fast-discovery-server-1.0.1
+#9 149.1 [100%] Built target fast-discovery-server
+#9 149.1 -- Install configuration: "Release"
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/topic_names.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/rtps
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/rtps/monitor_service
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/rtps/monitor_service/connections_fwd.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/rtps/StatisticsCommon.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/IListeners.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/subscriber
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/subscriber/qos
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/subscriber/qos/DataReaderQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/publisher
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/publisher/qos
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/publisher/qos/DataWriterQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/domain
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/domain/DomainParticipant.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/LibrarySettings.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/fixed_size_bitmap.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/collections
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/collections/ResourceLimitedVector.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/collections/ResourceLimitedContainerConfig.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/md5.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/IPLocator.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/IPFinder.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/TimedMutex.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/utils/TimedConditionVariable.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/config
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/config/doxygen_modules.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/fastdds_dll.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/fastdds_auto_link.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/RTPSDomain.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/interfaces
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/interfaces/IReaderDataFilter.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/ParticipantBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/BuiltinTopicKey.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/TopicDescription.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/ContentFilterProperty.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/SubscriptionBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/PublicationBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/BuiltinEndpoints.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/Endpoint.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/messages
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/messages/RTPSMessageSenderInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/messages/RTPS_messages.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/writer
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/writer/RTPSWriter.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/writer/WriterDiscoveryStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/writer/WriterListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorSelectorEntry.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/RemoteLocators.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/MatchingInfo.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/PortParameters.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/CdrSerialization.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/ChangeKind_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/WriteParams.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/FragmentNumber.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Property.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Time_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/OriginalWriterInfo.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/CacheChange.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/BinaryProperty.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/InstanceHandle.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/SequenceNumber.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/VendorId_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/ProductVersion_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/EntityId_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/SampleIdentity.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorWithMask.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Locator.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/GuidPrefix_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/SerializedPayload.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Guid.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorsIterator.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorListComparisons.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Token.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Types.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorSelector.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/CDRMessage_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/reader
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/reader/ReaderDiscoveryStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/reader/ReaderListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/reader/RTPSReader.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/history
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/history/ReaderHistory.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/history/IChangePool.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/history/WriterHistory.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/history/History.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/history/IPayloadPool.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/EndpointAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/EndpointSecurityAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/ResourceManagement.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/HistoryAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/PropertyPolicy.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/ExternalLocators.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/RTPSParticipantAllocationAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/ReaderAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/ThreadSettings.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/BuiltinTransports.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/RTPSParticipantAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/attributes/WriterAttributes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/SocketTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/ChainingTransport.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/ChainingTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/UDPv6TransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/TCPv6TransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/TransportReceiverInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/SenderResource.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/NetworkBuffer.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/UDPv4TransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/test_UDPv4TransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/TransportDescriptorInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/TransportInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/UDPTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/TCPv4TransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/PortBasedTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/shared_mem
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/shared_mem/test_SharedMemTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/shared_mem/SharedMemTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/network
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/network/NetworkInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/network/BlockedNetworkInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/network/AllowedNetworkInterface.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/network/NetmaskFilterKind.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/network/NetworkInterfaceWithFilter.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/transport/TCPTransportDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/participant
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/participant/ParticipantDiscoveryInfo.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/participant/RTPSParticipant.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/participant/RTPSParticipantListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/flowcontrol
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/flowcontrol/FlowControllerDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/flowcontrol/FlowControllerSchedulerPolicy.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/rtps/flowcontrol/FlowControllerConsts.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/Service.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/Replier.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/RemoteExceptionCode_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/RPCEntity.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/ServiceTypeSupport.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/RPCTypeObjectSupport.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/Requester.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/rpc/RequestInfo.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableArray.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/Time_t.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/MatchedStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/SubscriptionMatchedStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/BaseStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/DeadlineMissedStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/PublicationMatchedStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/LivelinessChangedStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/StatusMask.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/IncompatibleQosStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/status/SampleRejectedStatus.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/Entity.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableTypedCollection.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableCollection.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableSequence.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/ReturnCode.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/condition
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/condition/GuardCondition.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/condition/Condition.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/condition/WaitSet.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/condition/StatusCondition.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/ReaderResourceLimitsQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/ParameterTypes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/WriterDataLifecycleQosPolicy.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/RTPSReliableWriterQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/QosPolicies.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/RTPSReliableReaderQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/ReaderDataLifecycleQosPolicy.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/StackAllocatedSequence.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/detail
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/detail/DDSReturnCode.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/detail/DDSSecurityReturnCode.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/UserAllocatedSequence.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/Types.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin/topic
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin/topic/ParticipantBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin/topic/BuiltinTopicKey.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin/topic/SubscriptionBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin/topic/PublicationBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/builtin/topic/TopicBuiltinTopicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/DataReaderListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/ViewState.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/Subscriber.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/qos
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/qos/SubscriberQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/qos/ReaderQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/qos/DataReaderQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/DataReader.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/SubscriberListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/SampleState.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/ReadCondition.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/InstanceState.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/subscriber/SampleInfo.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/ContentFilteredTopic.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicDescription.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TypeSupport.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/Topic.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/qos
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/qos/TopicQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/IContentFilter.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/IContentFilterFactory.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicDataType.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/qos
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/qos/PublisherQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/qos/WriterQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/qos/DataWriterQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/DataWriterListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/PublisherListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/DataWriter.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/publisher/Publisher.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/common
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/common/InstanceHandle.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/DomainParticipant.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/qos
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/qos/DomainParticipantQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/qos/DomainParticipantFactoryQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/qos/ReplierQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/qos/DomainParticipantExtendedQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/qos/RequesterQos.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/DomainParticipantListener.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/domain/DomainParticipantFactory.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log/FileConsumer.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log/StdoutConsumer.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log/OStreamConsumer.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log/Colors.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log/StdoutErrConsumer.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/log/Log.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/TypeObjectUtils.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/TypeObject.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/ITypeObjectRegistry.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobjectCdrAux.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobjectPubSubTypes.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/exception
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/exception/Exception.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicTypeMember.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicDataFactory.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/type_traits.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicType.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicTypeBuilder.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicData.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/VerbatimTextDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/TypeDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/MemberDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/AnnotationDescriptor.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicPubSubType.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/DynamicTypeBuilderFactory.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/detail
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/detail/dynamic_language_binding.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/detail/type_traits.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/dynamic_types/Types.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/utils.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/common.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/config.hpp
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/types.idl
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/monitorservice_types.idl
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/rtps
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/rtps/monitor_service
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/subscriber
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/subscriber/qos
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/publisher
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/publisher/qos
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/include/fastdds/statistics/dds/domain
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/lib/libfastdds.so.3.6.2.0
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/lib/libfastdds.so.3.6
+#9 149.1 -- Set non-toolchain portion of runtime path of "/opt/fastdds-python/install/fastdds/lib/libfastdds.so.3.6.2.0" to ""
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/lib/libfastdds.so
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/cmake/fastdds-shared-targets.cmake
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/cmake/fastdds-shared-targets-release.cmake
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/cmake/fastdds-config.cmake
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/cmake/fastdds-config-version.cmake
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/thirdparty/optionparser
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/thirdparty/optionparser/optionparser
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/thirdparty/optionparser/optionparser/optionparser.h
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/include/fastdds/thirdparty/optionparser/optionparser.hpp
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/cmake/optionparser-targets.cmake
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/bin/fast-discovery-server-1.0.1
+#9 149.1 -- Set non-toolchain portion of runtime path of "/opt/fastdds-python/install/fastdds/bin/fast-discovery-server-1.0.1" to ""
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/shm
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/shm/parser.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/shm/clean.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/xml_ci
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/xml_ci/parser.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/xml_ci/validate.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/fastdds.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/parser.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/helpers.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/xmlrpc_local
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/xmlrpc_local/local_server.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/xmlrpc_local/local_client.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/xmlrpc_local/__init__.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/process_handler
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/process_handler/process_handler.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/process_handler/__init__.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/node
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/node/__init__.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/node/daemon_node.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/daemon
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/daemon/daemonize.py
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/tools/fastdds/discovery/fastdds_daemon/daemon/__init__.py
+#9 149.1 -- Up-to-date: /opt/fastdds-python/install/fastdds/bin
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/bin/fastdds
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/bin/ros-discovery
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/LICENSE
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/fastdds_profiles.xsd
+#9 149.1 -- Installing: /opt/fastdds-python/install/fastdds/share/fastdds/fastdds_static_discovery.xsd
+#9 149.1 Finished <<< fastdds [2min 18s]
+#9 149.1 Starting >>> fastdds_python
+#9 149.2 -- The C compiler identification is GNU 11.4.0
+#9 149.2 -- The CXX compiler identification is GNU 11.4.0
+#9 149.3 -- Detecting C compiler ABI info
+#9 149.3 -- Detecting C compiler ABI info - done
+#9 149.3 -- Check for working C compiler: /usr/bin/cc - skipped
+#9 149.3 -- Detecting C compile features
+#9 149.3 -- Detecting C compile features - done
+#9 149.3 -- Detecting CXX compiler ABI info
+#9 149.4 -- Detecting CXX compiler ABI info - done
+#9 149.4 -- Check for working CXX compiler: /usr/bin/c++ - skipped
+#9 149.4 -- Detecting CXX compile features
+#9 149.4 -- Detecting CXX compile features - done
+#9 149.4 -- Tests not compiled by default
+#9 149.4 -- Found SWIG: /usr/bin/swig4.0 (found version "4.0.2")  
+#9 149.5 -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development Development.Module Development.Embed 
+#9 149.5 -- Configuring FastDDS wrapper for Python...
+#9 149.5 -- Configuring done (0.4s)
+#9 149.5 -- Generating done (0.0s)
+#9 149.5 -- Build files have been written to: /opt/fastdds-python/build/fastdds_python
+#9 149.6 [ 33%] Swig compile /opt/fastdds-python/build/fastdds_python/src/swig/fastdds.i for python
+#9 149.8 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp:39: Warning 302: Identifier 'LocatorListIterator' redefined (ignored),
+#9 149.8 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Locator.hpp:561: Warning 302: previous definition of 'LocatorListIterator'.
+#9 149.8 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp:41: Warning 302: Identifier 'LocatorListConstIterator' redefined (ignored),
+#9 149.8 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Locator.hpp:562: Warning 302: previous definition of 'LocatorListConstIterator'.
+#9 149.9 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/WriteParams.hpp:53: Warning 325: Nested struct not currently supported (UserWriteData ignored)
+#9 149.9 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/ContentFilterProperty.hpp:48: Warning 325: Nested struct not currently supported (AllocationConfiguration ignored)
+#9 150.0 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/QosPolicies.hpp:1368: Warning 325: Nested class not currently supported (const_iterator ignored)
+#9 150.0 /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicDataType.hpp:73: Warning 325: Nested struct not currently supported (Context ignored)
+#9 150.3 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:420: Warning 312: Nested union not currently supported (ignored).
+#9 150.3 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:4229: Warning 312: Nested union not currently supported (ignored).
+#9 150.3 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:6221: Warning 312: Nested union not currently supported (ignored).
+#9 150.5 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:22058: Warning 312: Nested union not currently supported (ignored).
+#9 150.5 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:23452: Warning 312: Nested union not currently supported (ignored).
+#9 150.5 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:23836: Warning 312: Nested union not currently supported (ignored).
+#9 150.5 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp:46: Warning 401: Nothing known about base class 'LocatorsIterator'. Ignored.
+#9 150.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableSequence.hpp:1: Warning 401: Nothing known about base class 'LoanableTypedCollection< eprosima::fastdds::dds::SampleInfo,std::true_type >'. Ignored.
+#9 150.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableSequence.hpp:1: Warning 401: Maybe you forgot to instantiate 'LoanableTypedCollection< eprosima::fastdds::dds::SampleInfo,std::true_type >' using %template.
+#9 151.1 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/VendorId_t.hpp:57: Warning 503: Can't wrap 'operator <<' unless renamed to a valid identifier.
+#9 154.9 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:2760: Warning 509: Overloaded method eprosima::fastdds::dds::xtypes::Dummy::Dummy(eprosima::fastdds::dds::xtypes::Dummy &&) effectively ignored,
+#9 154.9 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:2750: Warning 509: as it is shadowed by eprosima::fastdds::dds::xtypes::Dummy::Dummy(eprosima::fastdds::dds::xtypes::Dummy const &).
+#9 155.0 [ 66%] Building CXX object src/swig/CMakeFiles/fastdds_python.dir/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx.o
+#9 157.5 /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx: In function ‘PyObject* PyInit__fastdds_python()’:
+#9 157.5 /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx:988:64: warning: ‘void PyEval_InitThreads()’ is deprecated [-Wdeprecated-declarations]
+#9 157.5   988 | #     define SWIG_PYTHON_INITIALIZE_THREADS  PyEval_InitThreads()
+#9 157.5       |                                              ~~~~~~~~~~~~~~~~~~^~
+#9 157.5 /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx:176177:3: note: in expansion of macro ‘SWIG_PYTHON_INITIALIZE_THREADS’
+#9 157.5 176177 |   SWIG_PYTHON_INITIALIZE_THREADS;
+#9 157.5        |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#9 157.5 In file included from /usr/include/python3.10/Python.h:130,
+#9 157.5                  from /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx:186:
+#9 157.5 /usr/include/python3.10/ceval.h:122:37: note: declared here
+#9 157.5   122 | Py_DEPRECATED(3.9) PyAPI_FUNC(void) PyEval_InitThreads(void);
+#9 157.5       |                                     ^~~~~~~~~~~~~~~~~~
+#9 213.3 [100%] Linking CXX shared library _fastdds_python.so
+#9 213.5 [100%] Built target fastdds_python
+#9 213.6 -- Install configuration: "Release"
+#9 213.6 -- Installing: /opt/fastdds-python/install/fastdds_python/lib/python3.10/site-packages/fastdds/_fastdds_python.so
+#9 213.6 -- Set non-toolchain portion of runtime path of "/opt/fastdds-python/install/fastdds_python/lib/python3.10/site-packages/fastdds/_fastdds_python.so" to ""
+#9 213.6 -- Installing: /opt/fastdds-python/install/fastdds_python/lib/python3.10/site-packages/fastdds/__init__.py
+#9 213.6 -- Installing: /opt/fastdds-python/install/fastdds_python/lib/cmake/fastdds_python/fastdds_python-targets.cmake
+#9 213.6 -- Installing: /opt/fastdds-python/install/fastdds_python/lib/cmake/fastdds_python/fastdds_python-targets-release.cmake
+#9 213.6 -- Installing: /opt/fastdds-python/install/fastdds_python/lib/cmake/fastdds_python/fastdds_python-config.cmake
+#9 213.6 -- Installing: /opt/fastdds-python/install/fastdds_python/lib/cmake/fastdds_python/fastdds_python-config-version.cmake
+#9 213.6 Finished <<< fastdds_python [1min 4s]
+#9 213.6 --- stderr: fastdds_python
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp:39: Warning 302: Identifier 'LocatorListIterator' redefined (ignored),
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Locator.hpp:561: Warning 302: previous definition of 'LocatorListIterator'.
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp:41: Warning 302: Identifier 'LocatorListConstIterator' redefined (ignored),
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/Locator.hpp:562: Warning 302: previous definition of 'LocatorListConstIterator'.
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/WriteParams.hpp:53: Warning 325: Nested struct not currently supported (UserWriteData ignored)
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/builtin/data/ContentFilterProperty.hpp:48: Warning 325: Nested struct not currently supported (AllocationConfiguration ignored)
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/policy/QosPolicies.hpp:1368: Warning 325: Nested class not currently supported (const_iterator ignored)
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/topic/TopicDataType.hpp:73: Warning 325: Nested struct not currently supported (Context ignored)
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:420: Warning 312: Nested union not currently supported (ignored).
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:4229: Warning 312: Nested union not currently supported (ignored).
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:6221: Warning 312: Nested union not currently supported (ignored).
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:22058: Warning 312: Nested union not currently supported (ignored).
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:23452: Warning 312: Nested union not currently supported (ignored).
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:23836: Warning 312: Nested union not currently supported (ignored).
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/LocatorList.hpp:46: Warning 401: Nothing known about base class 'LocatorsIterator'. Ignored.
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableSequence.hpp:1: Warning 401: Nothing known about base class 'LoanableTypedCollection< eprosima::fastdds::dds::SampleInfo,std::true_type >'. Ignored.
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/core/LoanableSequence.hpp:1: Warning 401: Maybe you forgot to instantiate 'LoanableTypedCollection< eprosima::fastdds::dds::SampleInfo,std::true_type >' using %template.
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/rtps/common/VendorId_t.hpp:57: Warning 503: Can't wrap 'operator <<' unless renamed to a valid identifier.
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:2760: Warning 509: Overloaded method eprosima::fastdds::dds::xtypes::Dummy::Dummy(eprosima::fastdds::dds::xtypes::Dummy &&) effectively ignored,
+#9 213.6 /opt/fastdds-python/install/fastdds/include/fastdds/dds/xtypes/type_representation/detail/dds_xtypes_typeobject.hpp:2750: Warning 509: as it is shadowed by eprosima::fastdds::dds::xtypes::Dummy::Dummy(eprosima::fastdds::dds::xtypes::Dummy const &).
+#9 213.6 /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx: In function ‘PyObject* PyInit__fastdds_python()’:
+#9 213.6 /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx:988:64: warning: ‘void PyEval_InitThreads()’ is deprecated [-Wdeprecated-declarations]
+#9 213.6   988 | #     define SWIG_PYTHON_INITIALIZE_THREADS  PyEval_InitThreads()
+#9 213.6       |                                              ~~~~~~~~~~~~~~~~~~^~
+#9 213.6 /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx:176177:3: note: in expansion of macro ‘SWIG_PYTHON_INITIALIZE_THREADS’
+#9 213.6 176177 |   SWIG_PYTHON_INITIALIZE_THREADS;
+#9 213.6        |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#9 213.6 In file included from /usr/include/python3.10/Python.h:130,
+#9 213.6                  from /opt/fastdds-python/build/fastdds_python/src/swig/CMakeFiles/fastdds_python.dir/fastddsPYTHON_wrap.cxx:186:
+#9 213.6 /usr/include/python3.10/ceval.h:122:37: note: declared here
+#9 213.6   122 | Py_DEPRECATED(3.9) PyAPI_FUNC(void) PyEval_InitThreads(void);
+#9 213.6       |                                     ^~~~~~~~~~~~~~~~~~
+#9 213.6 ---
+#9 213.6 
+#9 213.6 Summary: 4 packages finished [3min 33s]
+#9 213.6   3 packages had stderr output: fastcdr fastdds_python foonathan_memory_vendor
+#9 DONE 213.7s
+
+#10 [7/7] RUN source install/setup.bash     && /usr/bin/python3 -c "import fastdds; print('Fast DDS Python import OK')"
+#10 0.211 Fast DDS Python import OK
+#10 DONE 0.2s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 6.5s done
+#11 exporting manifest sha256:4be1091c0113960d467f119c26193a3d455c5ca8cd88b7ff97b1a5a4868329a9 0.0s done
+#11 exporting config sha256:cb30f6a98ea58080d1f0ccd6deb3fbd7f3ed66a2f4cc48ae5d6d6e776fecb44b 0.0s done
+#11 exporting attestation manifest sha256:a4c29ed94032c8a451b7e265451d6acb340b4d712e957644dcf264f05139ed00 0.0s done
+#11 exporting manifest list sha256:e7cb8b7d46e44fe0cd90bb24c65cdfce8f88ee7b73e37badbac12191a1a90e28 0.0s done
+#11 naming to docker.io/rono/fastdds-python:2.6.2 done
+#11 unpacking to docker.io/rono/fastdds-python:2.6.2
+#11 unpacking to docker.io/rono/fastdds-python:2.6.2 2.6s done
+#11 DONE 9.2s
