@@ -1,0 +1,9 @@
+default via 172.20.20.1 dev eth0 
+10.0.24.0/30 dev eth1 proto kernel scope link src 10.0.24.2 
+10.101.0.0/24 nhid 17 via 10.0.24.1 dev eth1 proto bgp metric 20 
+10.102.0.0/24 nhid 17 via 10.0.24.1 dev eth1 proto bgp metric 20 
+10.103.0.0/24 nhid 17 via 10.0.24.1 dev eth1 proto bgp metric 20 
+10.105.0.0/24 nhid 17 via 10.0.24.1 dev eth1 proto bgp metric 20 
+10.106.0.0/24 nhid 17 via 10.0.24.1 dev eth1 proto bgp metric 20 
+10.107.0.0/24 nhid 17 via 10.0.24.1 dev eth1 proto bgp metric 20 
+172.20.20.0/24 dev eth0 proto kernel scope link src 172.20.20.6 

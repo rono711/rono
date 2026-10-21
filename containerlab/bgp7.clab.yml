@@ -1,0 +1,65 @@
+name: bgp7
+
+topology:
+  nodes:
+    r1:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r1/daemons:/etc/frr/daemons
+        - ../configs/r1/frr.conf:/etc/frr/frr.conf
+
+    r2:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r2/daemons:/etc/frr/daemons
+        - ../configs/r2/frr.conf:/etc/frr/frr.conf
+
+    r3:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r3/daemons:/etc/frr/daemons
+        - ../configs/r3/frr.conf:/etc/frr/frr.conf
+
+    r4:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r4/daemons:/etc/frr/daemons
+        - ../configs/r4/frr.conf:/etc/frr/frr.conf
+
+    r5:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r5/daemons:/etc/frr/daemons
+        - ../configs/r5/frr.conf:/etc/frr/frr.conf
+
+    r6:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r6/daemons:/etc/frr/daemons
+        - ../configs/r6/frr.conf:/etc/frr/frr.conf
+
+    r7:
+      kind: linux
+      image: quay.io/frrouting/frr:10.6.1
+      binds:
+        - ../configs/r7/daemons:/etc/frr/daemons
+        - ../configs/r7/frr.conf:/etc/frr/frr.conf
+
+  links:
+    - endpoints: ["r1:eth1", "r2:eth1"]
+    - endpoints: ["r1:eth2", "r3:eth1"]
+
+    - endpoints: ["r2:eth2", "r3:eth2"]
+    - endpoints: ["r2:eth3", "r4:eth1"]
+    - endpoints: ["r2:eth4", "r5:eth1"]
+
+    - endpoints: ["r3:eth3", "r6:eth1"]
+    - endpoints: ["r3:eth4", "r7:eth1"]
+
+    - endpoints: ["r5:eth2", "r6:eth2"]

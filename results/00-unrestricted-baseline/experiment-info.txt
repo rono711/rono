@@ -1,0 +1,19 @@
+Experiment: 00-unrestricted-baseline
+Date: 2026-09-26T11:43:01+00:00
+Host: ip-10-0-12-38
+Containerlab:     version: 0.79.0
+Docker: Docker version 29.8.1, build 4a63305
+FRR image: quay.io/frrouting/frr:10.6.1
+
+Topology:
+AS65001 R1
+AS65002 R2
+AS65003 R3
+AS65004 R4-VICTIM
+AS65005 R5
+AS65006 R6
+AS65007 R7-ATTACKER
+
+Victim prefix: 10.104.0.0/24
+Attacker prefix: 10.107.0.0/24
+Policy: unrestricted eBGP baseline
