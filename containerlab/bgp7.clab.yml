@@ -8,6 +8,7 @@ topology:
       binds:
         - ../configs/r1/daemons:/etc/frr/daemons
         - ../configs/r1/frr.conf:/etc/frr/frr.conf
+        - ../configs/r1/vtysh.conf:/etc/frr/vtysh.conf
 
     r2:
       kind: linux
@@ -15,6 +16,7 @@ topology:
       binds:
         - ../configs/r2/daemons:/etc/frr/daemons
         - ../configs/r2/frr.conf:/etc/frr/frr.conf
+        - ../configs/r2/vtysh.conf:/etc/frr/vtysh.conf
 
     r3:
       kind: linux
@@ -22,6 +24,7 @@ topology:
       binds:
         - ../configs/r3/daemons:/etc/frr/daemons
         - ../configs/r3/frr.conf:/etc/frr/frr.conf
+        - ../configs/r3/vtysh.conf:/etc/frr/vtysh.conf
 
     r4:
       kind: linux
@@ -29,6 +32,7 @@ topology:
       binds:
         - ../configs/r4/daemons:/etc/frr/daemons
         - ../configs/r4/frr.conf:/etc/frr/frr.conf
+        - ../configs/r4/vtysh.conf:/etc/frr/vtysh.conf
 
     r5:
       kind: linux
@@ -36,6 +40,7 @@ topology:
       binds:
         - ../configs/r5/daemons:/etc/frr/daemons
         - ../configs/r5/frr.conf:/etc/frr/frr.conf
+        - ../configs/r5/vtysh.conf:/etc/frr/vtysh.conf
 
     r6:
       kind: linux
@@ -43,6 +48,7 @@ topology:
       binds:
         - ../configs/r6/daemons:/etc/frr/daemons
         - ../configs/r6/frr.conf:/etc/frr/frr.conf
+        - ../configs/r6/vtysh.conf:/etc/frr/vtysh.conf
 
     r7:
       kind: linux
@@ -50,6 +56,7 @@ topology:
       binds:
         - ../configs/r7/daemons:/etc/frr/daemons
         - ../configs/r7/frr.conf:/etc/frr/frr.conf
+        - ../configs/r7/vtysh.conf:/etc/frr/vtysh.conf
 
   links:
     - endpoints: ["r1:eth1", "r2:eth1"]

@@ -1,0 +1,33 @@
+2026/10/21 16:18:58 WATCHFRR: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 WATCHFRR: [T83RR-8SM5G] watchfrr 10.6.1_git starting: vty@0
+2026/10/21 16:18:58 WATCHFRR: [ZCJ3S-SPH5S] mgmtd state -> down : initial connection attempt failed
+2026/10/21 16:18:58 WATCHFRR: [ZCJ3S-SPH5S] zebra state -> down : initial connection attempt failed
+2026/10/21 16:18:58 WATCHFRR: [ZCJ3S-SPH5S] bgpd state -> down : initial connection attempt failed
+2026/10/21 16:18:58 WATCHFRR: [ZCJ3S-SPH5S] staticd state -> down : initial connection attempt failed
+2026/10/21 16:18:58 WATCHFRR: [YFT0P-5Q5YX] Forked background command [pid 12]: /usr/lib/frr/watchfrr.sh restart all
+2026/10/21 16:18:58 MGMTD: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 ZEBRA: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 ZEBRA: [QBKSZ-0KHCW][EC 4043309138] Disabling MPLS support (no kernel support)
+2026/10/21 16:18:58 ZEBRA: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 ZEBRA: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 BGP: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 BGP: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 BGP: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+2026/10/21 16:18:58 STATIC: [YDG3W-JND95] FD Limit set: 524288 is stupidly large.  Is this what you intended?  Consider using --limit-fds also limiting size to 100000
+[38|mgmtd] sending configuration
+[39|zebra] sending configuration
+[45|bgpd] sending configuration
+[54|staticd] sending configuration
+Waiting for children to finish applying config...
+[59|watchfrr] sending configuration
+[39|zebra] done
+2026/10/21 16:18:58 WATCHFRR: [VTVCM-Y2NW3] Configuration Read in Took: 00:00:00
+[59|watchfrr] done
+[54|staticd] done
+[45|bgpd] done
+[38|mgmtd] done
+2026/10/21 16:18:58 WATCHFRR: [QDG3Y-BY5TN] mgmtd state -> up : connect succeeded
+2026/10/21 16:18:58 WATCHFRR: [QDG3Y-BY5TN] zebra state -> up : connect succeeded
+2026/10/21 16:18:58 WATCHFRR: [QDG3Y-BY5TN] bgpd state -> up : connect succeeded
+2026/10/21 16:18:58 WATCHFRR: [QDG3Y-BY5TN] staticd state -> up : connect succeeded
+2026/10/21 16:18:58 WATCHFRR: [KWE5Q-QNGFC] all daemons up, doing startup-complete notify
