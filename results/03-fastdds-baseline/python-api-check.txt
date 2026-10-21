@@ -1,0 +1,9 @@
+RELIABLE_RELIABILITY_QOS : True
+BEST_EFFORT_RELIABILITY_QOS : True
+TRANSIENT_LOCAL_DURABILITY_QOS : True
+KEEP_LAST_HISTORY_QOS : True
+create_contentfilteredtopic: True
+DataWriterQos.reliability : True
+DataWriterQos.durability : True
+DataWriterQos.history : True
+DataWriterQos.resource_limits : True
