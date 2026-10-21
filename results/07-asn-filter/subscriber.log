@@ -1,0 +1,4 @@
+{"event": "filter_enabled", "expression": "customer_asn = 65005"}
+Policy subscriber ready; Ctrl+C to stop
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": true, "version": 1, "cache_entries": 1}
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": false, "version": 2, "cache_entries": 1}

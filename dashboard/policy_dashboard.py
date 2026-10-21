@@ -32,12 +32,24 @@ def integer(data, name, default, minimum, maximum):
 
 def start_policy(role, data):
     domain = integer(data, "domain", 72, 0, 200)
+
+    filter_text = str(data.get("filter_customer", "")).strip()
+    filter_customer = None
+    if filter_text:
+        filter_customer = int(filter_text)
+        if not 1 <= filter_customer <= 4294967295:
+            raise ValueError("Invalid subscriber filter ASN")
+
     customer = integer(data, "customer", 65005, 1, 4294967295)
     provider = integer(data, "provider", 65002, 1, 4294967295)
     version = integer(data, "version", 1, 1, 18446744073709551615)
+
     action = data.get("action", "authorize")
     if action not in ("authorize", "revoke"):
         raise ValueError("Invalid policy action")
+
+    if not (APP_DIR / "policy_app.py").is_file():
+        raise RuntimeError(f"Missing application: {APP_DIR / 'policy_app.py'}")
 
     item = base.inspect(role)
     if item is not None:
@@ -49,12 +61,15 @@ def start_policy(role, data):
         "run", "-d", "-i",
         "--name", base.NAMES[role],
         "--label", f"{base.OWNER}=true",
-        "--network", "host", "--ipc", "host",
+        "--network", "host",
+        "--ipc", "host",
         "-v", f"{APP_DIR}:/app:ro",
         base.IMAGE,
         "bash", "-c", base.RUN_SCRIPT, "rono",
-        role, "--domain", str(domain),
+        role,
+        "--domain", str(domain),
     ]
+
     if role == "publisher":
         command += [
             "--customer", str(customer),
@@ -62,6 +77,9 @@ def start_policy(role, data):
             "--version", str(version),
             "--action", action,
         ]
+    elif filter_customer is not None:
+        command += ["--filter-customer", str(filter_customer)]
+
     base.docker(*command)
 
 
@@ -72,13 +90,18 @@ def policy_status(role):
 
     result = base.docker("logs", "--tail", "200", base.NAMES[role])
     logs = result.stdout + result.stderr
-    expected = "cache_updated" if role == "subscriber" else "write_return"
+
+    expected = (
+        "cache_updated" if role == "subscriber" else "write_return"
+    )
     count = 0
+
     for line in logs.splitlines():
         try:
             record = json.loads(line)
         except (ValueError, TypeError):
             continue
+
         if isinstance(record, dict) and record.get("event") == expected:
             count += 1
 
@@ -95,13 +118,26 @@ base.status = policy_status
 controls = """
 <div class="controls">
 <label>Domain ID
-<input id="domain" type="number" min="0" max="200" value="72"></label>
+<input id="domain" type="number"
+       min="0" max="200" value="72"></label>
+
+<label>Subscriber filter ASN
+<input id="filter_customer" type="number"
+       min="1" max="4294967295" value="65005"
+       placeholder="Blank = all ASNs"></label>
+
 <label>Customer ASN
-<input id="customer" type="number" min="1" value="65005"></label>
+<input id="customer" type="number"
+       min="1" max="4294967295" value="65005"></label>
+
 <label>Provider ASN
-<input id="provider" type="number" min="1" value="65002"></label>
+<input id="provider" type="number"
+       min="1" max="4294967295" value="65002"></label>
+
 <label>Version
-<input id="version" type="number" min="1" value="1"></label>
+<input id="version" type="text"
+       inputmode="numeric" value="1"></label>
+
 <label>Action
 <select id="action" style="padding:10px;font:inherit">
 <option value="authorize">Authorize</option>
@@ -111,48 +147,77 @@ controls = """
 """
 
 page = base.PAGE
+
 start = page.index('<div class="controls">')
 end = page.index("</div>", start) + len("</div>")
 page = page[:start] + controls + page[end:]
 
 old = 'label:document.getElementById("label").value'
 new = """
+filter_customer:document.getElementById("filter_customer").value,
 customer:document.getElementById("customer").value,
 provider:document.getElementById("provider").value,
 version:document.getElementById("version").value,
 action:document.getElementById("action").value
 """
-if old not in page:
-    raise RuntimeError("Dashboard template changed; inspect before updating")
-page = page.replace(old, new)
 
+if old not in page:
+    raise RuntimeError("Dashboard template changed; inspect dashboard/app.py")
+
+page = page.replace(old, new)
+page = page.replace(
+    "<title>RONO DDS Dashboard</title>",
+    "<title>RONO Policy Dashboard</title>",
+)
 page = page.replace(
     "Fast DDS Python control panel · HelloWorld baseline",
-    "Typed policy updates · Authorization, revocation and version checks",
+    "Typed policy updates · Authorization, revocation and ASN filtering",
 )
-page = page.replace(
-    "Publisher waits for discovery and exits after sending.",
-    "Publisher writes one policy and exits after a short delivery window.",
+
+# Replace the instructions below the cards with policy-specific guidance.
+instructions_start = page.index("<p>Start the subscriber first")
+instructions_end = page.index("</main>", instructions_start)
+
+page = (
+    page[:instructions_start]
+    + """
+<p>Start the subscriber first, then publish a policy.
+Publisher writes one policy and exits after a short delivery window.
+Subscriber remains running until stopped.</p>
+
+<p>Subscriber filter is applied at Start; blank accepts all ASNs.
+After changing the filter or domain, Stop and Start the subscriber.
+Customer ASN and Provider ASN describe the policy being published.</p>
+
+<p>QoS: RELIABLE · TRANSIENT_LOCAL · KEEP_LAST depth 20.
+Counters show events from the last 200 log lines:
+publisher write-return events and subscriber accepted cache updates.
+Write-return events are not delivery acknowledgments.</p>
+
+<p>Subscriber cache is in memory and resets on restart.
+Old or duplicate versions are ignored per customer–provider pair
+while the subscriber remains running.</p>
+"""
+    + page[instructions_end:]
 )
-page = page.replace(
-    "Messages use the bundled example's default QoS.",
-    "QoS: RELIABLE · TRANSIENT_LOCAL · KEEP_LAST depth 20.",
-)
-page = page.replace(
-    "Counters describe this run; they do not establish a reliability guarantee.",
-    "Counters show recent write-return/cache-update events, not delivery "
-    "acknowledgments. Subscriber cache is in memory and resets on restart. "
-    "ASN filtering is not enabled yet.",
-)
+
 page = page.replace('+" messages"', '+" events"')
 base.PAGE = page
 
+
 if __name__ == "__main__":
-    print(f"RONO Policy dashboard: http://127.0.0.1:{PORT}", flush=True)
-    server = base.ThreadingHTTPServer(("127.0.0.1", PORT), base.Handler)
+    print(
+        f"RONO Policy dashboard: http://127.0.0.1:{PORT}",
+        flush=True,
+    )
+    server = base.ThreadingHTTPServer(
+        ("127.0.0.1", PORT),
+        base.Handler,
+    )
+
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\nDashboard stopped; use Stop buttons before closing.")
+        print("\nDashboard stopped; DDS containers retain their current state.")
     finally:
         server.server_close()

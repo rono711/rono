@@ -24,6 +24,7 @@ parser.add_argument("--customer", type=int, default=65005)
 parser.add_argument("--provider", type=int, default=65002)
 parser.add_argument("--version", type=int, default=1)
 parser.add_argument("--action", choices=["authorize", "revoke"], default="authorize")
+parser.add_argument("--filter-customer", type=int, default=None)
 args = parser.parse_args()
 
 factory = fastdds.DomainParticipantFactory.get_instance()
@@ -99,7 +100,30 @@ try:
         reader_qos = fastdds.DataReaderQos()
         subscriber.get_default_datareader_qos(reader_qos)
         configure_qos(reader_qos)
-        reader = subscriber.create_datareader(topic, reader_qos)
+        reader_topic = topic
+        filtered_topic = None
+
+        if args.filter_customer is not None:
+            if not 1 <= args.filter_customer <= 4294967295:
+                raise ValueError("Invalid filter customer ASN")
+
+            expression = f"customer_asn = {args.filter_customer}"
+            filtered_topic = participant.create_contentfilteredtopic(
+                "RONO_FilteredPolicy",
+                topic,
+                expression,
+                [],
+            )
+            if filtered_topic is None:
+                raise RuntimeError("Could not create DDS content filter")
+
+            reader_topic = filtered_topic
+            print(json.dumps({
+                "event": "filter_enabled",
+                "expression": expression,
+            }), flush=True)
+
+        reader = subscriber.create_datareader(reader_topic, reader_qos)
         if reader is None:
             raise RuntimeError("Could not create DDS reader")
 
