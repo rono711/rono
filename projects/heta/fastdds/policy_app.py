@@ -25,7 +25,15 @@ parser.add_argument("--provider", type=int, default=65002)
 parser.add_argument("--version", type=int, default=1)
 parser.add_argument("--action", choices=["authorize", "revoke"], default="authorize")
 parser.add_argument("--filter-customer", type=int, default=None)
+parser.add_argument("--reliability",
+                    choices=["reliable", "best_effort"], default="reliable")
+parser.add_argument("--durability",
+                    choices=["transient_local", "volatile"],
+                    default="transient_local")
+parser.add_argument("--history-depth", type=int, default=20)
 args = parser.parse_args()
+if not 1 <= args.history_depth <= 100:
+    parser.error("--history-depth must be between 1 and 100")
 
 factory = fastdds.DomainParticipantFactory.get_instance()
 participant_qos = fastdds.DomainParticipantQos()
@@ -48,10 +56,32 @@ if topic is None:
 
 
 def configure_qos(qos):
-    qos.reliability().kind = fastdds.RELIABLE_RELIABILITY_QOS
-    qos.durability().kind = fastdds.TRANSIENT_LOCAL_DURABILITY_QOS
+    qos.reliability().kind = (
+        fastdds.RELIABLE_RELIABILITY_QOS
+        if args.reliability == "reliable"
+        else fastdds.BEST_EFFORT_RELIABILITY_QOS
+    )
+    qos.durability().kind = (
+        fastdds.TRANSIENT_LOCAL_DURABILITY_QOS
+        if args.durability == "transient_local"
+        else fastdds.VOLATILE_DURABILITY_QOS
+    )
     qos.history().kind = fastdds.KEEP_LAST_HISTORY_QOS
-    qos.history().depth = 20
+    qos.history().depth = args.history_depth
+    limits = qos.resource_limits()
+    if limits.max_samples_per_instance != -1:
+        limits.max_samples_per_instance = max(
+            limits.max_samples_per_instance, args.history_depth)
+    if limits.max_samples != -1:
+        limits.max_samples = max(limits.max_samples, args.history_depth)
+
+    print(json.dumps({
+        "event": "qos_configured",
+        "role": args.role,
+        "reliability": args.reliability,
+        "durability": args.durability,
+        "history_depth": args.history_depth,
+    }), flush=True)
 
 
 try:

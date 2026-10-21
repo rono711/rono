@@ -32,6 +32,13 @@ def integer(data, name, default, minimum, maximum):
 
 def start_policy(role, data):
     domain = integer(data, "domain", 72, 0, 200)
+    reliability = data.get("reliability", "reliable")
+    durability = data.get("durability", "transient_local")
+    depth = integer(data, "history_depth", 20, 1, 100)
+    if reliability not in ("reliable", "best_effort"):
+        raise ValueError("Invalid reliability")
+    if durability not in ("transient_local", "volatile"):
+        raise ValueError("Invalid durability")
 
     filter_text = str(data.get("filter_customer", "")).strip()
     filter_customer = None
@@ -68,6 +75,9 @@ def start_policy(role, data):
         "bash", "-c", base.RUN_SCRIPT, "rono",
         role,
         "--domain", str(domain),
+        "--reliability", reliability,
+        "--durability", durability,
+        "--history-depth", str(depth),
     ]
 
     if role == "publisher":
@@ -138,6 +148,22 @@ controls = """
 <input id="version" type="text"
        inputmode="numeric" value="1"></label>
 
+<label>Reliability
+<select id="reliability" style="padding:10px;font:inherit">
+<option value="reliable">Reliable</option>
+<option value="best_effort">Best Effort</option>
+</select></label>
+
+<label>Durability
+<select id="durability" style="padding:10px;font:inherit">
+<option value="transient_local">Transient Local</option>
+<option value="volatile">Volatile</option>
+</select></label>
+
+<label>History depth per ASN pair
+<input id="history_depth" type="number"
+       min="1" max="100" value="20"></label>
+
 <label>Action
 <select id="action" style="padding:10px;font:inherit">
 <option value="authorize">Authorize</option>
@@ -158,7 +184,10 @@ filter_customer:document.getElementById("filter_customer").value,
 customer:document.getElementById("customer").value,
 provider:document.getElementById("provider").value,
 version:document.getElementById("version").value,
-action:document.getElementById("action").value
+action:document.getElementById("action").value,
+reliability:document.getElementById("reliability").value,
+durability:document.getElementById("durability").value,
+history_depth:document.getElementById("history_depth").value
 """
 
 if old not in page:
@@ -186,10 +215,13 @@ Publisher writes one policy and exits after a short delivery window.
 Subscriber remains running until stopped.</p>
 
 <p>Subscriber filter is applied at Start; blank accepts all ASNs.
-After changing the filter or domain, Stop and Start the subscriber.
+After changing filter, domain or QoS, Stop and Start the subscriber.
 Customer ASN and Provider ASN describe the policy being published.</p>
 
-<p>QoS: RELIABLE · TRANSIENT_LOCAL · KEEP_LAST depth 20.
+<p>QoS selections apply when each container starts.
+For the first test, use identical QoS settings on both endpoints.
+History uses KEEP_LAST; depth applies per customer–provider pair.
+Transient Local history is available only while its writer remains alive.
 Counters show events from the last 200 log lines:
 publisher write-return events and subscriber accepted cache updates.
 Write-return events are not delivery acknowledgments.</p>
