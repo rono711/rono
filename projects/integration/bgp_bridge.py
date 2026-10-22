@@ -5,6 +5,7 @@ Only future log entries from the existing domain-72 dashboard subscriber are rea
 Stopping that subscriber ends this bridge and restores its temporary filter.
 """
 import json
+import fcntl
 import re
 import signal
 import subprocess
@@ -115,6 +116,8 @@ def main():
     if "--domain" not in command or command[command.index("--domain") + 1] != "72":
         raise RuntimeError("This bridge requires subscriber domain 72")
     baseline = check_binding()
+    if "RONO_PATH_R3_IN" in baseline or "RONO_PATH_PREFIX" in baseline:
+        raise RuntimeError("Restore path-controller baseline before starting the DDS bridge")
     if MAP in baseline or LIST in baseline:
         raise RuntimeError("Demo filter already exists. Restore the manual baseline first")
     before = route()
@@ -201,7 +204,11 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, stop)
     signal.signal(signal.SIGTERM, stop)
     try:
-        main()
+        lock_dir = Path.home() / ".cache/rono"
+        lock_dir.mkdir(parents=True, exist_ok=True)
+        with (lock_dir / "router-control.lock").open("w") as router_lock:
+            fcntl.flock(router_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            main()
     except Exception as error:
         print("BRIDGE ERROR:", error, file=sys.stderr, flush=True)
         sys.exit(1)

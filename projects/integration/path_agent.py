@@ -109,7 +109,9 @@ def main():
     root = Path.cwd()
     if not (root / "containerlab/bgp7.clab.yml").is_file():
         raise RuntimeError("Run from ~/research/rono")
-    with (root / ".rono-path-agent.lock").open("w") as lock:
+    lock_dir = Path.home() / ".cache/rono"
+    lock_dir.mkdir(parents=True, exist_ok=True)
+    with (lock_dir / "router-control.lock").open("w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         config = guard()
         before = routes()
