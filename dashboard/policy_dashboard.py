@@ -32,6 +32,7 @@ def integer(data, name, default, minimum, maximum):
 
 def start_policy(role, data):
     domain = integer(data, "domain", 72, 0, 200)
+    hold_seconds = integer(data, "hold_seconds", 60, 5, 300)
     reliability = data.get("reliability", "reliable")
     durability = data.get("durability", "transient_local")
     depth = integer(data, "history_depth", 20, 1, 100)
@@ -86,6 +87,7 @@ def start_policy(role, data):
             "--provider", str(provider),
             "--version", str(version),
             "--action", action,
+            "--hold-seconds", str(hold_seconds),
         ]
     elif filter_customer is not None:
         command += ["--filter-customer", str(filter_customer)]
@@ -164,6 +166,10 @@ controls = """
 <input id="history_depth" type="number"
        min="1" max="100" value="20"></label>
 
+<label>Publisher hold seconds
+<input id="hold_seconds" type="number"
+       min="5" max="300" value="60"></label>
+
 <label>Action
 <select id="action" style="padding:10px;font:inherit">
 <option value="authorize">Authorize</option>
@@ -185,6 +191,7 @@ customer:document.getElementById("customer").value,
 provider:document.getElementById("provider").value,
 version:document.getElementById("version").value,
 action:document.getElementById("action").value,
+hold_seconds:document.getElementById("hold_seconds").value,
 reliability:document.getElementById("reliability").value,
 durability:document.getElementById("durability").value,
 history_depth:document.getElementById("history_depth").value
@@ -211,7 +218,7 @@ page = (
     page[:instructions_start]
     + """
 <p>Start the subscriber first, then publish a policy.
-Publisher writes one policy and exits after a short delivery window.
+Publisher writes one policy, stays alive for the selected hold time, then exits.
 Subscriber remains running until stopped.</p>
 
 <p>Subscriber filter is applied at Start; blank accepts all ASNs.

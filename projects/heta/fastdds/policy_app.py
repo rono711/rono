@@ -31,7 +31,10 @@ parser.add_argument("--durability",
                     choices=["transient_local", "volatile"],
                     default="transient_local")
 parser.add_argument("--history-depth", type=int, default=20)
+parser.add_argument("--hold-seconds", type=int, default=60)
 args = parser.parse_args()
+if not 5 <= args.hold_seconds <= 300:
+    parser.error("--hold-seconds must be between 5 and 300")
 if not 1 <= args.history_depth <= 100:
     parser.error("--history-depth must be between 1 and 100")
 
@@ -118,7 +121,7 @@ try:
             "version": args.version,
         }), flush=True)
 
-        deadline = time.monotonic() + 5
+        deadline = time.monotonic() + args.hold_seconds
         while running and time.monotonic() < deadline:
             time.sleep(0.1)
 
