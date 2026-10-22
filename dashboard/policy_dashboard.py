@@ -259,7 +259,36 @@ while the subscriber remains running.</p>
 )
 
 page = page.replace('+" messages"', '+" events"')
+
+page = page.replace("<h1>RONO</h1>", """
+<header class="rono-brand">
+  <div class="rono-eyebrow">UNIFIED RESEARCH PLATFORM</div>
+  <h1>RONO</h1>
+  <p class="rono-fullname">Routing Orchestration and
+    <span>Network Optimization</span></p>
+  <div class="rono-accent"></div>
+</header>
+""", 1)
+
+page = page.replace("</style>", """
+.rono-brand{padding:12px 0 8px}
+.rono-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;
+color:#7dd3fc;margin-bottom:8px}
+.rono-brand h1{font-size:clamp(48px,8vw,76px);line-height:1.1;
+letter-spacing:5px;margin:0;font-weight:800;color:#5ae0b5;
+background:linear-gradient(110deg,#5ae0b5,#7dd3fc,#c4b5fd);
+-webkit-background-clip:text;background-clip:text;
+-webkit-text-fill-color:transparent;width:fit-content}
+.rono-fullname{font-size:clamp(17px,3vw,23px);font-weight:500;
+color:#e7edf7;margin:12px 0 16px;line-height:1.5}
+.rono-fullname span{color:#7dd3fc}
+.rono-accent{height:3px;width:90px;border-radius:4px;
+background:linear-gradient(90deg,#5ae0b5,#7dd3fc,#c4b5fd)}
+</style>
+""", 1)
+
 base.PAGE = page
+
 
 
 from automated_tests import install as install_automated_tests
