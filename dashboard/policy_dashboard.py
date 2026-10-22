@@ -287,12 +287,49 @@ background:linear-gradient(90deg,#5ae0b5,#7dd3fc,#c4b5fd)}
 </style>
 """, 1)
 
+
+# Final RONO branding
+import re
+
+rono_header = """
+<header class="rono-final-brand">
+<svg viewBox="0 0 520 180" role="img"
+     aria-label="RONO: Routing Orchestration and Network Optimization">
+  <text x="0" y="174" textLength="520" lengthAdjust="spacingAndGlyphs"
+        font-family="Arial, sans-serif" font-size="160" font-weight="800"><tspan fill="#ef4444">RO</tspan><tspan fill="#22c55e">NO</tspan></text>
+  <text x="0" y="22" textLength="520" lengthAdjust="spacingAndGlyphs"
+        fill="#e7edf7" font-family="Arial, sans-serif"
+        font-size="20">Routing Orchestration and Network Optimization</text>
+</svg>
+</header>
+"""
+
+page, replacements = re.subn(
+    r'<header\b[^>]*class="[^"]*rono-brand[^"]*"[^>]*>.*?</header>',
+    lambda match: rono_header,
+    page,
+    count=1,
+    flags=re.S,
+)
+if replacements != 1:
+    raise RuntimeError("Could not locate the RONO branding header")
+
+page = page.replace("</style>", """
+.rono-final-brand{width:min(100%,440px);margin:12px 0 24px}
+.rono-final-brand svg{display:block;width:100%;height:auto}
+</style>
+""", 1)
+
 base.PAGE = page
+
 
 
 
 from automated_tests import install as install_automated_tests
 install_automated_tests(base, APP_DIR)
+
+from bgp_dashboard import install as install_bgp_dashboard
+install_bgp_dashboard(base, APP_DIR)
 
 if __name__ == "__main__":
     print(

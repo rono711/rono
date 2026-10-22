@@ -1,0 +1,16 @@
+BGP routing table entry for 10.105.0.0/24, version 14
+Paths: (3 available, best #2, table default)
+  Advertised to peers:
+  10.0.12.1 10.0.23.2 10.0.24.2 10.0.25.2
+  65001 65003 65006 65005, (removed)
+    10.0.12.1 (inaccessible, import-check enabled) from 10.0.12.1 (10.101.0.1)
+      Origin IGP, invalid, external
+      Last update: Thu Oct 22 01:09:38 2026
+  65005
+    10.0.25.2 from 10.0.25.2 (10.105.0.1)
+      Origin IGP, metric 0, valid, external, best (AS Path)
+      Last update: Thu Oct 22 01:10:12 2026
+  65003 65006 65005
+    10.0.23.2 from 10.0.23.2 (10.103.0.1)
+      Origin IGP, valid, external
+      Last update: Thu Oct 22 00:47:45 2026

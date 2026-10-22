@@ -3,3 +3,6 @@
 {"timestamp_utc": "2026-10-22T00:57:05.164410+00:00", "event": "bgp_applied", "version": 1000, "authorized": false, "direct_path_present": false}
 {"timestamp_utc": "2026-10-22T01:01:15.561631+00:00", "event": "policy_received", "version": 1001, "authorized": true}
 {"timestamp_utc": "2026-10-22T01:01:16.324948+00:00", "event": "bgp_applied", "version": 1001, "authorized": true, "direct_path_present": true}
+{"timestamp_utc": "2026-10-22T01:09:37.844164+00:00", "event": "policy_received", "version": 1002, "authorized": false}
+{"timestamp_utc": "2026-10-22T01:09:38.050793+00:00", "event": "bgp_applied", "version": 1002, "authorized": false, "direct_path_present": false}
+{"timestamp_utc": "2026-10-22T01:10:12.040905+00:00", "event": "rollback_verified", "direct_path_present": true}
