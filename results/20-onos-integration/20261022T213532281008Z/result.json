@@ -1,0 +1,142 @@
+{
+  "onos_rest_probe": {
+    "devices": [
+      {
+        "id": "of:0000000000000175",
+        "type": "SWITCH",
+        "available": true,
+        "role": "MASTER",
+        "mfr": "Nicira, Inc.",
+        "hw": "Open vSwitch",
+        "sw": "3.7.1",
+        "serial": "None",
+        "driver": "ovs",
+        "chassisId": "175",
+        "lastUpdate": "1792704364725",
+        "humanReadableLastUpdate": "connected 9m28s ago",
+        "annotations": {
+          "channelId": "172.17.0.1:43066",
+          "datapathDescription": "None",
+          "driver": "ovs",
+          "locType": "none",
+          "managementAddress": "172.17.0.1",
+          "name": "RONO FRR transit",
+          "protocol": "OF_13"
+        }
+      }
+    ]
+  },
+  "devices": {
+    "devices": [
+      {
+        "id": "of:0000000000000175",
+        "type": "SWITCH",
+        "available": true,
+        "role": "MASTER",
+        "mfr": "Nicira, Inc.",
+        "hw": "Open vSwitch",
+        "sw": "3.7.1",
+        "serial": "None",
+        "driver": "ovs",
+        "chassisId": "175",
+        "lastUpdate": "1792704364725",
+        "humanReadableLastUpdate": "connected 9m28s ago",
+        "annotations": {
+          "channelId": "172.17.0.1:43066",
+          "datapathDescription": "None",
+          "driver": "ovs",
+          "locType": "none",
+          "managementAddress": "172.17.0.1",
+          "name": "RONO FRR transit",
+          "protocol": "OF_13"
+        }
+      }
+    ]
+  },
+  "owned_intents": [],
+  "frr": {
+    "rono-sdn-frr-a": {
+      "routerId": "198.19.1.1",
+      "as": 65101,
+      "vrfId": 0,
+      "vrfName": "default",
+      "tableVersion": 1,
+      "ribCount": 1,
+      "ribMemory": 152,
+      "peerCount": 1,
+      "peerMemory": 16904,
+      "peers": {
+        "198.18.0.2": {
+          "softwareVersion": "n/a",
+          "remoteAs": 65102,
+          "localAs": 65101,
+          "version": 4,
+          "msgRcvd": 0,
+          "msgSent": 0,
+          "tableVersion": 0,
+          "outq": 0,
+          "inq": 0,
+          "peerUptime": "never",
+          "peerUptimeMsec": 0,
+          "pfxRcd": 0,
+          "pfxSnt": 0,
+          "state": "Active",
+          "peerState": "OK",
+          "connectionsEstablished": 0,
+          "connectionsDropped": 0,
+          "idType": "ipv4"
+        }
+      },
+      "failedPeers": 1,
+      "displayedPeers": 1,
+      "totalPeers": 1,
+      "dynamicPeers": 0,
+      "bestPath": {
+        "multiPathRelax": "false"
+      }
+    },
+    "rono-sdn-frr-b": {
+      "routerId": "198.19.2.1",
+      "as": 65102,
+      "vrfId": 0,
+      "vrfName": "default",
+      "tableVersion": 1,
+      "ribCount": 1,
+      "ribMemory": 152,
+      "peerCount": 1,
+      "peerMemory": 16904,
+      "peers": {
+        "198.18.0.1": {
+          "softwareVersion": "n/a",
+          "remoteAs": 65101,
+          "localAs": 65102,
+          "version": 4,
+          "msgRcvd": 0,
+          "msgSent": 0,
+          "tableVersion": 0,
+          "outq": 0,
+          "inq": 0,
+          "peerUptime": "never",
+          "peerUptimeMsec": 0,
+          "pfxRcd": 0,
+          "pfxSnt": 0,
+          "state": "Idle",
+          "peerState": "OK",
+          "connectionsEstablished": 0,
+          "connectionsDropped": 0,
+          "idType": "ipv4"
+        }
+      },
+      "failedPeers": 1,
+      "displayedPeers": 1,
+      "totalPeers": 1,
+      "dynamicPeers": 0,
+      "bestPath": {
+        "multiPathRelax": "false"
+      }
+    }
+  },
+  "onos_dashboard": "http://127.0.0.1:8181/onos/ui",
+  "rono_dashboard": "http://127.0.0.1:8502",
+  "scope": "Dedicated ONOS-controlled transit and FRR pair; existing bgp7 unchanged"
+}

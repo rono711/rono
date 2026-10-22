@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "expected": "connected",
+  "bgp": {
+    "rono-sdn-frr-a": {
+      "routerId": "198.19.1.1",
+      "as": 65101,
+      "vrfId": 0,
+      "vrfName": "default",
+      "tableVersion": 6,
+      "ribCount": 3,
+      "ribMemory": 456,
+      "peerCount": 1,
+      "peerMemory": 16904,
+      "peers": {
+        "198.18.0.2": {
+          "hostname": "bb751fa4ea3d",
+          "softwareVersion": "n/a",
+          "remoteAs": 65102,
+          "localAs": 65101,
+          "version": 4,
+          "msgRcvd": 85,
+          "msgSent": 96,
+          "tableVersion": 6,
+          "outq": 0,
+          "inq": 0,
+          "peerUptime": "00:00:02",
+          "peerUptimeMsec": 2000,
+          "peerUptimeEstablishedEpoch": 1792705716,
+          "pfxRcd": 1,
+          "pfxSnt": 2,
+          "state": "Established",
+          "peerState": "OK",
+          "connectionsEstablished": 3,
+          "connectionsDropped": 2,
+          "idType": "ipv4"
+        }
+      },
+      "failedPeers": 0,
+      "displayedPeers": 1,
+      "totalPeers": 1,
+      "dynamicPeers": 0,
+      "bestPath": {
+        "multiPathRelax": "false"
+      }
+    },
+    "rono-sdn-frr-b": {
+      "routerId": "198.19.2.1",
+      "as": 65102,
+      "vrfId": 0,
+      "vrfName": "default",
+      "tableVersion": 6,
+      "ribCount": 3,
+      "ribMemory": 456,
+      "peerCount": 1,
+      "peerMemory": 16904,
+      "peers": {
+        "198.18.0.1": {
+          "hostname": "a2b279b98696",
+          "softwareVersion": "n/a",
+          "remoteAs": 65101,
+          "localAs": 65102,
+          "version": 4,
+          "msgRcvd": 82,
+          "msgSent": 90,
+          "tableVersion": 6,
+          "outq": 0,
+          "inq": 0,
+          "peerUptime": "00:00:03",
+          "peerUptimeMsec": 3000,
+          "peerUptimeEstablishedEpoch": 1792705715,
+          "pfxRcd": 1,
+          "pfxSnt": 2,
+          "state": "Established",
+          "peerState": "OK",
+          "connectionsEstablished": 3,
+          "connectionsDropped": 2,
+          "idType": "ipv4"
+        }
+      },
+      "failedPeers": 0,
+      "displayedPeers": 1,
+      "totalPeers": 1,
+      "dynamicPeers": 0,
+      "bestPath": {
+        "multiPathRelax": "false"
+      }
+    }
+  },
+  "route": {
+    "prefix": "198.19.2.0/24",
+    "version": 6,
+    "advertisedTo": {
+      "198.18.0.2": {
+        "hostname": "bb751fa4ea3d"
+      }
+    },
+    "pathCount": 1,
+    "paths": [
+      {
+        "aspath": {
+          "string": "65102",
+          "segments": [
+            {
+              "type": "as-sequence",
+              "list": [
+                65102
+              ]
+            }
+          ],
+          "length": 1
+        },
+        "origin": "IGP",
+        "metric": 0,
+        "valid": true,
+        "version": 6,
+        "bestpath": {
+          "overall": true,
+          "selectionReason": "First path received"
+        },
+        "lastUpdate": {
+          "epoch": 1792705717,
+          "string": "Thu Oct 22 21:48:37 2026"
+        },
+        "nexthops": [
+          {
+            "ip": "198.18.0.2",
+            "hostname": "bb751fa4ea3d",
+            "afi": "ipv4",
+            "metric": 0,
+            "accessible": true,
+            "used": true
+          }
+        ],
+        "peer": {
+          "peerId": "198.18.0.2",
+          "routerId": "198.19.2.1",
+          "hostname": "bb751fa4ea3d",
+          "type": "external"
+        }
+      }
+    ]
+  },
+  "ping": "PING 198.19.2.1 (198.19.2.1) from 198.19.1.1: 56 data bytes\n64 bytes from 198.19.2.1: seq=0 ttl=64 time=0.045 ms\n64 bytes from 198.19.2.1: seq=1 ttl=64 time=0.064 ms\n\n--- 198.19.2.1 ping statistics ---\n2 packets transmitted, 2 packets received, 0% packet loss\nround-trip min/avg/max = 0.045/0.054/0.064 ms\n"
+}

@@ -1,0 +1,4 @@
+{
+  "command": "lab-up",
+  "error": "[71|mgmtd] sending configuration\n[72|zebra] sending configuration\n% Can't enter config; running datastore locked by another session\n[78|bgpd] sending configuration\n[87|staticd] sending configuration\nWaiting for children to finish applying config...\n[92|watchfrr] sending configuration\n[72|zebra] done\n[78|bgpd] done\n[87|staticd] done\n[92|watchfrr] done\n[71|mgmtd] done\n"
+}

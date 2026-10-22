@@ -1,0 +1,146 @@
+{
+  "prefix": "10.105.0.0/24",
+  "version": 100,
+  "advertisedTo": {
+    "10.0.12.1": {
+      "hostname": "r1"
+    },
+    "10.0.23.2": {
+      "hostname": "r3"
+    },
+    "10.0.24.2": {
+      "hostname": "r4"
+    },
+    "10.0.25.2": {
+      "hostname": "r5"
+    }
+  },
+  "pathCount": 3,
+  "paths": [
+    {
+      "aspath": {
+        "string": "65001 65003 65006 65005",
+        "segments": [
+          {
+            "type": "as-sequence",
+            "list": [
+              65001,
+              65003,
+              65006,
+              65005
+            ]
+          }
+        ],
+        "length": 4
+      },
+      "removed": true,
+      "origin": "IGP",
+      "valid": false,
+      "version": 100,
+      "lastUpdate": {
+        "epoch": 1792701241,
+        "string": "Thu Oct 22 20:34:01 2026"
+      },
+      "processScheduled": true,
+      "nexthops": [
+        {
+          "ip": "10.0.12.1",
+          "hostname": "r1",
+          "afi": "ipv4",
+          "accessible": false,
+          "importCheckEnabled": true,
+          "used": true
+        }
+      ],
+      "peer": {
+        "peerId": "10.0.12.1",
+        "routerId": "10.101.0.1",
+        "hostname": "r1",
+        "type": "external"
+      }
+    },
+    {
+      "aspath": {
+        "string": "65005",
+        "segments": [
+          {
+            "type": "as-sequence",
+            "list": [
+              65005
+            ]
+          }
+        ],
+        "length": 1
+      },
+      "origin": "IGP",
+      "metric": 0,
+      "valid": true,
+      "version": 100,
+      "bestpath": {
+        "overall": true,
+        "selectionReason": "AS Path"
+      },
+      "lastUpdate": {
+        "epoch": 1792632051,
+        "string": "Thu Oct 22 01:20:51 2026"
+      },
+      "processScheduled": true,
+      "nexthops": [
+        {
+          "ip": "10.0.25.2",
+          "hostname": "r5",
+          "afi": "ipv4",
+          "metric": 0,
+          "accessible": true,
+          "used": true
+        }
+      ],
+      "peer": {
+        "peerId": "10.0.25.2",
+        "routerId": "10.105.0.1",
+        "hostname": "r5",
+        "type": "external"
+      }
+    },
+    {
+      "aspath": {
+        "string": "65003 65006 65005",
+        "segments": [
+          {
+            "type": "as-sequence",
+            "list": [
+              65003,
+              65006,
+              65005
+            ]
+          }
+        ],
+        "length": 3
+      },
+      "origin": "IGP",
+      "valid": true,
+      "version": 100,
+      "lastUpdate": {
+        "epoch": 1792701241,
+        "string": "Thu Oct 22 20:34:01 2026"
+      },
+      "processScheduled": true,
+      "nexthops": [
+        {
+          "ip": "10.0.23.2",
+          "hostname": "r3",
+          "afi": "ipv4",
+          "metric": 0,
+          "accessible": true,
+          "used": true
+        }
+      ],
+      "peer": {
+        "peerId": "10.0.23.2",
+        "routerId": "10.103.0.1",
+        "hostname": "r3",
+        "type": "external"
+      }
+    }
+  ]
+}

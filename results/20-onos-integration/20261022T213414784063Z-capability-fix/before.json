@@ -1,0 +1,17 @@
+{
+  "containers": [
+    [
+      "rono-sdn-frr-a",
+      [
+        "CAP_NET_ADMIN"
+      ]
+    ],
+    [
+      "rono-sdn-frr-b",
+      [
+        "CAP_NET_ADMIN"
+      ]
+    ]
+  ],
+  "backup": "/home/ubuntu/research/rono-frr-caps-backup-20261022-213414"
+}

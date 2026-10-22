@@ -1,0 +1,22 @@
+{
+  "action": "connect",
+  "status": "PASS",
+  "intents": [
+    {
+      "type": "PointToPointIntent",
+      "id": "0x0",
+      "key": "rono-frr-demo-ab",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "INSTALLED"
+    },
+    {
+      "type": "PointToPointIntent",
+      "id": "0x1",
+      "key": "rono-frr-demo-ba",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "INSTALLED"
+    }
+  ]
+}

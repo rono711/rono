@@ -1,0 +1,42 @@
+{
+  "intent": {
+    "schema": 1,
+    "request_id": "e4693353f90f48a0b2e7f2b75d6fd54a",
+    "action": "alternative"
+  },
+  "transport": "rest",
+  "folder": "/home/ubuntu/research/rono/results/18-controller-transports/20261022T203136308658Z-rest",
+  "status": "done",
+  "handoff_monotonic_ns": 109135646132173,
+  "received_monotonic_ns": 109135646924586,
+  "result": {
+    "action": "alternative",
+    "target": "alternative",
+    "prefix": "10.105.0.0/24",
+    "decision_source": "explicit operator preference",
+    "status": "PASS",
+    "paths": [
+      {
+        "peer": "10.0.12.1",
+        "as_path": "65001 65003 65006 65005",
+        "local_preference": "default",
+        "best": false
+      },
+      {
+        "peer": "10.0.23.2",
+        "as_path": "65003 65006 65005",
+        "local_preference": 250,
+        "best": true
+      },
+      {
+        "peer": "10.0.25.2",
+        "as_path": "65005",
+        "local_preference": "default",
+        "best": false
+      }
+    ],
+    "observed_apply_ms": 675.040045,
+    "results": "/home/ubuntu/research/rono/results/16-path-steering/20261022T203136435664Z"
+  },
+  "completed_monotonic_ns": 109136456879371
+}

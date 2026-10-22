@@ -1,0 +1,68 @@
+{
+  "onos_rest_probe": {
+    "devices": [
+      {
+        "id": "of:0000000000000175",
+        "type": "SWITCH",
+        "available": true,
+        "role": "MASTER",
+        "mfr": "Nicira, Inc.",
+        "hw": "Open vSwitch",
+        "sw": "3.7.1",
+        "serial": "None",
+        "driver": "ovs",
+        "chassisId": "175",
+        "lastUpdate": "1792704364725",
+        "humanReadableLastUpdate": "connected just now",
+        "annotations": {
+          "channelId": "172.17.0.1:43066",
+          "datapathDescription": "None",
+          "driver": "ovs",
+          "locType": "none",
+          "managementAddress": "172.17.0.1",
+          "name": "RONO FRR transit",
+          "protocol": "OF_13"
+        }
+      }
+    ]
+  },
+  "devices": {
+    "devices": [
+      {
+        "id": "of:0000000000000175",
+        "type": "SWITCH",
+        "available": true,
+        "role": "MASTER",
+        "mfr": "Nicira, Inc.",
+        "hw": "Open vSwitch",
+        "sw": "3.7.1",
+        "serial": "None",
+        "driver": "ovs",
+        "chassisId": "175",
+        "lastUpdate": "1792704364725",
+        "humanReadableLastUpdate": "connected just now",
+        "annotations": {
+          "channelId": "172.17.0.1:43066",
+          "datapathDescription": "None",
+          "driver": "ovs",
+          "locType": "none",
+          "managementAddress": "172.17.0.1",
+          "name": "RONO FRR transit",
+          "protocol": "OF_13"
+        }
+      }
+    ]
+  },
+  "owned_intents": [],
+  "frr": {
+    "rono-sdn-frr-a": {
+      "error": "bgpd is not running\n"
+    },
+    "rono-sdn-frr-b": {
+      "error": "bgpd is not running\n"
+    }
+  },
+  "onos_dashboard": "http://127.0.0.1:8181/onos/ui",
+  "rono_dashboard": "http://127.0.0.1:8502",
+  "scope": "Dedicated ONOS-controlled transit and FRR pair; existing bgp7 unchanged"
+}

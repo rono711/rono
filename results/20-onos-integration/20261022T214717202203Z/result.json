@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "expected": "disconnected",
+  "bgp": {
+    "rono-sdn-frr-a": {
+      "routerId": "198.19.1.1",
+      "as": 65101,
+      "vrfId": 0,
+      "vrfName": "default",
+      "tableVersion": 5,
+      "ribCount": 1,
+      "ribMemory": 152,
+      "peerCount": 1,
+      "peerMemory": 16904,
+      "peers": {
+        "198.18.0.2": {
+          "hostname": "bb751fa4ea3d",
+          "softwareVersion": "n/a",
+          "remoteAs": 65102,
+          "localAs": 65101,
+          "version": 4,
+          "msgRcvd": 79,
+          "msgSent": 88,
+          "tableVersion": 0,
+          "outq": 0,
+          "inq": 0,
+          "peerUptime": "00:00:15",
+          "peerUptimeMsec": 15000,
+          "peerUptimeEstablishedEpoch": 1792705622,
+          "pfxRcd": 0,
+          "pfxSnt": 0,
+          "state": "Connect",
+          "peerState": "OK",
+          "connectionsEstablished": 2,
+          "connectionsDropped": 2,
+          "idType": "ipv4"
+        }
+      },
+      "failedPeers": 1,
+      "displayedPeers": 1,
+      "totalPeers": 1,
+      "dynamicPeers": 0,
+      "bestPath": {
+        "multiPathRelax": "false"
+      }
+    },
+    "rono-sdn-frr-b": {
+      "routerId": "198.19.2.1",
+      "as": 65102,
+      "vrfId": 0,
+      "vrfName": "default",
+      "tableVersion": 5,
+      "ribCount": 1,
+      "ribMemory": 152,
+      "peerCount": 1,
+      "peerMemory": 16904,
+      "peers": {
+        "198.18.0.1": {
+          "hostname": "a2b279b98696",
+          "softwareVersion": "n/a",
+          "remoteAs": 65101,
+          "localAs": 65102,
+          "version": 4,
+          "msgRcvd": 77,
+          "msgSent": 85,
+          "tableVersion": 0,
+          "outq": 0,
+          "inq": 0,
+          "peerUptime": "00:00:15",
+          "peerUptimeMsec": 15000,
+          "peerUptimeEstablishedEpoch": 1792705622,
+          "pfxRcd": 0,
+          "pfxSnt": 0,
+          "state": "Connect",
+          "peerState": "OK",
+          "connectionsEstablished": 2,
+          "connectionsDropped": 2,
+          "idType": "ipv4"
+        }
+      },
+      "failedPeers": 1,
+      "displayedPeers": 1,
+      "totalPeers": 1,
+      "dynamicPeers": 0,
+      "bestPath": {
+        "multiPathRelax": "false"
+      }
+    }
+  },
+  "ping": "PING 198.19.2.1 (198.19.2.1) from 198.19.1.1: 56 data bytes\n"
+}
