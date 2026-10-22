@@ -32,6 +32,10 @@ def integer(data, name, default, minimum, maximum):
 
 def start_policy(role, data):
     domain = integer(data, "domain", 72, 0, 200)
+    samples = integer(data, "samples", 1, 1, 100)
+    interval = float(data.get("interval", 0.1))
+    if not 0.01 <= interval <= 2:
+        raise ValueError("Interval must be between 0.01 and 2 seconds")
     hold_seconds = integer(data, "hold_seconds", 60, 5, 300)
     reliability = data.get("reliability", "reliable")
     durability = data.get("durability", "transient_local")
@@ -52,6 +56,8 @@ def start_policy(role, data):
     provider = integer(data, "provider", 65002, 1, 4294967295)
     version = integer(data, "version", 1, 1, 18446744073709551615)
 
+    if version + samples - 1 > 18446744073709551615:
+        raise ValueError("Version range exceeds unsigned 64-bit limits")
     action = data.get("action", "authorize")
     if action not in ("authorize", "revoke"):
         raise ValueError("Invalid policy action")
@@ -87,6 +93,8 @@ def start_policy(role, data):
             "--provider", str(provider),
             "--version", str(version),
             "--action", action,
+            "--samples", str(samples),
+            "--interval", str(interval),
             "--hold-seconds", str(hold_seconds),
         ]
     elif filter_customer is not None:
@@ -170,6 +178,14 @@ controls = """
 <input id="hold_seconds" type="number"
        min="5" max="300" value="60"></label>
 
+<label>Sample count
+<input id="samples" type="number"
+       min="1" max="100" value="1"></label>
+
+<label>Interval seconds
+<input id="interval" type="number"
+       min="0.01" max="2" step="0.01" value="0.1"></label>
+
 <label>Action
 <select id="action" style="padding:10px;font:inherit">
 <option value="authorize">Authorize</option>
@@ -191,6 +207,8 @@ customer:document.getElementById("customer").value,
 provider:document.getElementById("provider").value,
 version:document.getElementById("version").value,
 action:document.getElementById("action").value,
+samples:document.getElementById("samples").value,
+interval:document.getElementById("interval").value,
 hold_seconds:document.getElementById("hold_seconds").value,
 reliability:document.getElementById("reliability").value,
 durability:document.getElementById("durability").value,
@@ -218,7 +236,7 @@ page = (
     page[:instructions_start]
     + """
 <p>Start the subscriber first, then publish a policy.
-Publisher writes one policy, stays alive for the selected hold time, then exits.
+Publisher sends the selected sample count with increasing versions, then stays alive for the hold time.
 Subscriber remains running until stopped.</p>
 
 <p>Subscriber filter is applied at Start; blank accepts all ASNs.

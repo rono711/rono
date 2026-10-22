@@ -1,0 +1,6 @@
+{"event": "qos_configured", "role": "subscriber", "reliability": "reliable", "durability": "transient_local", "history_depth": 20}
+{"event": "filter_enabled", "expression": "customer_asn = 65005"}
+Policy subscriber ready; Ctrl+C to stop
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": true, "version": 107, "cache_entries": 1}
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": true, "version": 108, "cache_entries": 1}
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": true, "version": 109, "cache_entries": 1}

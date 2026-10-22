@@ -32,7 +32,15 @@ parser.add_argument("--durability",
                     default="transient_local")
 parser.add_argument("--history-depth", type=int, default=20)
 parser.add_argument("--hold-seconds", type=int, default=60)
+parser.add_argument("--samples", type=int, default=1)
+parser.add_argument("--interval", type=float, default=0.1)
 args = parser.parse_args()
+if not 1 <= args.samples <= 100:
+    parser.error("--samples must be between 1 and 100")
+if not 0.01 <= args.interval <= 2:
+    parser.error("--interval must be between 0.01 and 2")
+if not 1 <= args.version <= 18446744073709551615 - (args.samples - 1):
+    parser.error("Version range exceeds unsigned 64-bit limits")
 if not 5 <= args.hold_seconds <= 300:
     parser.error("--hold-seconds must be between 5 and 300")
 if not 1 <= args.history_depth <= 100:
@@ -104,22 +112,27 @@ try:
         # can complete. A bounded discovery/acknowledgment check comes next.
         time.sleep(2)
 
-        sample = policy.RoutePolicyUpdate()
-        sample.customer_asn(args.customer)
-        sample.provider_asn(args.provider)
-        sample.authorized(args.action == "authorize")
-        sample.version(args.version)
-        sample.published_timestamp_ns(time.time_ns())
+        for offset in range(args.samples):
+            if not running:
+                break
+            sample = policy.RoutePolicyUpdate()
+            sample.customer_asn(args.customer)
+            sample.provider_asn(args.provider)
+            sample.authorized(args.action == "authorize")
+            sample.version(args.version + offset)
+            sample.published_timestamp_ns(time.time_ns())
 
-        result = writer.write(sample)
-        print(json.dumps({
-            "event": "write_return",
-            "result": str(result),
-            "customer_asn": args.customer,
-            "provider_asn": args.provider,
-            "authorized": args.action == "authorize",
-            "version": args.version,
-        }), flush=True)
+            result = writer.write(sample)
+            print(json.dumps({
+                "event": "write_return",
+                "result": str(result),
+                "customer_asn": args.customer,
+                "provider_asn": args.provider,
+                "authorized": args.action == "authorize",
+                "version": args.version + offset,
+            }), flush=True)
+
+            time.sleep(args.interval)
 
         deadline = time.monotonic() + args.hold_seconds
         while running and time.monotonic() < deadline:
