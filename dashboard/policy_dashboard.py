@@ -320,7 +320,187 @@ page = page.replace("</style>", """
 </style>
 """, 1)
 
+
+# Bold gradient RONO wordmark
+import re
+
+gradient_header = """
+<header class="rono-gradient-brand">
+<svg viewBox="0 0 520 185" role="img"
+     aria-label="Routing Orchestration and Network Optimization — RONO">
+  <defs>
+    <linearGradient id="rono-bold-gradient"
+                    x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F42A41"/>
+      <stop offset="30%" stop-color="#C73545"/>
+      <stop offset="65%" stop-color="#287D61"/>
+      <stop offset="100%" stop-color="#006A4E"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="22" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="#e7edf7" font-family="Arial, sans-serif"
+        font-size="20">Routing Orchestration and Network Optimization</text>
+  <text x="0" y="174" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="url(#rono-bold-gradient)"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="160" font-weight="900">RONO</text>
+</svg>
+</header>
+"""
+
+page, count = re.subn(
+    r'<header\b[^>]*class="[^"]*rono-[^"]*"[^>]*>.*?</header>',
+    lambda match: gradient_header,
+    page, count=1, flags=re.S,
+)
+if count != 1:
+    raise RuntimeError("RONO header not found")
+
+page = page.replace("</style>", """
+.rono-gradient-brand{width:min(100%,440px);margin:12px 0 24px}
+.rono-gradient-brand svg{display:block;width:100%;height:auto}
+</style>
+""", 1)
+
+
+# Bold gradient RONO wordmark
+import re
+
+gradient_header = """
+<header class="rono-gradient-brand">
+<svg viewBox="0 0 520 185" role="img"
+     aria-label="Routing Orchestration and Network Optimization — RONO">
+  <defs>
+    <linearGradient id="rono-bold-gradient"
+                    x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F42A41"/>
+      <stop offset="30%" stop-color="#C73545"/>
+      <stop offset="65%" stop-color="#287D61"/>
+      <stop offset="100%" stop-color="#006A4E"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="22" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="#e7edf7" font-family="Arial, sans-serif"
+        font-size="20">Routing Orchestration and Network Optimization</text>
+  <text x="0" y="174" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="url(#rono-bold-gradient)"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="160" font-weight="900">RONO</text>
+</svg>
+</header>
+"""
+
+page, count = re.subn(
+    r'<header\b[^>]*class="[^"]*rono-[^"]*"[^>]*>.*?</header>',
+    lambda match: gradient_header,
+    page, count=1, flags=re.S,
+)
+if count != 1:
+    raise RuntimeError("RONO header not found")
+
+page = page.replace("</style>", """
+.rono-gradient-brand{width:min(100%,440px);margin:12px 0 24px}
+.rono-gradient-brand svg{display:block;width:100%;height:auto}
+</style>
+""", 1)
+
+
+# Bold gradient RONO wordmark
+import re
+
+gradient_header = """
+<header class="rono-gradient-brand">
+<svg viewBox="0 0 520 185" role="img"
+     aria-label="Routing Orchestration and Network Optimization — RONO">
+  <defs>
+    <linearGradient id="rono-bold-gradient"
+                    x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F42A41"/>
+      <stop offset="30%" stop-color="#C73545"/>
+      <stop offset="65%" stop-color="#287D61"/>
+      <stop offset="100%" stop-color="#006A4E"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="22" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="#e7edf7" font-family="Arial, sans-serif"
+        font-size="20">Routing Orchestration and Network Optimization</text>
+  <text x="0" y="174" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="url(#rono-bold-gradient)"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="160" font-weight="900">RONO</text>
+</svg>
+</header>
+"""
+
+page, count = re.subn(
+    r'<header\b[^>]*class="[^"]*rono-[^"]*"[^>]*>.*?</header>',
+    lambda match: gradient_header,
+    page, count=1, flags=re.S,
+)
+if count != 1:
+    raise RuntimeError("RONO header not found")
+
+page = page.replace("</style>", """
+.rono-gradient-brand{width:min(100%,440px);margin:12px 0 24px}
+.rono-gradient-brand svg{display:block;width:100%;height:auto}
+</style>
+""", 1)
+
+
+# Bold gradient RONO wordmark
+import re
+
+gradient_header = """
+<header class="rono-gradient-brand">
+<svg viewBox="0 0 520 185" role="img"
+     aria-label="Routing Orchestration and Network Optimization — RONO">
+  <defs>
+    <linearGradient id="rono-bold-gradient"
+                    x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F42A41"/>
+      <stop offset="30%" stop-color="#C73545"/>
+      <stop offset="65%" stop-color="#287D61"/>
+      <stop offset="100%" stop-color="#006A4E"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="22" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="#e7edf7" font-family="Arial, sans-serif"
+        font-size="20">Routing Orchestration and Network Optimization</text>
+  <text x="0" y="174" textLength="520"
+        lengthAdjust="spacingAndGlyphs"
+        fill="url(#rono-bold-gradient)"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="160" font-weight="900">RONO</text>
+</svg>
+</header>
+"""
+
+page, count = re.subn(
+    r'<header\b[^>]*class="[^"]*rono-[^"]*"[^>]*>.*?</header>',
+    lambda match: gradient_header,
+    page, count=1, flags=re.S,
+)
+if count != 1:
+    raise RuntimeError("RONO header not found")
+
+page = page.replace("</style>", """
+.rono-gradient-brand{width:min(100%,440px);margin:12px 0 24px}
+.rono-gradient-brand svg{display:block;width:100%;height:auto}
+</style>
+""", 1)
+
 base.PAGE = page
+
+
+
+
 
 
 
