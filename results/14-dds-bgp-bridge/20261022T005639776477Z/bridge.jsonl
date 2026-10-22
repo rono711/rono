@@ -1,0 +1,5 @@
+{"timestamp_utc": "2026-10-22T00:56:39.777244+00:00", "event": "bridge_ready", "results": "/home/ubuntu/research/rono/results/14-dds-bgp-bridge/20261022T005639776477Z", "subscriber": "rono-policy-subscriber", "note": "Only new cache_updated events; fixed pair 65005/65002"}
+{"timestamp_utc": "2026-10-22T00:57:04.955730+00:00", "event": "policy_received", "version": 1000, "authorized": false}
+{"timestamp_utc": "2026-10-22T00:57:05.164410+00:00", "event": "bgp_applied", "version": 1000, "authorized": false, "direct_path_present": false}
+{"timestamp_utc": "2026-10-22T01:01:15.561631+00:00", "event": "policy_received", "version": 1001, "authorized": true}
+{"timestamp_utc": "2026-10-22T01:01:16.324948+00:00", "event": "bgp_applied", "version": 1001, "authorized": true, "direct_path_present": true}
