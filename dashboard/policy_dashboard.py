@@ -514,6 +514,9 @@ install_bgp_dashboard(base, APP_DIR)
 from path_dashboard import install as install_path_dashboard
 install_path_dashboard(base, APP_DIR)
 
+from path_benchmark import install as install_path_benchmark
+install_path_benchmark(base, __file__)
+
 if __name__ == "__main__":
     print(
         f"RONO Policy dashboard: http://127.0.0.1:{PORT}",

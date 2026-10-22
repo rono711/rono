@@ -65,6 +65,7 @@ def install(base, app_dir):
                     result = subprocess.run(
                         [sys.executable, str(integration / "path_agent.py"), intent["action"]],
                         cwd=root, capture_output=True, text=True)
+                    completed_ns = time.monotonic_ns()
                     (folder / "agent.stdout.json").write_text(result.stdout)
                     (folder / "agent.stderr.txt").write_text(result.stderr)
                     try:
@@ -74,9 +75,10 @@ def install(base, app_dir):
                     if result.returncode:
                         outcome.update(status="ERROR", error=result.stderr.strip() or "Agent failed")
                 except Exception as error:
+                    completed_ns = time.monotonic_ns()
                     outcome = {"status": "ERROR", "error": str(error)}
                 with record_lock:
-                    entry.update(status="done", result=outcome, completed_monotonic_ns=time.monotonic_ns())
+                    entry.update(status="done", result=outcome, completed_monotonic_ns=completed_ns)
                     (folder / "transport-result.json").write_text(json.dumps(entry, indent=2))
                 self.reply(200, outcome)
             except Exception as error:
@@ -117,11 +119,45 @@ def install(base, app_dir):
                 time.sleep(0.25)
             raise RuntimeError("DDS receiver startup timed out")
 
+    writer_lock = threading.Lock()
+
+    def prepare_dds():
+        ensure_receiver()
+        with writer_lock:
+            name = "rono-path-intent-writer"
+            inspected = base.docker("inspect", name, check=False)
+            if inspected.returncode == 0:
+                item = json.loads(inspected.stdout)[0]
+                if (item["Config"].get("Labels") or {}).get(LABEL) != "true":
+                    raise RuntimeError("Writer name belongs to another application")
+                if not (item["State"]["Running"] and "RONO_AGENT_TOKEN=" + base.TOKEN in item["Config"].get("Env", [])):
+                    base.docker("rm", "-f", name)
+                    inspected = None
+            elif "no such" in inspected.stderr.lower():
+                inspected = None
+            else:
+                raise RuntimeError(inspected.stderr)
+            if inspected is None:
+                base.docker("run", "-d", "--name", name, "--label", LABEL + "=true",
+                    "--network", "host", "--ipc", "host", "-e", "RONO_AGENT_TOKEN=" + base.TOKEN,
+                    "-v", str(integration) + ":/app:ro", "rono/policy-python:0.1",
+                    "bash", "-c", RUN.replace("path_dds_transport.py", "path_dds_writer.py"))
+            deadline = time.monotonic() + 20
+            while time.monotonic() < deadline:
+                try:
+                    with urllib.request.urlopen("http://127.0.0.1:8514/ready", timeout=1) as response:
+                        if json.load(response).get("matched"):
+                            return
+                except (OSError, ValueError):
+                    pass
+                time.sleep(.2)
+            raise RuntimeError("Persistent DDS writer discovery failed; inspect docker logs " + name)
+
     def run_intent(action, transport):
         if transport not in ("rest", "dds"):
             raise ValueError("Transport must be REST or DDS")
         if transport == "dds":
-            ensure_receiver()
+            prepare_dds()
         request_id = uuid.uuid4().hex
         intent = {"schema": 1, "request_id": request_id, "action": action}
         folder = root / "results/18-controller-transports" / (
@@ -148,10 +184,11 @@ def install(base, app_dir):
                 with urllib.request.urlopen(request, timeout=180) as response:
                     json.load(response)
             else:
-                result = base.docker("run", "--rm", "--network", "host", "--ipc", "host",
-                    "-v", str(integration) + ":/app:ro", "rono/policy-python:0.1",
-                    "bash", "-c", RUN, "rono", "sender", json.dumps(intent))
-                (folder / "dds-sender.log").write_text(result.stdout + result.stderr)
+                request = urllib.request.Request("http://127.0.0.1:8514/publish",
+                    data=json.dumps(intent).encode(), method="POST",
+                    headers={"X-RONO-Token": base.TOKEN})
+                with urllib.request.urlopen(request, timeout=10) as response:
+                    json.load(response)
             deadline = time.monotonic() + 180
             while time.monotonic() < deadline:
                 with record_lock:
@@ -160,7 +197,8 @@ def install(base, app_dir):
                         outcome = dict(entry["result"])
                         outcome.update(transport=transport, request_id=request_id,
                                        transport_results=str(folder),
-                                       transport_scope="Functional test; DDS sender startup/discovery included")
+                                       enforcement_ms=(entry["completed_monotonic_ns"] - entry["handoff_monotonic_ns"])/1e6,
+                                       transport_scope="Application adapters plus agent; persistent DDS; startup/discovery excluded")
                         return SimpleNamespace(returncode=0 if outcome.get("status") == "PASS" else 1,
                                                stdout=json.dumps(outcome), stderr=outcome.get("error", ""))
                 time.sleep(0.1)
@@ -174,4 +212,6 @@ def install(base, app_dir):
                 (folder / "transport-error.json").write_text(json.dumps(entry, indent=2))
             raise
 
+    base._rono_run_path_intent = run_intent
+    base._rono_prepare_dds = prepare_dds
     return run_intent

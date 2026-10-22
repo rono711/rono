@@ -15,6 +15,7 @@ def install(base, app_dir):
     script = root / "projects/integration/path_agent.py"
     lock = threading.Lock()
     state = {"running": False, "result": None, "error": "", "folder": ""}
+    base._rono_path_busy = lambda: state["running"]
 
     def agent_module():
         spec = importlib.util.spec_from_file_location("rono_path_agent", script)

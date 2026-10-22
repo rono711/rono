@@ -1,0 +1,49 @@
+{
+  "running": true,
+  "progress": "Trials complete",
+  "summary": [
+    {
+      "transport": "rest",
+      "action": "alternative",
+      "attempted": 5,
+      "passed": 5,
+      "failed": 0,
+      "median_ms": 805.692124,
+      "p95_ms": 810.747198
+    },
+    {
+      "transport": "rest",
+      "action": "direct",
+      "attempted": 5,
+      "passed": 5,
+      "failed": 0,
+      "median_ms": 846.128843,
+      "p95_ms": 851.811255
+    },
+    {
+      "transport": "dds",
+      "action": "alternative",
+      "attempted": 5,
+      "passed": 5,
+      "failed": 0,
+      "median_ms": 812.698948,
+      "p95_ms": 822.340468
+    },
+    {
+      "transport": "dds",
+      "action": "direct",
+      "attempted": 5,
+      "passed": 5,
+      "failed": 0,
+      "median_ms": 852.848619,
+      "p95_ms": 865.250401
+    }
+  ],
+  "folder": "/home/ubuntu/research/rono/results/19-enforcement-benchmark/20261022T203125724559Z",
+  "error": "",
+  "restoration": "PASS",
+  "cycles_requested": 5,
+  "metric": "Host monotonic handoff \u2192 agent subprocess completion (includes agent evidence I/O and route polling)",
+  "scope": "Application stack comparison: DDS includes local HTTP gateway hops; not pure protocol latency. No traffic RTT or network-wide convergence measurement.",
+  "sampling": "Nearest-rank p95; separate transport/action groups; first failure aborts; warm-ups excluded; agent route polling quantizes observations."
+}
