@@ -1,0 +1,15 @@
+{
+  "transport": "dds",
+  "requested_operation": "lowest_cost",
+  "decision_source": "configured cost; lower wins; ties prefer direct",
+  "configured_costs": {
+    "direct": 30,
+    "alternative": 10
+  },
+  "available_candidates": [
+    "direct",
+    "alternative"
+  ],
+  "selected": "alternative",
+  "note": "Configured scores, not measured latency or congestion"
+}

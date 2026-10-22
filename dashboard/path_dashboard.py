@@ -1,5 +1,6 @@
 """Dashboard controls for operator steering and one-shot configured-cost selection."""
 import hmac
+from path_transports import install as install_path_transports
 import importlib.util
 import json
 import subprocess
@@ -21,6 +22,7 @@ def install(base, app_dir):
         spec.loader.exec_module(module)
         return module
 
+    run_intent = install_path_transports(base, app_dir)
     parent = base.Handler
 
     class Handler(parent):
@@ -51,6 +53,9 @@ def install(base, app_dir):
                 data = json.loads(self.rfile.read(size))
                 if not isinstance(data, dict):
                     raise ValueError("Invalid request")
+                transport_name = data.get("transport", "rest")
+                if transport_name not in ("rest", "dds"):
+                    raise ValueError("Choose REST or DDS")
                 operation = data.get("operation")
                 if operation not in ("direct", "alternative", "restore", "lowest_cost"):
                     raise ValueError("Invalid path action")
@@ -62,7 +67,7 @@ def install(base, app_dir):
                 state.update(running=True, error="", result=None)
                 agent = agent_module()
                 agent.guard()
-                decision = {"requested_operation": operation,
+                decision = {"transport": transport_name, "requested_operation": operation,
                             "decision_source": "explicit operator preference"}
                 action = operation
                 if operation == "lowest_cost":
@@ -92,8 +97,7 @@ def install(base, app_dir):
                 def apply():
                     try:
                         # No timeout kill: the agent owns verification and rollback deadlines.
-                        result = subprocess.run([sys.executable, str(script), action], cwd=root,
-                                                capture_output=True, text=True)
+                        result = run_intent(action, transport_name)
                         (folder / "agent.stdout.json").write_text(result.stdout)
                         (folder / "agent.stderr.txt").write_text(result.stderr)
                         try:
@@ -131,6 +135,9 @@ def install(base, app_dir):
 <p>R2 → 10.105.0.0/24. Stop the DDS BGP bridge before steering.
 Costs are operator-configured scores, not measured network delay.</p>
 <div class="controls">
+<label>Policy transport<select id="path-transport" style="padding:10px;font:inherit">
+<option value="rest">REST / HTTP</option><option value="dds">DDS Reliable</option>
+</select></label>
 <label>Direct path cost<input id="direct-cost" type="number" min="1" max="1000000" value="10"></label>
 <label>Alternative path cost<input id="alternative-cost" type="number" min="1" max="1000000" value="30"></label>
 </div>
@@ -143,6 +150,8 @@ Costs are operator-configured scores, not measured network delay.</p>
 <div><h3>Decision and verification</h3><pre id="path-result">Ready</pre></div></div>
 <p>Selection runs once per click. It chooses a valid expected path with the lower
 configured cost; ties prefer Direct. Restore baseline before starting the DDS bridge.
+REST and DDS send the same PathIntent to one agent. DDS uses separate domain 174.
+These are functional checks; sender startup/discovery is not controlled for benchmarking.
 This is a fixed-scope research controller, not autonomous congestion-based TE.</p>
 </section>'''
     js = '''<script>
@@ -165,7 +174,7 @@ async function pathAction(operation){
  try{
   const r=await fetch('/api/path-control',{method:'POST',
    headers:{'Content-Type':'application/json','X-RONO-Token':token},
-   body:JSON.stringify({operation,
+   body:JSON.stringify({operation,transport:document.getElementById("path-transport").value,
     direct_cost:document.getElementById('direct-cost').value,
     alternative_cost:document.getElementById('alternative-cost').value})});
   const d=await r.json();if(!r.ok)throw Error(d.error);
