@@ -1,0 +1,16 @@
+{
+  "test": "history-depth-3",
+  "status": "PASS",
+  "publisher_writes_observed_utc": "2026-10-22T00:24:04.260094+00:00",
+  "subscriber_start_requested_utc": "2026-10-22T00:24:04.260109+00:00",
+  "expected_versions": [
+    107,
+    108,
+    109
+  ],
+  "observed_versions": [
+    107,
+    108,
+    109
+  ]
+}

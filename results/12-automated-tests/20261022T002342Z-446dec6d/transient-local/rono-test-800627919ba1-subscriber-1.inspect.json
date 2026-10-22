@@ -1,0 +1,237 @@
+[
+    {
+        "Id": "36ecb1586b1797177f59095622fa2b4e71eaa21d9d8b4eaa72869d6d126f0f6a",
+        "Created": "2026-10-22T00:23:44.889444325Z",
+        "Path": "bash",
+        "Args": [
+            "-c",
+            "\nset -e\nsource /opt/fastdds-python/install/setup.bash\nexport PYTHONPATH=\"/opt/rono/policy/build:${PYTHONPATH:-}\"\nexec /usr/bin/python3 -u /app/policy_app.py \"$@\"\n",
+            "rono",
+            "subscriber",
+            "--domain",
+            "173",
+            "--reliability",
+            "reliable",
+            "--durability",
+            "transient_local",
+            "--history-depth",
+            "20",
+            "--filter-customer",
+            "65005"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 667006,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-22T00:23:44.970208714Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:51c0571306969c1e61e0ae1c156d4ce63d2f92d89269dd3377a018d1a0e50d6e",
+        "ResolvConfPath": "/var/lib/docker/containers/36ecb1586b1797177f59095622fa2b4e71eaa21d9d8b4eaa72869d6d126f0f6a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/36ecb1586b1797177f59095622fa2b4e71eaa21d9d8b4eaa72869d6d126f0f6a/hostname",
+        "HostsPath": "/var/lib/docker/containers/36ecb1586b1797177f59095622fa2b4e71eaa21d9d8b4eaa72869d6d126f0f6a/hosts",
+        "LogPath": "/var/lib/docker/containers/36ecb1586b1797177f59095622fa2b4e71eaa21d9d8b4eaa72869d6d126f0f6a/36ecb1586b1797177f59095622fa2b4e71eaa21d9d8b4eaa72869d6d126f0f6a-json.log",
+        "Name": "/rono-test-800627919ba1-subscriber-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/home/ubuntu/research/rono/projects/heta/fastdds:/app:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "host",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "host",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": [
+                "label=disable"
+            ],
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/ubuntu/research/rono/projects/heta/fastdds",
+                "Destination": "/app",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "ip-172-31-40-229",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/fastdds-python/src/fastddsgen/scripts:/opt/build-tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "CMAKE_BUILD_PARALLEL_LEVEL=2"
+            ],
+            "Cmd": [
+                "bash",
+                "-c",
+                "\nset -e\nsource /opt/fastdds-python/install/setup.bash\nexport PYTHONPATH=\"/opt/rono/policy/build:${PYTHONPATH:-}\"\nexec /usr/bin/python3 -u /app/policy_app.py \"$@\"\n",
+                "rono",
+                "subscriber",
+                "--domain",
+                "173",
+                "--reliability",
+                "reliable",
+                "--durability",
+                "transient_local",
+                "--history-depth",
+                "20",
+                "--filter-customer",
+                "65005"
+            ],
+            "Image": "rono/policy-python:0.1",
+            "Volumes": null,
+            "WorkingDir": "/opt/rono/policy",
+            "Entrypoint": null,
+            "Labels": {
+                "io.rono.automated-tests": "true",
+                "org.opencontainers.image.version": "22.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "243a8d92732d94bf6158bd385b3164bfe8463be2ecd14b960306fd6988cd069e",
+            "SandboxKey": "/var/run/docker/netns/default",
+            "Ports": {},
+            "Networks": {
+                "host": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "5c2327361ff5593d912b8e704d58a278e5fa2353b47c743b37bedcfa20760ad5",
+                    "EndpointID": "361b5cf03527c35a3e458bc8932f1501e9c297113a5cb33c19fe592cad5eb0a5",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:2d2e69994bbd326931030f89bf77d80b631c994d090efa23aeeb3010b7950462",
+            "size": 4105,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

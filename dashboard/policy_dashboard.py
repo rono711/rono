@@ -262,6 +262,9 @@ page = page.replace('+" messages"', '+" events"')
 base.PAGE = page
 
 
+from automated_tests import install as install_automated_tests
+install_automated_tests(base, APP_DIR)
+
 if __name__ == "__main__":
     print(
         f"RONO Policy dashboard: http://127.0.0.1:{PORT}",

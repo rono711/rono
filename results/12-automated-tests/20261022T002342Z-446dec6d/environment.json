@@ -1,0 +1,90 @@
+{
+  "started_utc": "2026-10-22T00:23:42.557788+00:00",
+  "git_commit": "5d1d18df1a7d6357f18ea6b05e5b9fd48296d761",
+  "domain": 173,
+  "image": "rono/policy-python:0.1",
+  "negative_observation_seconds": 8,
+  "source_sha256": {
+    "projects/heta/fastdds/policy_app.py": "aee67e18e30ea2d8046736a3c0f45291742d28b0ddc6e68c51e2754ae30e976a",
+    "dashboard/automated_tests.py": "03833ff72aeacf4d92b03cfc72a9045a0171c1dec356f5fa0e05d8e719be4014",
+    "dashboard/policy_dashboard.py": "e91758a230b3b1ebe88410305ff49be9476cf4556d74867e0ea22f6e7f5623d7"
+  },
+  "image_inspect": [
+    {
+      "Id": "sha256:51c0571306969c1e61e0ae1c156d4ce63d2f92d89269dd3377a018d1a0e50d6e",
+      "RepoTags": [
+        "rono/policy-python:0.1"
+      ],
+      "RepoDigests": [
+        "rono/policy-python@sha256:51c0571306969c1e61e0ae1c156d4ce63d2f92d89269dd3377a018d1a0e50d6e"
+      ],
+      "Comment": "buildkit.dockerfile.v0",
+      "Created": "2026-10-21T21:57:36.35107403Z",
+      "Config": {
+        "Env": [
+          "PATH=/opt/fastdds-python/src/fastddsgen/scripts:/opt/build-tools/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "DEBIAN_FRONTEND=noninteractive",
+          "CMAKE_BUILD_PARALLEL_LEVEL=2"
+        ],
+        "Cmd": [
+          "bash"
+        ],
+        "WorkingDir": "/opt/rono/policy",
+        "Labels": {
+          "org.opencontainers.image.version": "22.04"
+        },
+        "ArgsEscaped": true,
+        "Shell": [
+          "/bin/bash",
+          "-o",
+          "pipefail",
+          "-c"
+        ]
+      },
+      "Architecture": "amd64",
+      "Os": "linux",
+      "Size": 2451902979,
+      "RootFS": {
+        "Type": "layers",
+        "Layers": [
+          "sha256:129f77d88403f1d66805466da50673bab10cf6052bdf1fe422b0341b51a55da2",
+          "sha256:7c729d4a4a1d140a23b8bd0108b9247ac85a78ea7aced2aca506e77a452f6f84",
+          "sha256:44fbdcd16cec7927a69093b8695822b36497456bb5ac556fbe8f752e95815eb2",
+          "sha256:0094d03d78e4c32b7f5110a3e42655806ed16384713e7e740580459a62014be6",
+          "sha256:08084ab7a281071be66c2190dcd96387bd6ddc381673c2f353fe7629d66ebf17",
+          "sha256:60fb1b4f33c6ef0389ba169fff70cc90d8232a3ff4ac095952666bb11be491e9",
+          "sha256:862ac2fee568d4124d9c8cd681fddd2bf9c708543ed945e30d3fcdd17f7f77e2",
+          "sha256:8e39b930e7844f6f641e2eebda97c00f82f7192e349278978eb7f687bad28edf",
+          "sha256:209a6ec5b01f9bad7c287225d5e8266aa48dcd6f899901f04e941700b36d9664",
+          "sha256:d94360bc6bdb777bcef84e6277ed28834a8907c8351c65712ef611a7bdd114ef",
+          "sha256:c88b95e702bfe0064832024c31eef4bc2f93d5d5779b6348ee590e5e206bb180",
+          "sha256:49b8e1d04bfd6531cf3f8cd6222af05798132c6e6febedd820c070821564735e",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:515448dbe8fd64f9806cf9444f4cc54c95ca28972d584d4abf05a0faced71cc0",
+          "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "sha256:ed78bdd224e57882c13d30e547bd6f7114feb079c14593335e1f9c2af99d163d",
+          "sha256:2b3762d5dc01d98fd35640820ab204634285ba76b3643e3d163c9ede464c049e",
+          "sha256:76a51012c0401822048df8ceb1fa5f981d9ba820949d96598418a63cf2ed8301",
+          "sha256:c8d98273d4ebdbcf6a927ff4d6cc2dd7e6c071d050e7d30854aba12292dc95e8",
+          "sha256:596cbd85f98eaad100cc6bbadea7810d2137142f2a90dc439c31e44826a4cc92"
+        ]
+      },
+      "Metadata": {
+        "LastTagTime": "2026-10-21T21:57:36.679862188Z"
+      },
+      "Descriptor": {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "digest": "sha256:51c0571306969c1e61e0ae1c156d4ce63d2f92d89269dd3377a018d1a0e50d6e",
+        "size": 856
+      },
+      "Identity": {
+        "Build": [
+          {
+            "Ref": "8movygz5p620zyxzjxa5j6l1c",
+            "CreatedAt": "2026-10-21T21:57:36.767210884Z"
+          }
+        ]
+      }
+    }
+  ]
+}
