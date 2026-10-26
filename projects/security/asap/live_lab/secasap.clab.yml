@@ -1,0 +1,50 @@
+name: secasap
+topology:
+  defaults:
+    kind: linux
+    image: quay.io/frrouting/frr:10.6.1
+    network-mode: none
+  nodes:
+    core:
+      binds:
+        - configs/core/daemons:/etc/frr/daemons
+        - configs/core/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+    validator:
+      binds:
+        - configs/validator/daemons:/etc/frr/daemons
+        - configs/validator/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+    provider:
+      binds:
+        - configs/provider/daemons:/etc/frr/daemons
+        - configs/provider/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+    leaker:
+      binds:
+        - configs/leaker/daemons:/etc/frr/daemons
+        - configs/leaker/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+    victim:
+      binds:
+        - configs/victim/daemons:/etc/frr/daemons
+        - configs/victim/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+    observer:
+      binds:
+        - configs/observer/daemons:/etc/frr/daemons
+        - configs/observer/frr.conf:/etc/frr/frr.conf
+      exec:
+        - sysctl -w net.ipv4.ip_forward=1
+  links:
+    - endpoints: ["core:eth1", "validator:eth1"]
+    - endpoints: ["core:eth2", "provider:eth1"]
+    - endpoints: ["provider:eth2", "victim:eth1"]
+    - endpoints: ["validator:eth2", "leaker:eth1"]
+    - endpoints: ["provider:eth3", "leaker:eth2"]
+    - endpoints: ["validator:eth3", "observer:eth1"]

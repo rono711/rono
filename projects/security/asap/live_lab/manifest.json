@@ -1,0 +1,40 @@
+{
+  "phase": "legitimate_baseline",
+  "asns": {
+    "core": 65001,
+    "validator": 65002,
+    "provider": 65003,
+    "leaker": 65066,
+    "victim": 65169,
+    "observer": 65004
+  },
+  "provider_customer_links": [
+    [
+      "core",
+      "validator"
+    ],
+    [
+      "core",
+      "provider"
+    ],
+    [
+      "provider",
+      "victim"
+    ],
+    [
+      "validator",
+      "leaker"
+    ],
+    [
+      "provider",
+      "leaker"
+    ],
+    [
+      "validator",
+      "observer"
+    ]
+  ],
+  "victim_prefix": "192.0.2.0/24",
+  "observer_prefix": "198.51.100.1/32",
+  "scope": "Private live FRR demonstration; no native ASPA or RPKI validation claimed. NO-LEAK is a prefix-specific lab export guard, not a complete commercial export policy."
+}
