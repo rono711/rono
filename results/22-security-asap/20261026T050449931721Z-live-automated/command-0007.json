@@ -1,0 +1,13 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "clab-secasap-leaker",
+    "vtysh",
+    "-c",
+    "clear bgp ipv4 unicast 10.222.4.1 soft out"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

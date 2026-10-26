@@ -1,0 +1,12 @@
+Evidence: /home/ubuntu/research/rono/results/22-security-asap/20261026T050449931721Z-live-automated
+{"stage": "baseline", "status": "PASS", "paths": {"validator": "65001 65003 65169", "observer": "65002 65001 65003 65169"}}
+{"stage": "leaked", "status": "PASS", "paths": {"validator": "65066 65003 65169", "observer": "65002 65066 65003 65169"}}
+{"stage": "filtered", "status": "PASS", "paths": {"validator": "65001 65003 65169", "observer": "65002 65001 65003 65169"}}
+{"stage": "restored", "status": "PASS", "paths": {"validator": "65001 65003 65169", "observer": "65002 65001 65003 65169"}}
+{
+  "status": "PASS",
+  "stages_passed": 4,
+  "restoration": "PASS",
+  "error": null,
+  "scope": "Live FRR scenario-specific filter; not native ASPA/ROV"
+}

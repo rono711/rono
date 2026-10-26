@@ -1,0 +1,12 @@
+{
+  "scope": "Live FRR scenario-specific filter; not native ASPA/ROV",
+  "prefix": "192.0.2.0/24",
+  "expected_order": [
+    "baseline",
+    "leaked",
+    "filtered",
+    "restored"
+  ],
+  "measurement": "Functional path checks and three pings per stage",
+  "timing_note": "Polling deadlines are not convergence measurements"
+}
