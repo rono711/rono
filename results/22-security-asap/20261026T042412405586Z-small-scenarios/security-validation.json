@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "scope": "Four deterministic synthetic scenarios; not Internet-scale reproduction",
+  "validation_note": "Explicit expectations documented after first observation; retain as regression checks, not preregistered independent predictions.",
+  "checks": [
+    {
+      "scenario": "google_hijack",
+      "status": "PASS",
+      "expected": {
+        "666": 0,
+        "2": 0,
+        "1": 0,
+        "15169": 1,
+        "3": 1
+      },
+      "observed": {
+        "666": 0,
+        "2": 0,
+        "1": 0,
+        "15169": 1,
+        "3": 1
+      }
+    },
+    {
+      "scenario": "google_hijack_rov",
+      "status": "PASS",
+      "expected": {
+        "666": 0,
+        "2": 1,
+        "1": 1,
+        "15169": 1,
+        "3": 1
+      },
+      "observed": {
+        "15169": 1,
+        "3": 1,
+        "1": 1,
+        "2": 1,
+        "666": 0
+      }
+    },
+    {
+      "scenario": "google_origin_hijack",
+      "status": "PASS",
+      "expected": {
+        "666": 0,
+        "2": 0,
+        "1": 1,
+        "15169": 1,
+        "3": 1
+      },
+      "observed": {
+        "15169": 1,
+        "3": 1,
+        "1": 1,
+        "666": 0,
+        "2": 0
+      }
+    },
+    {
+      "scenario": "google_origin_hijack_aspa",
+      "status": "PASS",
+      "expected": {
+        "666": 0,
+        "2": 1,
+        "1": 1,
+        "15169": 1,
+        "3": 1
+      },
+      "observed": {
+        "15169": 1,
+        "3": 1,
+        "1": 1,
+        "2": 1,
+        "666": 0
+      }
+    }
+  ]
+}

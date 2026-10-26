@@ -1,0 +1,42 @@
+{
+  "rounds": 2,
+  "leaker": 666,
+  "expected_pre_leak_path": [
+    666,
+    3,
+    15169
+  ],
+  "cases": [
+    {
+      "name": "bgp",
+      "policy": "BGP",
+      "expected_as2_path": [
+        2,
+        666,
+        3,
+        15169
+      ]
+    },
+    {
+      "name": "rov",
+      "policy": "ROV",
+      "expected_as2_path": [
+        2,
+        666,
+        3,
+        15169
+      ]
+    },
+    {
+      "name": "aspa",
+      "policy": "ASPA",
+      "expected_as2_path": [
+        2,
+        1,
+        3,
+        15169
+      ]
+    }
+  ],
+  "scope": "Synthetic multihomed leak; not a live convergence test"
+}
