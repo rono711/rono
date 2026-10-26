@@ -1,0 +1,47 @@
+{
+  "status": "MEASUREMENT_PASS",
+  "paths": [
+    0,
+    1
+  ],
+  "offered_mbps": [
+    21,
+    9,
+    4
+  ],
+  "receiver_mbps": [
+    19.0085453229632,
+    8.811242167126089,
+    3.9809136511070076
+  ],
+  "loss_percent": [
+    8.02779555636829,
+    0.0,
+    0.0
+  ],
+  "utilization": [
+    0.8033743466666666,
+    0.5382987733333333,
+    0.00012792,
+    0.8034044266666667,
+    3.253333333333333e-05,
+    0.5382987733333333,
+    0.00012792,
+    3.253333333333333e-05
+  ],
+  "utilization_window_sec": [
+    15,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15
+  ],
+  "launch_skew_ms": 1.021948002744466,
+  "utilization_clip_count": 0,
+  "traffic": "UDP; two controlled flows plus optional background",
+  "scope": "Live episodic path allocation, not continuous TCP rerouting",
+  "evidence": "/home/ubuntu/research/rono/results/21-cn-load-balancing/drl-live/20261026T030401899555Z"
+}

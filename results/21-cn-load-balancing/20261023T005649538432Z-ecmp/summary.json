@@ -1,0 +1,33 @@
+{
+  "method": "deterministic_software_per_flow_ECMP",
+  "is_drl": false,
+  "controller": "127.0.0.1:8182",
+  "priority": 21000,
+  "flows": [
+    {
+      "src": "10.54.0.1",
+      "sport": 41001,
+      "dst": "10.54.0.3",
+      "dport": 5301,
+      "path": [
+        "rls1",
+        "rls2",
+        "rls4"
+      ]
+    },
+    {
+      "src": "10.54.0.2",
+      "sport": 41002,
+      "dst": "10.54.0.4",
+      "dport": 5302,
+      "path": [
+        "rls1",
+        "rls2",
+        "rls4"
+      ]
+    }
+  ],
+  "status": "FLOW_INSTALL_PASS",
+  "data_plane_test": "PENDING",
+  "verified_rules": 12
+}

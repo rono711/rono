@@ -22,3 +22,10 @@ containerlab/clab-*/
 /projects/heta/fastdds/idl/*.cxx
 /projects/heta/fastdds/idl/*.ipp
 /projects/heta/fastdds/idl/*.i
+
+# CN load balancing local artifacts
+/projects/load_balancing/**/.rl-token
+/projects/load_balancing/**/*.backup-*
+/projects/load_balancing/**/*.broken-*
+/projects/load_balancing/**/*.before-*
+/results/21-cn-load-balancing/poc-snapshot-*/

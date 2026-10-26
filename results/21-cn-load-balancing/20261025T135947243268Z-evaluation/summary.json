@@ -1,0 +1,65 @@
+{
+  "status": "EVALUATION_PILOT_PASS",
+  "summary": [
+    {
+      "method": "fixed",
+      "attempted": 2,
+      "passed": 2,
+      "mean_controlled_mbps": 18.56902970751557,
+      "mean_satisfaction": 0.9377437129463364,
+      "mean_reward": 0.9377437129463364
+    },
+    {
+      "method": "ecmp",
+      "attempted": 2,
+      "passed": 2,
+      "mean_controlled_mbps": 19.734406119578793,
+      "mean_satisfaction": 0.9203331725690171,
+      "mean_reward": 0.915333172569017
+    },
+    {
+      "method": "least_utilized",
+      "attempted": 2,
+      "passed": 2,
+      "mean_controlled_mbps": 17.933784248017936,
+      "mean_satisfaction": 0.8514477891044128,
+      "mean_reward": 0.8314477891044127
+    },
+    {
+      "method": "greedy_demand",
+      "attempted": 2,
+      "passed": 2,
+      "mean_controlled_mbps": 18.56679884497699,
+      "mean_satisfaction": 0.9363192924204821,
+      "mean_reward": 0.926319292420482
+    },
+    {
+      "method": "ppo",
+      "attempted": 2,
+      "passed": 2,
+      "mean_controlled_mbps": 18.263900543538988,
+      "mean_satisfaction": 0.8745265256965893,
+      "mean_reward": 0.8695265256965894
+    }
+  ],
+  "scenarios": {
+    "0": {
+      "demands": [
+        9,
+        9
+      ],
+      "background_path": 1,
+      "background_mbps": 4
+    },
+    "1": {
+      "demands": [
+        15,
+        9
+      ],
+      "background_path": 1,
+      "background_mbps": 16
+    }
+  },
+  "scope": "one frozen model, one seed, matched pilot workloads; not a completed repeated campaign",
+  "note": "Last method UDP rules remain active. Keep raw loss and per-flow metrics for analysis."
+}

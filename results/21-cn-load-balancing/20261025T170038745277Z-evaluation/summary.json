@@ -1,0 +1,113 @@
+{
+  "status": "EVALUATION_PILOT_PASS",
+  "summary": [
+    {
+      "method": "fixed",
+      "attempted": 8,
+      "passed": 8,
+      "mean_controlled_mbps": 16.65829774295691,
+      "mean_satisfaction": 0.6181406419159678,
+      "mean_reward": 0.6181406419159678
+    },
+    {
+      "method": "ecmp",
+      "attempted": 8,
+      "passed": 8,
+      "mean_controlled_mbps": 25.533427794718417,
+      "mean_satisfaction": 0.7794035341008763,
+      "mean_reward": 0.7781535341008763
+    },
+    {
+      "method": "least_utilized",
+      "attempted": 8,
+      "passed": 8,
+      "mean_controlled_mbps": 26.086374635624864,
+      "mean_satisfaction": 0.8324401138025282,
+      "mean_reward": 0.8236901138025283
+    },
+    {
+      "method": "greedy_demand",
+      "attempted": 8,
+      "passed": 8,
+      "mean_controlled_mbps": 26.828559199637386,
+      "mean_satisfaction": 0.8608680576101935,
+      "mean_reward": 0.8546180576101934
+    },
+    {
+      "method": "ppo",
+      "attempted": 8,
+      "passed": 8,
+      "mean_controlled_mbps": 26.02327125203385,
+      "mean_satisfaction": 0.8025152867785882,
+      "mean_reward": 0.8012652867785881
+    }
+  ],
+  "scenarios": {
+    "0": {
+      "demands": [
+        15,
+        21
+      ],
+      "background_path": 0,
+      "background_mbps": 10
+    },
+    "1": {
+      "demands": [
+        15,
+        21
+      ],
+      "background_path": 0,
+      "background_mbps": 10
+    },
+    "2": {
+      "demands": [
+        15,
+        9
+      ],
+      "background_path": 0,
+      "background_mbps": 10
+    },
+    "3": {
+      "demands": [
+        21,
+        21
+      ],
+      "background_path": 0,
+      "background_mbps": 16
+    },
+    "4": {
+      "demands": [
+        15,
+        21
+      ],
+      "background_path": 1,
+      "background_mbps": 10
+    },
+    "5": {
+      "demands": [
+        15,
+        9
+      ],
+      "background_path": 1,
+      "background_mbps": 16
+    },
+    "6": {
+      "demands": [
+        9,
+        9
+      ],
+      "background_path": 1,
+      "background_mbps": 16
+    },
+    "7": {
+      "demands": [
+        9,
+        21
+      ],
+      "background_path": 1,
+      "background_mbps": 10
+    }
+  },
+  "scope": "one frozen model, one seed, matched pilot workloads; not a completed repeated campaign",
+  "note": "Last method UDP rules remain active. Keep raw loss and per-flow metrics for analysis."
+}
