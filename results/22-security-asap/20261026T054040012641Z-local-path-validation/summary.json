@@ -1,0 +1,33 @@
+{
+  "status": "LOCAL_PATH_VALIDATION_PASS",
+  "prefix": "192.0.2.0/24",
+  "receiving_router": 65002,
+  "neighbor": 65066,
+  "neighbor_relationship": "CUSTOMER",
+  "origin_check": {
+    "expected": 65169,
+    "observed": 65169,
+    "matches_local_expectation": true
+  },
+  "decision": {
+    "path": [
+      65066,
+      65003,
+      65169
+    ],
+    "status": "INVALID",
+    "checks": [
+      {
+        "customer": 65169,
+        "claimed_provider": 65003,
+        "state": "VALID"
+      },
+      {
+        "customer": 65003,
+        "claimed_provider": 65066,
+        "state": "INVALID"
+      }
+    ]
+  },
+  "scope": "Customer-received upstream-path check using local data; candidate constructed from leaker RIB, not a captured export. No live leak enabled and no enforcement applied."
+}

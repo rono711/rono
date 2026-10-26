@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-validator",
+    "vtysh",
+    "-c",
+    "clear bgp ipv4 unicast 10.222.4.2 soft in"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

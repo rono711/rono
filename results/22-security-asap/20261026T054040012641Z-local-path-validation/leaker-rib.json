@@ -1,0 +1,96 @@
+{
+  "prefix": "192.0.2.0/24",
+  "version": 2,
+  "advertisedTo": {
+    "10.222.5.1": {
+      "hostname": "provider"
+    }
+  },
+  "pathCount": 2,
+  "paths": [
+    {
+      "aspath": {
+        "string": "65003 65169",
+        "segments": [
+          {
+            "type": "as-sequence",
+            "list": [
+              65003,
+              65169
+            ]
+          }
+        ],
+        "length": 2
+      },
+      "origin": "IGP",
+      "locPrf": 100,
+      "valid": true,
+      "version": 2,
+      "bestpath": {
+        "overall": true,
+        "selectionReason": "AS Path"
+      },
+      "lastUpdate": {
+        "epoch": 1792990202,
+        "string": "Mon Oct 26 04:50:02 2026"
+      },
+      "nexthops": [
+        {
+          "ip": "10.222.5.1",
+          "hostname": "provider",
+          "afi": "ipv4",
+          "metric": 0,
+          "accessible": true,
+          "used": true
+        }
+      ],
+      "peer": {
+        "peerId": "10.222.5.1",
+        "routerId": "10.255.22.3",
+        "hostname": "provider",
+        "type": "external"
+      }
+    },
+    {
+      "aspath": {
+        "string": "65002 65001 65003 65169",
+        "segments": [
+          {
+            "type": "as-sequence",
+            "list": [
+              65002,
+              65001,
+              65003,
+              65169
+            ]
+          }
+        ],
+        "length": 4
+      },
+      "origin": "IGP",
+      "locPrf": 100,
+      "valid": true,
+      "version": 2,
+      "lastUpdate": {
+        "epoch": 1792993165,
+        "string": "Mon Oct 26 05:39:25 2026"
+      },
+      "nexthops": [
+        {
+          "ip": "10.222.4.1",
+          "hostname": "validator",
+          "afi": "ipv4",
+          "metric": 0,
+          "accessible": true,
+          "used": true
+        }
+      ],
+      "peer": {
+        "peerId": "10.222.4.1",
+        "routerId": "10.255.22.2",
+        "hostname": "validator",
+        "type": "external"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-validator",
+    "vtysh",
+    "-c",
+    "configure terminal",
+    "-c",
+    "no bgp as-path access-list SEC-LEAK",
+    "-c",
+    "end"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

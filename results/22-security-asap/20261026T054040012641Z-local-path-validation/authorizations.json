@@ -1,0 +1,22 @@
+{
+  "source": "Local lab relationship configuration",
+  "cryptographically_verified": false,
+  "providers": {
+    "65002": [
+      65001
+    ],
+    "65003": [
+      65001
+    ],
+    "65066": [
+      65002,
+      65003
+    ],
+    "65169": [
+      65003
+    ],
+    "65004": [
+      65002
+    ]
+  }
+}

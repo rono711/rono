@@ -1,0 +1,11 @@
+{
+  "node": "leaker",
+  "args": [
+    "vtysh",
+    "-c",
+    "show bgp ipv4 unicast summary json"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"routerId\":\"10.255.22.4\",\n  \"as\":65066,\n  \"vrfId\":0,\n  \"vrfName\":\"default\",\n  \"tableVersion\":4,\n  \"ribCount\":3,\n  \"ribMemory\":456,\n  \"peerCount\":2,\n  \"peerMemory\":33808,\n  \"peers\":{\n    \"10.222.4.1\":{\n      \"hostname\":\"validator\",\n      \"softwareVersion\":\"n/a\",\n      \"remoteAs\":65002,\n      \"localAs\":65066,\n      \"version\":4,\n      \"msgRcvd\":150,\n      \"msgSent\":161,\n      \"tableVersion\":0,\n      \"outq\":0,\n      \"inq\":0,\n      \"peerUptime\":\"00:00:01\",\n      \"peerUptimeMsec\":1000,\n      \"peerUptimeEstablishedEpoch\":1792993164,\n      \"pfxRcd\":0,\n      \"pfxSnt\":0,\n      \"state\":\"Established\",\n      \"peerState\":\"OK\",\n      \"connectionsEstablished\":2,\n      \"connectionsDropped\":1,\n      \"idType\":\"ipv4\"\n    },\n    \"10.222.5.1\":{\n      \"hostname\":\"provider\",\n      \"softwareVersion\":\"n/a\",\n      \"remoteAs\":65003,\n      \"localAs\":65066,\n      \"version\":4,\n      \"msgRcvd\":60,\n      \"msgSent\":61,\n      \"tableVersion\":4,\n      \"outq\":0,\n      \"inq\":0,\n      \"peerUptime\":\"00:49:24\",\n      \"peerUptimeMsec\":2964000,\n      \"peerUptimeEstablishedEpoch\":1792990201,\n      \"pfxRcd\":2,\n      \"pfxSnt\":2,\n      \"state\":\"Established\",\n      \"peerState\":\"OK\",\n      \"connectionsEstablished\":1,\n      \"connectionsDropped\":0,\n      \"idType\":\"ipv4\"\n    }\n  },\n  \"failedPeers\":0,\n  \"displayedPeers\":2,\n  \"totalPeers\":2,\n  \"dynamicPeers\":0,\n  \"bestPath\":{\n    \"multiPathRelax\":\"false\"\n  }\n}\n",
+  "stderr": ""
+}

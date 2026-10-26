@@ -1,0 +1,15 @@
+{
+  "received_path": [
+    65066,
+    65003,
+    65169
+  ],
+  "decision": "INVALID",
+  "invalid_relationships": [
+    {
+      "customer": 65003,
+      "claimed_provider": 65066
+    }
+  ],
+  "authorization_source": "Local lab data; not signed ASPA"
+}

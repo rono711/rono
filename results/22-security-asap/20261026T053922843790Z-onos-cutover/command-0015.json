@@ -1,0 +1,16 @@
+{
+  "node": "leaker",
+  "args": [
+    "ping",
+    "-I",
+    "10.222.4.2",
+    "-c",
+    "3",
+    "-W",
+    "2",
+    "10.222.4.1"
+  ],
+  "returncode": 0,
+  "stdout": "PING 10.222.4.1 (10.222.4.1) from 10.222.4.2: 56 data bytes\n64 bytes from 10.222.4.1: seq=0 ttl=64 time=0.035 ms\n64 bytes from 10.222.4.1: seq=1 ttl=64 time=0.043 ms\n64 bytes from 10.222.4.1: seq=2 ttl=64 time=0.042 ms\n\n--- 10.222.4.1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.035/0.040/0.043 ms\n",
+  "stderr": ""
+}

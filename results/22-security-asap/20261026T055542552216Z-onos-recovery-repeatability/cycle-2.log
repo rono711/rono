@@ -1,0 +1,17 @@
+LIVE_LEAK_VALIDATION_PASS
+ONOS_BLOCK_PASS
+FRR_RECOVERY_PASS; ONOS protection remains installed
+{
+  "status": "PASS",
+  "stages_passed": [
+    "validation",
+    "onos_block",
+    "frr_recovery"
+  ],
+  "error": null,
+  "restoration": "PASS",
+  "cleanup_errors": [],
+  "scope": "Local validation \u2192 ONOS block \u2192 FRR recovery \u2192 restoration"
+}
+Evidence: /home/ubuntu/research/rono/results/22-security-asap/20261026T055559124393Z-onos-frr-recovery
+

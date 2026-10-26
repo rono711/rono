@@ -1,0 +1,17 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-validator",
+    "vtysh",
+    "-c",
+    "configure terminal",
+    "-c",
+    "no route-map SEC-LEAK-IN",
+    "-c",
+    "end"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}
