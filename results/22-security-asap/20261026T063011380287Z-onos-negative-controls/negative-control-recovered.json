@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source": "198.51.100.1",
+  "destination": "10.222.4.2",
+  "received": 3,
+  "drop_packets_before": 3,
+  "drop_packets_after": 3,
+  "scope": "Same source, destination outside blocked victim prefix"
+}

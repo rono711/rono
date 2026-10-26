@@ -1,0 +1,10 @@
+{
+  "scope": "Local validation and coordinated ONOS/FRR enforcement",
+  "authorization_source": "Local lab relationships; not signed ASPA",
+  "expected_stages": [
+    "validation",
+    "onos_block",
+    "frr_recovery"
+  ],
+  "timing": "Functional checks; polling is not convergence measurement"
+}

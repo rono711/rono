@@ -1,0 +1,18 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-observer",
+    "ping",
+    "-I",
+    "198.51.100.1",
+    "-c",
+    "3",
+    "-W",
+    "2",
+    "10.222.4.2"
+  ],
+  "returncode": 1,
+  "stdout": "PING 10.222.4.2 (10.222.4.2) from 198.51.100.1: 56 data bytes\n",
+  "stderr": "ping: sendto: Network unreachable\n"
+}

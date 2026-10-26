@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-validator",
+    "vtysh",
+    "-c",
+    "show bgp ipv4 unicast 192.0.2.0/24 json"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"prefix\":\"192.0.2.0/24\",\n  \"version\":33,\n  \"advertisedTo\":{\n    \"10.222.1.1\":{\n      \"hostname\":\"core\"\n    },\n    \"10.222.4.2\":{\n      \"hostname\":\"leaker\"\n    },\n    \"10.222.6.2\":{\n      \"hostname\":\"observer\"\n    }\n  },\n  \"pathCount\":2,\n  \"paths\":[\n    {\n      \"aspath\":{\n        \"string\":\"65066 65003 65169\",\n        \"segments\":[\n          {\n            \"type\":\"as-sequence\",\n            \"list\":[\n              65066,\n              65003,\n              65169\n            ]\n          }\n        ],\n        \"length\":3\n      },\n      \"origin\":\"IGP\",\n      \"locPrf\":200,\n      \"valid\":true,\n      \"version\":33,\n      \"bestpath\":{\n        \"overall\":true,\n        \"selectionReason\":\"Local Pref\"\n      },\n      \"lastUpdate\":{\n        \"epoch\":1792996083,\n        \"string\":\"Mon Oct 26 06:28:03 2026\"\n      },\n      \"nexthops\":[\n        {\n          \"ip\":\"10.222.4.2\",\n          \"hostname\":\"leaker\",\n          \"afi\":\"ipv4\",\n          \"metric\":0,\n          \"accessible\":true,\n          \"used\":true\n        }\n      ],\n      \"peer\":{\n        \"peerId\":\"10.222.4.2\",\n        \"routerId\":\"10.255.22.4\",\n        \"hostname\":\"leaker\",\n        \"type\":\"external\"\n      }\n    },\n    {\n      \"aspath\":{\n        \"string\":\"65001 65003 65169\",\n        \"segments\":[\n          {\n            \"type\":\"as-sequence\",\n            \"list\":[\n              65001,\n              65003,\n              65169\n            ]\n          }\n        ],\n        \"length\":3\n      },\n      \"origin\":\"IGP\",\n      \"locPrf\":100,\n      \"valid\":true,\n      \"version\":33,\n      \"lastUpdate\":{\n        \"epoch\":1792990201,\n        \"string\":\"Mon Oct 26 04:50:01 2026\"\n      },\n      \"nexthops\":[\n        {\n          \"ip\":\"10.222.1.1\",\n          \"hostname\":\"core\",\n          \"afi\":\"ipv4\",\n          \"metric\":0,\n          \"accessible\":true,\n          \"used\":true\n        }\n      ],\n      \"peer\":{\n        \"peerId\":\"10.222.1.1\",\n        \"routerId\":\"10.255.22.1\",\n        \"hostname\":\"core\",\n        \"type\":\"external\"\n      }\n    }\n  ]\n}\n",
+  "stderr": ""
+}
