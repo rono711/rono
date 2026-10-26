@@ -1,0 +1,103 @@
+{
+  "status": "ADAPTATION_PILOT_EXECUTION_PASS",
+  "scored_trials": 48,
+  "summary": [
+    {
+      "method": "fixed",
+      "actions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_controlled_mbps": 14.995220976943608,
+      "mean_controlled_satisfaction": 0.8330678320524226,
+      "assignment_changes_including_initial": 0
+    },
+    {
+      "method": "fixed_split",
+      "actions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mean_controlled_mbps": 16.80159642920855,
+      "mean_controlled_satisfaction": 0.9334220238449195,
+      "assignment_changes_including_initial": 1
+    },
+    {
+      "method": "ecmp",
+      "actions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mean_controlled_mbps": 16.85517159255216,
+      "mean_controlled_satisfaction": 0.9363945832042776,
+      "assignment_changes_including_initial": 1
+    },
+    {
+      "method": "least_utilized",
+      "actions": [
+        3,
+        0,
+        3,
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "mean_controlled_mbps": 16.847093928447123,
+      "mean_controlled_satisfaction": 0.9359496626915066,
+      "assignment_changes_including_initial": 11
+    },
+    {
+      "method": "greedy_demand",
+      "actions": [
+        2,
+        2,
+        3,
+        3,
+        0,
+        0,
+        1,
+        1
+      ],
+      "mean_controlled_mbps": 17.998644951601104,
+      "mean_controlled_satisfaction": 0.9999247049624916,
+      "assignment_changes_including_initial": 5
+    },
+    {
+      "method": "ppo",
+      "actions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mean_controlled_mbps": 16.79844112773535,
+      "mean_controlled_satisfaction": 0.9332448309042912,
+      "assignment_changes_including_initial": 1
+    }
+  ],
+  "scope": "Functional execution passed; adaptation analysis pending"
+}

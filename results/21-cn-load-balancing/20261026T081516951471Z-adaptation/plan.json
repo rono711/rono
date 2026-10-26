@@ -1,0 +1,67 @@
+{
+  "scope": "One-model episodic adaptation pilot; no superiority claim",
+  "model": "/reference/results/21-cn-load-balancing/20261025T182126138092Z-live-train/ppo-live.zip",
+  "model_sha256": "29275be3cb8cd14569cbdbb84f9ec82ecf20b149ce8952cbe19e0927962619b9",
+  "runner_sha256": "855d9656b094f83a866584081baa0fbbe3e2906b6d318e50d26737e09ebc175b",
+  "seed": 20261026,
+  "method_order": [
+    "ppo",
+    "ecmp",
+    "least_utilized",
+    "greedy_demand",
+    "fixed_split",
+    "fixed"
+  ],
+  "sequence": [
+    [
+      "A_low_path0",
+      0,
+      4
+    ],
+    [
+      "A_low_path0",
+      0,
+      4
+    ],
+    [
+      "B_high_path0",
+      0,
+      16
+    ],
+    [
+      "B_high_path0",
+      0,
+      16
+    ],
+    [
+      "C_high_path1",
+      1,
+      16
+    ],
+    [
+      "C_high_path1",
+      1,
+      16
+    ],
+    [
+      "D_low_path1",
+      1,
+      4
+    ],
+    [
+      "D_low_path1",
+      1,
+      4
+    ]
+  ],
+  "demands_mbps": [
+    9,
+    9
+  ],
+  "scored_trials": 48,
+  "warmups": "One action-0 trial in phase A per method; excluded",
+  "observation": "Current announced context plus prior-trial utilization",
+  "timing": "Decision and whole-step duration; not convergence latency",
+  "failure_policy": "Stop on first failure; preserve all evidence",
+  "final_state": "Last installed adapter rules remain active"
+}
