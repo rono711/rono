@@ -1,0 +1,87 @@
+{
+  "status": "CSV_CROSSCHECK_PASS",
+  "metric": "Mean per-trial eligible-AS attacker-attraction percentage",
+  "propagation_round": 1,
+  "checks": [
+    {
+      "adoption": 0.1,
+      "policy": "ASPA",
+      "trials": 100,
+      "audit_mean_percent": 10.786623539232053,
+      "csv_mean_percent": 10.786623539232053,
+      "upstream_yerr_uninterpreted": 7.116997004753183
+    },
+    {
+      "adoption": 0.1,
+      "policy": "OnlyToCustomers",
+      "trials": 100,
+      "audit_mean_percent": 10.786623539232053,
+      "csv_mean_percent": 10.786623539232053,
+      "upstream_yerr_uninterpreted": 7.116997004753183
+    },
+    {
+      "adoption": 0.2,
+      "policy": "ASPA",
+      "trials": 100,
+      "audit_mean_percent": 9.580811769616027,
+      "csv_mean_percent": 9.580811769616027,
+      "upstream_yerr_uninterpreted": 6.769836793074974
+    },
+    {
+      "adoption": 0.2,
+      "policy": "OnlyToCustomers",
+      "trials": 100,
+      "audit_mean_percent": 9.580811769616027,
+      "csv_mean_percent": 9.580811769616027,
+      "upstream_yerr_uninterpreted": 6.769836793074974
+    },
+    {
+      "adoption": 0.5,
+      "policy": "ASPA",
+      "trials": 100,
+      "audit_mean_percent": 5.37985183639399,
+      "csv_mean_percent": 5.37985183639399,
+      "upstream_yerr_uninterpreted": 5.089908467052622
+    },
+    {
+      "adoption": 0.5,
+      "policy": "OnlyToCustomers",
+      "trials": 100,
+      "audit_mean_percent": 5.37985183639399,
+      "csv_mean_percent": 5.37985183639399,
+      "upstream_yerr_uninterpreted": 5.089908467052622
+    },
+    {
+      "adoption": 0.8,
+      "policy": "ASPA",
+      "trials": 100,
+      "audit_mean_percent": 0.2890625,
+      "csv_mean_percent": 0.2890625,
+      "upstream_yerr_uninterpreted": 0.350677718048431
+    },
+    {
+      "adoption": 0.8,
+      "policy": "OnlyToCustomers",
+      "trials": 100,
+      "audit_mean_percent": 0.2890625,
+      "csv_mean_percent": 0.2890625,
+      "upstream_yerr_uninterpreted": 0.350677718048431
+    },
+    {
+      "adoption": 0.99,
+      "policy": "ASPA",
+      "trials": 100,
+      "audit_mean_percent": 0.0002217237061769616,
+      "csv_mean_percent": 0.0002217237061769616,
+      "upstream_yerr_uninterpreted": 0.000687467840300246
+    },
+    {
+      "adoption": 0.99,
+      "policy": "OnlyToCustomers",
+      "trials": 100,
+      "audit_mean_percent": 0.0002217237061769616,
+      "csv_mean_percent": 0.0002217237061769616,
+      "upstream_yerr_uninterpreted": 0.000687467840300246
+    }
+  ]
+}

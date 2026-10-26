@@ -1,0 +1,33 @@
+{
+  "scope": "Feasibility pilot; not final Figure 9 reproduction",
+  "dataset": {
+    "dataset": "20240401.as-rel2.txt.bz2",
+    "source_url": "https://publicdata.caida.org/datasets/as-relationships/serial-2/20240401.as-rel2.txt.bz2",
+    "snapshot": "2024-04-01",
+    "recorded_utc": "2026-10-26T07:01:51.509078+00:00",
+    "compressed_sha256": "3aa7109b61255edd8cb2b17a67af545cd3f9a90a789b96d700a4787b2603222d",
+    "text_sha256": "915d3f34f26d301b2b39429bf114ec7d0c80421bbea1c6acdc04ec6eb54a7730",
+    "relationship_records": 571330,
+    "text_bytes": 10509961
+  },
+  "bgpy_version": "13.0.13",
+  "runner_sha256": "19f42476abc497318679fa538b313ac0ad2f6c7759c92d2ce60ea469208ea16f",
+  "adoption": [
+    0.5
+  ],
+  "trials": 3,
+  "workers": 1,
+  "seed": 42,
+  "python_hash_seed": 0,
+  "base_policy": "ROV",
+  "defenses": [
+    "ASPA",
+    "OnlyToCustomers"
+  ],
+  "deviations": [
+    "One adoption setting",
+    "Three trials instead of 1000",
+    "Two defenses",
+    "Metric and sampling semantics require validation"
+  ]
+}

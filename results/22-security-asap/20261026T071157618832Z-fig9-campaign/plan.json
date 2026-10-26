@@ -1,0 +1,37 @@
+{
+  "scope": "Reduced-trial Figure 9(a) reproduction campaign",
+  "dataset": {
+    "dataset": "20240401.as-rel2.txt.bz2",
+    "source_url": "https://publicdata.caida.org/datasets/as-relationships/serial-2/20240401.as-rel2.txt.bz2",
+    "snapshot": "2024-04-01",
+    "recorded_utc": "2026-10-26T07:01:51.509078+00:00",
+    "compressed_sha256": "3aa7109b61255edd8cb2b17a67af545cd3f9a90a789b96d700a4787b2603222d",
+    "text_sha256": "915d3f34f26d301b2b39429bf114ec7d0c80421bbea1c6acdc04ec6eb54a7730",
+    "relationship_records": 571330,
+    "text_bytes": 10509961
+  },
+  "bgpy_version": "13.0.13",
+  "runner_sha256": "1932b1fcd24823c12d975dac789d6b8f222fa3eeab839ea5a2445eecb1e0734b",
+  "adoption": [
+    0.1,
+    0.2,
+    0.5,
+    0.8,
+    0.99
+  ],
+  "trials": 100,
+  "workers": 1,
+  "outer_seed": 42,
+  "python_hash_seed": 0,
+  "base_policy": "ROV",
+  "defenses": [
+    "ASPA",
+    "OnlyToCustomers"
+  ],
+  "deviations": [
+    "Five adoption settings; verify correspondence with published points",
+    "100 trials per setting instead of 1000",
+    "Two defenses",
+    "Sampling audited; upstream yerr is retained without relabelling"
+  ]
+}
