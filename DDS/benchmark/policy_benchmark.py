@@ -108,9 +108,37 @@ try:
         if writer is None:
             raise RuntimeError("Could not create DDS writer")
 
-        # Keep the writer alive after publishing so discovery and delivery
-        # can complete. A bounded discovery/acknowledgment check comes next.
-        time.sleep(2)
+        # Wait for a matched subscriber before publishing.
+        match_start = time.monotonic()
+        matched = False
+
+        while running and time.monotonic() - match_start < 15:
+            status = fastdds.PublicationMatchedStatus()
+            rc = writer.get_publication_matched_status(status)
+
+            if rc == 0 and status.current_count >= 1:
+                matched = True
+                break
+
+            time.sleep(0.05)
+
+        match_time_ms = (
+            time.monotonic() - match_start
+        ) * 1000
+
+        print(json.dumps({
+            "event": "endpoint_matching",
+            "matched": matched,
+            "matched_count":
+                status.current_count,
+            "matching_time_ms": match_time_ms,
+            "return_code": str(rc),
+        }), flush=True)
+
+        if not matched:
+            raise RuntimeError(
+                "DDS writer-reader matching timeout"
+            )
 
         for offset in range(args.samples):
             if not running:

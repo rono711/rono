@@ -1,0 +1,23 @@
+{
+  "experiment": "RONO DDS QoS Benchmark",
+  "campaign": "20261118T093138Z-ba34fce7",
+  "git_commit": "7b54dd59b37ecfa9008658aaecd95029eca49955",
+  "docker_image": "rono/policy-type:0.1",
+  "trials_per_mode": 5,
+  "samples_per_trial": 100,
+  "reliability_modes": [
+    "reliable",
+    "best_effort"
+  ],
+  "domains": {
+    "reliable": 78,
+    "best_effort": 79
+  },
+  "durability": "volatile",
+  "history_depth": 100,
+  "publish_interval_seconds": 0.01,
+  "subscriber_polling_seconds": 0.001,
+  "endpoint_matching_required": true,
+  "environment": "Single AWS EC2 host, Docker host networking",
+  "latency_definition": "Subscriber receive timestamp minus publisher sample creation timestamp; includes application processing and polling overhead."
+}
