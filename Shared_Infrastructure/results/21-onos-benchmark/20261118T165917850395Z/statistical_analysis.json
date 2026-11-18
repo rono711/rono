@@ -1,0 +1,31 @@
+{
+  "experiment": "DDS-ONOS CLI and network verification",
+  "samples_per_action": 30,
+  "confidence_method": "Student-t, two-sided 95%, df=29",
+  "t_critical": 2.04523,
+  "limitations": "Sequential observations; independence is approximate. Includes DDS sender startup, discovery, fixed hold and verification polling. Not pure protocol latency.",
+  "actions": {
+    "disconnect": {
+      "n": 30,
+      "mean_ms": 8159.217266666667,
+      "median_ms": 8103.791,
+      "std_ms": 223.94074823626025,
+      "p95_ms": 8415.792,
+      "ci95_mean_ms": [
+        8075.596402373356,
+        8242.838130959977
+      ]
+    },
+    "connect": {
+      "n": 30,
+      "mean_ms": 4382.136533333333,
+      "median_ms": 4366.496,
+      "std_ms": 76.37261815315627,
+      "p95_ms": 4476.082,
+      "ci95_mean_ms": [
+        4353.618524044678,
+        4410.654542621988
+      ]
+    }
+  }
+}
