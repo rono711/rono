@@ -1,0 +1,29 @@
+{
+  "node": "leaker",
+  "args": [
+    "vtysh",
+    "-c",
+    "configure terminal",
+    "-c",
+    "interface eth1",
+    "-c",
+    "no ip address 10.222.4.2/30",
+    "-c",
+    "shutdown",
+    "-c",
+    "exit",
+    "-c",
+    "interface sec0",
+    "-c",
+    "ip address 10.222.4.2/30",
+    "-c",
+    "no shutdown",
+    "-c",
+    "exit",
+    "-c",
+    "end"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-validator",
+    "vtysh",
+    "-c",
+    "show bgp ipv4 unicast summary json"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"routerId\":\"10.255.22.2\",\n  \"as\":65002,\n  \"vrfId\":0,\n  \"vrfName\":\"default\",\n  \"tableVersion\":24,\n  \"ribCount\":3,\n  \"ribMemory\":456,\n  \"peerCount\":3,\n  \"peerMemory\":50712,\n  \"peers\":{\n    \"10.222.1.1\":{\n      \"hostname\":\"core\",\n      \"softwareVersion\":\"n/a\",\n      \"remoteAs\":65001,\n      \"localAs\":65002,\n      \"version\":4,\n      \"msgRcvd\":75,\n      \"msgSent\":100,\n      \"tableVersion\":24,\n      \"outq\":0,\n      \"inq\":0,\n      \"peerUptime\":\"01:05:56\",\n      \"peerUptimeMsec\":3956000,\n      \"peerUptimeEstablishedEpoch\":1792990201,\n      \"pfxRcd\":1,\n      \"pfxSnt\":2,\n      \"state\":\"Established\",\n      \"peerState\":\"OK\",\n      \"connectionsEstablished\":1,\n      \"connectionsDropped\":0,\n      \"idType\":\"ipv4\"\n    },\n    \"10.222.4.2\":{\n      \"hostname\":\"leaker\",\n      \"softwareVersion\":\"n/a\",\n      \"remoteAs\":65066,\n      \"localAs\":65002,\n      \"version\":4,\n      \"msgRcvd\":218,\n      \"msgSent\":195,\n      \"tableVersion\":24,\n      \"outq\":0,\n      \"inq\":0,\n      \"peerUptime\":\"00:16:33\",\n      \"peerUptimeMsec\":993000,\n      \"peerUptimeEstablishedEpoch\":1792993164,\n      \"pfxRcd\":0,\n      \"pfxSnt\":2,\n      \"state\":\"Established\",\n      \"peerState\":\"OK\",\n      \"connectionsEstablished\":2,\n      \"connectionsDropped\":1,\n      \"idType\":\"ipv4\"\n    },\n    \"10.222.6.2\":{\n      \"hostname\":\"observer\",\n      \"softwareVersion\":\"n/a\",\n      \"remoteAs\":65004,\n      \"localAs\":65002,\n      \"version\":4,\n      \"msgRcvd\":99,\n      \"msgSent\":98,\n      \"tableVersion\":24,\n      \"outq\":0,\n      \"inq\":0,\n      \"peerUptime\":\"01:05:56\",\n      \"peerUptimeMsec\":3956000,\n      \"peerUptimeEstablishedEpoch\":1792990201,\n      \"pfxRcd\":1,\n      \"pfxSnt\":2,\n      \"state\":\"Established\",\n      \"peerState\":\"OK\",\n      \"connectionsEstablished\":1,\n      \"connectionsDropped\":0,\n      \"idType\":\"ipv4\"\n    }\n  },\n  \"failedPeers\":0,\n  \"displayedPeers\":3,\n  \"totalPeers\":3,\n  \"dynamicPeers\":0,\n  \"bestPath\":{\n    \"multiPathRelax\":\"false\"\n  }\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,49 @@
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+Building configuration...
+
+Current configuration:
+!
+frr version 10.6.1_git
+frr defaults traditional
+hostname leaker
+!
+ip prefix-list VICTIM seq 5 permit 192.0.2.0/24
+!
+route-map CUSTOMER-IN permit 10
+ set local-preference 200
+exit
+!
+route-map PROVIDER-IN permit 10
+ set local-preference 100
+exit
+!
+route-map NO-LEAK deny 10
+ match ip address prefix-list VICTIM
+exit
+!
+route-map NO-LEAK permit 100
+exit
+!
+interface eth1
+ ip address 10.222.4.2/30
+exit
+!
+interface eth2
+ ip address 10.222.5.2/30
+exit
+!
+router bgp 65066
+ bgp router-id 10.255.22.4
+ no bgp ebgp-requires-policy
+ neighbor 10.222.4.1 remote-as 65002
+ neighbor 10.222.5.1 remote-as 65003
+ !
+ address-family ipv4 unicast
+  neighbor 10.222.4.1 route-map PROVIDER-IN in
+  neighbor 10.222.4.1 route-map NO-LEAK out
+  neighbor 10.222.5.1 route-map PROVIDER-IN in
+ exit-address-family
+exit
+!
+end

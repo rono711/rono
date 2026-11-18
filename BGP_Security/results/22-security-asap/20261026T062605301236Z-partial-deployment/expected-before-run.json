@@ -1,0 +1,805 @@
+{
+  "scope": "Deterministic mechanism/deployment ablation",
+  "bgpy_version": "13.0.13",
+  "runner_sha256": "6da0f6edb68670481338256eeb355307f470184ac1f14ee5a74d3c28c4860a0f",
+  "bit_order": [
+    "validator_AS2",
+    "provider_AS3",
+    "victim_AS15169"
+  ],
+  "important_limit": "ASPA policy deployment couples verification and modeled record publication; these factors are not independently varied.",
+  "cases": [
+    {
+      "name": "rono_partial_bgp_reference_control",
+      "deployment": "bgp_reference",
+      "leak": false,
+      "expected_policies": {
+        "1": "BGP",
+        "2": "BGP",
+        "3": "BGP",
+        "666": "BGP",
+        "15169": "BGP",
+        "65004": "BGP"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_bgp_reference_leak",
+      "deployment": "bgp_reference",
+      "leak": true,
+      "expected_policies": {
+        "1": "BGP",
+        "2": "BGP",
+        "3": "BGP",
+        "666": "BGP",
+        "15169": "BGP",
+        "65004": "BGP"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_000_control",
+      "deployment": "aspa_000",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_000_leak",
+      "deployment": "aspa_000",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_001_control",
+      "deployment": "aspa_001",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_001_leak",
+      "deployment": "aspa_001",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_010_control",
+      "deployment": "aspa_010",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_010_leak",
+      "deployment": "aspa_010",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_011_control",
+      "deployment": "aspa_011",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_011_leak",
+      "deployment": "aspa_011",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ROV",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_100_control",
+      "deployment": "aspa_100",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_100_leak",
+      "deployment": "aspa_100",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_101_control",
+      "deployment": "aspa_101",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_101_leak",
+      "deployment": "aspa_101",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ROV",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            666,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": true
+    },
+    {
+      "name": "rono_partial_aspa_110_control",
+      "deployment": "aspa_110",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_110_leak",
+      "deployment": "aspa_110",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ROV",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_111_control",
+      "deployment": "aspa_111",
+      "leak": false,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    },
+    {
+      "name": "rono_partial_aspa_111_leak",
+      "deployment": "aspa_111",
+      "leak": true,
+      "expected_policies": {
+        "1": "ROV",
+        "2": "ASPA",
+        "3": "ASPA",
+        "666": "BGP",
+        "15169": "ASPA",
+        "65004": "ROV"
+      },
+      "expected_paths": {
+        "2": [
+          [
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "65004": [
+          [
+            65004,
+            2,
+            1,
+            3,
+            15169
+          ]
+        ],
+        "3": [
+          [
+            3,
+            15169
+          ]
+        ],
+        "15169": [
+          [
+            15169
+          ]
+        ]
+      },
+      "expected_observer_attraction": false
+    }
+  ]
+}

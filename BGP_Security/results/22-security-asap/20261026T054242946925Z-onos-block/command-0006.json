@@ -1,0 +1,19 @@
+{
+  "node": "leaker",
+  "args": [
+    "vtysh",
+    "-c",
+    "configure terminal",
+    "-c",
+    "router bgp 65066",
+    "-c",
+    "address-family ipv4 unicast",
+    "-c",
+    "no neighbor 10.222.4.1 route-map NO-LEAK out",
+    "-c",
+    "end"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

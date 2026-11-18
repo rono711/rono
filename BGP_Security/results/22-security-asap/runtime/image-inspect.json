@@ -1,0 +1,61 @@
+[
+    {
+        "Id": "sha256:473aa325f0b65ea88a64885fb3fdd02ce53c2424cde60532dd6de7b4c07782dd",
+        "RepoTags": [
+            "rono-security-asap:0.1"
+        ],
+        "RepoDigests": [
+            "rono-security-asap@sha256:473aa325f0b65ea88a64885fb3fdd02ce53c2424cde60532dd6de7b4c07782dd"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-26T04:18:51.057544182Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.17",
+                "PYTHON_SHA256=bfb74ad39efae27cda510f134ab408e00f9992c56851cfc0b1cdb5646da11599",
+                "PYTHONUNBUFFERED=1",
+                "MPLCONFIGDIR=/tmp/matplotlib",
+                "OMP_NUM_THREADS=1"
+            ],
+            "Cmd": [
+                "python3"
+            ],
+            "WorkingDir": "/work"
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 982467945,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+                "sha256:eb7bb13e51ba254226024272a53cb9d772f8eb17212b62dd285bad084af31373",
+                "sha256:f4634db04ed93dca6cf508991927459d25594a6d9afc93902f843d3d26c82d5c",
+                "sha256:b98f3af3eaddb49609693bff7c49cf27149150ba4fc491d8e19fe1e0cd61c617",
+                "sha256:3c8ae2327a509455cb5e1bd43b6aabfd74593d56944f1f26d5ffd9f3764e06c7",
+                "sha256:3d80ad8afcc8c314d525f573e90fbdbae804ad73fbf6454e614d4cb0d49a2c31",
+                "sha256:fe33565609fa1dfd07cb148b715afaefe263f7d8ea06695278a84732f805dcaa",
+                "sha256:1ec40c82b0cd10ae2f7ae66ea8a5303e2d3b11d42b0e03fe924aa315fc294b7e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-26T04:19:01.494586416Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:473aa325f0b65ea88a64885fb3fdd02ce53c2424cde60532dd6de7b4c07782dd",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "m81kp9rnxzlwk0z9g5ir80pun",
+                    "CreatedAt": "2026-10-26T04:19:03.893731637Z"
+                }
+            ]
+        }
+    }
+]

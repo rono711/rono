@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-validator",
+    "vtysh",
+    "-c",
+    "show running-config"
+  ],
+  "returncode": 0,
+  "stdout": "Building configuration...\n\nCurrent configuration:\n!\nfrr version 10.6.1_git\nfrr defaults traditional\nhostname validator\nservice integrated-vtysh-config\n!\nip prefix-list VICTIM seq 5 permit 192.0.2.0/24\n!\nroute-map CUSTOMER-IN permit 10\n set local-preference 200\nexit\n!\nroute-map PROVIDER-IN permit 10\n set local-preference 100\nexit\n!\ninterface eth1\n ip address 10.222.1.2/30\nexit\n!\ninterface eth2\n shutdown\nexit\n!\ninterface eth3\n ip address 10.222.6.1/30\nexit\n!\ninterface sec0\n ip address 10.222.4.1/30\nexit\n!\nrouter bgp 65002\n bgp router-id 10.255.22.2\n no bgp ebgp-requires-policy\n neighbor 10.222.1.1 remote-as 65001\n neighbor 10.222.4.2 remote-as 65066\n neighbor 10.222.6.2 remote-as 65004\n !\n address-family ipv4 unicast\n  neighbor 10.222.1.1 route-map PROVIDER-IN in\n  neighbor 10.222.4.2 route-map CUSTOMER-IN in\n  neighbor 10.222.6.2 route-map CUSTOMER-IN in\n exit-address-family\nexit\n!\nbgp as-path access-list SEC-LEAK seq 5 permit ^65066_65003_65169$\n!\nend\n",
+  "stderr": ""
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "stages_passed": [
+    "validation",
+    "onos_block",
+    "frr_recovery"
+  ],
+  "error": null,
+  "restoration": "PASS",
+  "cleanup_errors": [],
+  "scope": "Local validation \u2192 ONOS block \u2192 FRR recovery \u2192 restoration"
+}

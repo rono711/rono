@@ -1,0 +1,18 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-observer",
+    "ping",
+    "-I",
+    "198.51.100.1",
+    "-c",
+    "3",
+    "-W",
+    "2",
+    "192.0.2.1"
+  ],
+  "returncode": 0,
+  "stdout": "PING 192.0.2.1 (192.0.2.1) from 198.51.100.1: 56 data bytes\n64 bytes from 192.0.2.1: seq=0 ttl=61 time=0.056 ms\n64 bytes from 192.0.2.1: seq=1 ttl=61 time=0.072 ms\n64 bytes from 192.0.2.1: seq=2 ttl=61 time=0.081 ms\n\n--- 192.0.2.1 ping statistics ---\n3 packets transmitted, 3 packets received, 0% packet loss\nround-trip min/avg/max = 0.056/0.069/0.081 ms\n",
+  "stderr": ""
+}

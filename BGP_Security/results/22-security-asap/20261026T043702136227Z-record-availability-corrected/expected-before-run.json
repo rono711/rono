@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {
+      "name": "validator_and_victim_aspa",
+      "validator_policy": "ASPA",
+      "victim_policy": "ASPA",
+      "expected_observer_outcome": 1
+    },
+    {
+      "name": "validator_only_aspa",
+      "validator_policy": "ASPA",
+      "victim_policy": "BGP",
+      "expected_observer_outcome": 0
+    }
+  ],
+  "scope": "Simulated ASPA adoption and record availability"
+}

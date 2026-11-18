@@ -1,0 +1,42 @@
+{
+  "scope": "Six-AS synthetic topology",
+  "new_link": {
+    "provider": 2,
+    "customer": 65004
+  },
+  "expected_outcomes": {
+    "google_hijack": {
+      "666": 0,
+      "2": 0,
+      "1": 0,
+      "15169": 1,
+      "3": 1,
+      "65004": 0
+    },
+    "google_hijack_rov": {
+      "666": 0,
+      "2": 1,
+      "1": 1,
+      "15169": 1,
+      "3": 1,
+      "65004": 1
+    },
+    "google_origin_hijack": {
+      "666": 0,
+      "2": 0,
+      "1": 1,
+      "15169": 1,
+      "3": 1,
+      "65004": 0
+    },
+    "google_origin_hijack_aspa": {
+      "666": 0,
+      "2": 1,
+      "1": 1,
+      "15169": 1,
+      "3": 1,
+      "65004": 1
+    }
+  },
+  "note": "Fixed before execution; derived from the original topology"
+}

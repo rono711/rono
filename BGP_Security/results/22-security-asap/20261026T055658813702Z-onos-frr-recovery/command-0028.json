@@ -1,0 +1,13 @@
+{
+  "args": [
+    "sudo",
+    "ovs-ofctl",
+    "-O",
+    "OpenFlow13",
+    "dump-flows",
+    "br-rono-sec"
+  ],
+  "returncode": 0,
+  "stdout": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x200009e5be74a, duration=11.459s, table=0, n_packets=4, n_bytes=392, send_flow_rem priority=50000,ip,in_port=1,nw_src=198.51.100.1,nw_dst=192.0.2.0/24 actions=drop\n cookie=0xaf0000d3569898, duration=1220.760s, table=0, n_packets=224, n_bytes=22132, send_flow_rem priority=20000,ip,in_port=2 actions=output:1\n cookie=0xaf000054cddeb4, duration=1220.760s, table=0, n_packets=31, n_bytes=1302, send_flow_rem priority=41000,arp,in_port=1 actions=output:2\n cookie=0xaf0000cc38b472, duration=1220.760s, table=0, n_packets=178, n_bytes=16559, send_flow_rem priority=20000,ip,in_port=1 actions=output:2\n cookie=0xaf0000be026f5c, duration=1220.760s, table=0, n_packets=31, n_bytes=1302, send_flow_rem priority=41000,arp,in_port=2 actions=output:1\n cookie=0x10000fe93d9e1, duration=1858.313s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,arp actions=CONTROLLER:65535,clear_actions\n cookie=0x100005ee231f2, duration=1858.313s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x88cc actions=CONTROLLER:65535,clear_actions\n cookie=0x100009cab6660, duration=1858.313s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x8942 actions=CONTROLLER:65535,clear_actions\n",
+  "stderr": ""
+}

@@ -1,0 +1,10 @@
+% Can't open configuration file /etc/frr/vtysh.conf due to 'No such file or directory'.
+Configuration file[/etc/frr/frr.conf] processing failure: 11
+BGP routing table entry for 192.0.2.0/24, version 2
+Paths: (1 available, best #1, table default)
+  Advertised to peers:
+  10.222.4.1 10.222.5.1
+  65003 65169
+    10.222.5.1 from 10.222.5.1 (10.255.22.3)
+      Origin IGP, localpref 100, valid, external, best (First path received)
+      Last update: Mon Oct 26 04:50:02 2026

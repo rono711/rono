@@ -1,0 +1,776 @@
+[
+  {
+    "deviceId": "of:0000000000005402",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43001
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5401
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005404",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43001
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5401
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005402",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5401
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43001
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005401",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5401
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43001
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005401",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43001
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5401
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005404",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5401
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43001
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005403",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43002
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5402
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005404",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43002
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5402
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "4"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005403",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5402
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43002
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005401",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5402
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43002
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005401",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43002
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5402
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "4"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005404",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5402
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43002
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005402",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43003
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5403
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005404",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43003
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5403
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "4"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005402",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5403
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43003
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005401",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5403
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43003
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005401",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 43003
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 5403
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ]
+    }
+  },
+  {
+    "deviceId": "of:0000000000005404",
+    "priority": 23000,
+    "tableId": 0,
+    "timeout": 0,
+    "isPermanent": true,
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x0800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 17
+        },
+        {
+          "type": "UDP_SRC",
+          "udpPort": 5403
+        },
+        {
+          "type": "UDP_DST",
+          "udpPort": 43003
+        }
+      ]
+    },
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ]
+    }
+  }
+]

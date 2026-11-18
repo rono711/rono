@@ -1,0 +1,40 @@
+{
+  "stage": "diagnostic_no_security_pass_claim",
+  "actual_policies": {
+    "1": "BGP",
+    "2": "ASPA",
+    "3": "BGP",
+    "666": "BGP",
+    "15169": "ASPA",
+    "65004": "BGP"
+  },
+  "outcomes": {
+    "15169": 1,
+    "3": 1,
+    "1": 1,
+    "2": 1,
+    "666": 0,
+    "65004": 1
+  },
+  "forged_candidate_checks": [
+    {
+      "prefix": "1.2.0.0/16",
+      "as_path": [
+        666,
+        15169
+      ],
+      "next_hop": 666,
+      "next_hop_valid": true,
+      "provider_checks_origin_outward": [
+        {
+          "customer": 15169,
+          "provider": 666,
+          "allowed_or_unknown": false
+        }
+      ],
+      "max_up_ramp": 1,
+      "rov_check": true,
+      "aspa_check": false
+    }
+  ]
+}

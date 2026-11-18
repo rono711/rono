@@ -1,0 +1,48 @@
+{
+  "method": "Pointwise percentile bootstrap of per-trial means",
+  "resamples": 10000,
+  "seed": 20261026,
+  "note": "Approximate intervals, not simultaneous bands; sparse nonzero outcomes limit tail inference. Upstream yerr remains unchanged.",
+  "results": [
+    {
+      "adoption": 0.1,
+      "trials_per_defense": 100,
+      "mean_attraction_percent_both_defenses": 10.786623539232053,
+      "bootstrap_95_percentile_lower": 6.924196577629382,
+      "bootstrap_95_percentile_upper": 15.28675396494157,
+      "trials_with_nonzero_attraction": 82
+    },
+    {
+      "adoption": 0.2,
+      "trials_per_defense": 100,
+      "mean_attraction_percent_both_defenses": 9.580811769616027,
+      "bootstrap_95_percentile_lower": 5.777363313856427,
+      "bootstrap_95_percentile_upper": 13.797474958263773,
+      "trials_with_nonzero_attraction": 79
+    },
+    {
+      "adoption": 0.5,
+      "trials_per_defense": 100,
+      "mean_attraction_percent_both_defenses": 5.37985183639399,
+      "bootstrap_95_percentile_lower": 2.661323560100167,
+      "bootstrap_95_percentile_upper": 8.590906719532555,
+      "trials_with_nonzero_attraction": 55
+    },
+    {
+      "adoption": 0.8,
+      "trials_per_defense": 100,
+      "mean_attraction_percent_both_defenses": 0.2890625,
+      "bootstrap_95_percentile_lower": 0.11127921535893155,
+      "bootstrap_95_percentile_upper": 0.5244678631051752,
+      "trials_with_nonzero_attraction": 36
+    },
+    {
+      "adoption": 0.99,
+      "trials_per_defense": 100,
+      "mean_attraction_percent_both_defenses": 0.0002217237061769616,
+      "bootstrap_95_percentile_lower": 0.0,
+      "bootstrap_95_percentile_upper": 0.0006521285475792988,
+      "trials_with_nonzero_attraction": 2
+    }
+  ]
+}

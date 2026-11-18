@@ -1,0 +1,22 @@
+{
+  "scope": "single-model integration pilot; no statistical superiority claim",
+  "model": "results/21-cn-load-balancing/20261025T182126138092Z-live-train/ppo-live.zip",
+  "model_sha256": "29275be3cb8cd14569cbdbb84f9ec82ecf20b149ce8952cbe19e0927962619b9",
+  "weights_frozen": true,
+  "seed": 20261030,
+  "horizon": 8,
+  "order": [
+    "least_utilized",
+    "fixed",
+    "ppo",
+    "ecmp",
+    "fixed_split",
+    "greedy_demand"
+  ],
+  "sb3": "2.9.0",
+  "torch": "2.8.0+cpu",
+  "transport": "UDP; same fixed five-tuples for every method",
+  "ecmp_note": "one tuple pair only; not a sweep over ECMP collisions",
+  "reset": "fixed action0 warm-up per method; excluded from scored trials",
+  "failure_policy": "stop on first error; preserve completed and failed records"
+}

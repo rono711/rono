@@ -1,0 +1,20 @@
+PERMITTED_CONTROL_PASS: leak-before-block
+LIVE_LEAK_VALIDATION_PASS
+PERMITTED_CONTROL_PASS: blocked
+ONOS_BLOCK_PASS
+PERMITTED_CONTROL_PASS: recovered
+FRR_RECOVERY_PASS; ONOS protection remains installed
+{
+  "status": "PASS",
+  "stages_passed": [
+    "validation",
+    "onos_block",
+    "frr_recovery"
+  ],
+  "error": null,
+  "restoration": "PASS",
+  "cleanup_errors": [],
+  "scope": "Local validation \u2192 ONOS block \u2192 FRR recovery \u2192 restoration"
+}
+Evidence: /home/ubuntu/research/rono/results/22-security-asap/20261026T063011380287Z-onos-negative-controls
+

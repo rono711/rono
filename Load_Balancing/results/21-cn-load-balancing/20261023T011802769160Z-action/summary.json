@@ -1,0 +1,13 @@
+{
+  "phase": "manual_action_validation_not_DRL",
+  "controller": "127.0.0.1:8182",
+  "paths": [
+    0,
+    1
+  ],
+  "status": "ACTION_RULES_PASS",
+  "data_plane_test": "PENDING",
+  "priority": 22000,
+  "note": "Priority-22000 overrides remain active. Do not label later traffic ECMP/fixed until removed.",
+  "verified_rules": 12
+}

@@ -1,0 +1,41 @@
+{
+  "status": "AUDIT_VALIDATION_PASS",
+  "records": 1000,
+  "matched_pairs": 500,
+  "raw_sha256": "d4ce3a1cf33a9e146e13359f0f2eeb3c3aaad86b3e5d17a5b8e5ff836f171239",
+  "normalized_sha256": "2277bc356b2caf528e6ca5e938ecc599ffafda50c4cc7df7239132e88200c8fa",
+  "original_preserved": true,
+  "summary": [
+    {
+      "adoption": 0.1,
+      "ASPA_mean_percent": 10.786623539232053,
+      "OnlyToCustomers_mean_percent": 10.786623539232053,
+      "max_absolute_paired_difference_pp": 0.0
+    },
+    {
+      "adoption": 0.2,
+      "ASPA_mean_percent": 9.580811769616027,
+      "OnlyToCustomers_mean_percent": 9.580811769616027,
+      "max_absolute_paired_difference_pp": 0.0
+    },
+    {
+      "adoption": 0.5,
+      "ASPA_mean_percent": 5.37985183639399,
+      "OnlyToCustomers_mean_percent": 5.37985183639399,
+      "max_absolute_paired_difference_pp": 0.0
+    },
+    {
+      "adoption": 0.8,
+      "ASPA_mean_percent": 0.2890625,
+      "OnlyToCustomers_mean_percent": 0.2890625,
+      "max_absolute_paired_difference_pp": 0.0
+    },
+    {
+      "adoption": 0.99,
+      "ASPA_mean_percent": 0.0002217237061769616,
+      "OnlyToCustomers_mean_percent": 0.0002217237061769616,
+      "max_absolute_paired_difference_pp": 0.0
+    }
+  ],
+  "scope": "Audit integrity and pairing; CSV and original-paper comparison pending"
+}

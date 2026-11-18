@@ -1,0 +1,1574 @@
+[
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282111,
+    "packets": 0,
+    "bytes": 0,
+    "id": "281476974895628",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005403",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x806"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282111,
+    "packets": 312,
+    "bytes": 43992,
+    "id": "281476625278116",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005403",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x8942"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282111,
+    "packets": 312,
+    "bytes": 43992,
+    "id": "281475829732838",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005403",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x88cc"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 30938,
+    "bytes": 2056212,
+    "id": "562951089365384",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 5301
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 41001
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562949982766602",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 5302
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 41002
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 312,
+    "bytes": 43992,
+    "id": "281475611483407",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x8942"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562953260152592",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 41002
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 5302
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 35717,
+    "bytes": 98517599,
+    "id": "562951352634920",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 41001
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 5301
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 14,
+    "bytes": 1436,
+    "id": "562951240301355",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 0,
+    "bytes": 0,
+    "id": "281475940029745",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x806"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 312,
+    "bytes": 43992,
+    "id": "281476616980407",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x88cc"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562952756845119",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 13,
+    "bytes": 1206,
+    "id": "562951092376517",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282088,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562951660687815",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005402",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 310,
+    "bytes": 43710,
+    "id": "281478827561219",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x88cc"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 310,
+    "bytes": 43710,
+    "id": "281475094050953",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x8942"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562952278075921",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "4"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 13,
+    "bytes": 1206,
+    "id": "562953451799203",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 0,
+    "bytes": 0,
+    "id": "281475110768809",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x806"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562954002210220",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562952486689608",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 5302
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 41002
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 30938,
+    "bytes": 2056212,
+    "id": "562951228114765",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 5301
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 41001
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 14,
+    "bytes": 1436,
+    "id": "562953342474199",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562953155331033",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "4"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 41002
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 5302
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282174,
+    "packets": 35717,
+    "bytes": 98517599,
+    "id": "562951755030889",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005404",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 41001
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 5301
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562951707458818",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 0,
+    "bytes": 0,
+    "id": "281476663551237",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x806"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 314,
+    "bytes": 44274,
+    "id": "281479100092065",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x8942"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 480,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 314,
+    "bytes": 44274,
+    "id": "281478170136882",
+    "appId": "org.onosproject.core",
+    "priority": 40000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "CONTROLLER"
+        }
+      ],
+      "clearDeferred": true,
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x88cc"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 35736,
+    "bytes": 98555053,
+    "id": "562951444090446",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 41001
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 5301
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562950722299869",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 5302
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 41002
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 30938,
+    "bytes": 2056212,
+    "id": "562951208156510",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.3/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 5301
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 41001
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 13,
+    "bytes": 1206,
+    "id": "562953904201829",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "1"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.1/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562953025886823",
+    "appId": "org.onosproject.cli",
+    "priority": 21000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IP_PROTO",
+          "protocol": 6
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.2/32"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.4/32"
+        },
+        {
+          "type": "TCP_SRC",
+          "tcpPort": 41002
+        },
+        {
+          "type": "TCP_DST",
+          "tcpPort": 5302
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 14,
+    "bytes": 1436,
+    "id": "562951954254184",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "3"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.3/32"
+        }
+      ]
+    }
+  },
+  {
+    "groupId": 0,
+    "state": "ADDED",
+    "life": 479,
+    "liveType": "UNKNOWN",
+    "lastSeen": 1792718282075,
+    "packets": 0,
+    "bytes": 0,
+    "id": "562952726878061",
+    "appId": "org.onosproject.cli",
+    "priority": 20000,
+    "timeout": 0,
+    "isPermanent": true,
+    "deviceId": "of:0000000000005401",
+    "tableId": 0,
+    "tableName": "0",
+    "treatment": {
+      "instructions": [
+        {
+          "type": "OUTPUT",
+          "port": "2"
+        }
+      ],
+      "deferred": []
+    },
+    "selector": {
+      "criteria": [
+        {
+          "type": "ETH_TYPE",
+          "ethType": "0x800"
+        },
+        {
+          "type": "IPV4_SRC",
+          "ip": "10.54.0.0/24"
+        },
+        {
+          "type": "IPV4_DST",
+          "ip": "10.54.0.2/32"
+        }
+      ]
+    }
+  }
+]

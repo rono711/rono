@@ -1,0 +1,13 @@
+{
+  "args": [
+    "docker",
+    "exec",
+    "clab-secasap-observer",
+    "vtysh",
+    "-c",
+    "show bgp ipv4 unicast 192.0.2.0/24 json"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"prefix\":\"192.0.2.0/24\",\n  \"version\":25,\n  \"advertisedTo\":{\n    \"10.222.6.1\":{\n      \"hostname\":\"validator\"\n    }\n  },\n  \"pathCount\":1,\n  \"paths\":[\n    {\n      \"aspath\":{\n        \"string\":\"65002 65066 65003 65169\",\n        \"segments\":[\n          {\n            \"type\":\"as-sequence\",\n            \"list\":[\n              65002,\n              65066,\n              65003,\n              65169\n            ]\n          }\n        ],\n        \"length\":4\n      },\n      \"origin\":\"IGP\",\n      \"locPrf\":100,\n      \"valid\":true,\n      \"version\":25,\n      \"bestpath\":{\n        \"overall\":true,\n        \"selectionReason\":\"First path received\"\n      },\n      \"lastUpdate\":{\n        \"epoch\":1792994160,\n        \"string\":\"Mon Oct 26 05:56:00 2026\"\n      },\n      \"nexthops\":[\n        {\n          \"ip\":\"10.222.6.1\",\n          \"hostname\":\"validator\",\n          \"afi\":\"ipv4\",\n          \"metric\":0,\n          \"accessible\":true,\n          \"used\":true\n        }\n      ],\n      \"peer\":{\n        \"peerId\":\"10.222.6.1\",\n        \"routerId\":\"10.255.22.2\",\n        \"hostname\":\"validator\",\n        \"type\":\"external\"\n      }\n    }\n  ]\n}\n",
+  "stderr": ""
+}

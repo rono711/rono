@@ -1,0 +1,168 @@
+{
+  "statistics": [
+    {
+      "device": "of:0000000000005403",
+      "ports": [
+        {
+          "port": 1,
+          "packetsReceived": 643452,
+          "packetsSent": 8254,
+          "bytesReceived": 790157599,
+          "bytesSent": 1159108,
+          "packetsRxDropped": 2,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 2,
+          "packetsReceived": 8254,
+          "packetsSent": 643527,
+          "bytesReceived": 1159108,
+          "bytesSent": 790168174,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        }
+      ]
+    },
+    {
+      "device": "of:0000000000005402",
+      "ports": [
+        {
+          "port": 1,
+          "packetsReceived": 785495,
+          "packetsSent": 9787,
+          "bytesReceived": 964823481,
+          "bytesSent": 1333475,
+          "packetsRxDropped": 2,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 2,
+          "packetsReceived": 9787,
+          "packetsSent": 785609,
+          "bytesReceived": 1333475,
+          "bytesSent": 964839555,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        }
+      ]
+    },
+    {
+      "device": "of:0000000000005404",
+      "ports": [
+        {
+          "port": 1,
+          "packetsReceived": 785609,
+          "packetsSent": 9787,
+          "bytesReceived": 964839555,
+          "bytesSent": 1333475,
+          "packetsRxDropped": 4,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 2,
+          "packetsReceived": 643527,
+          "packetsSent": 8254,
+          "bytesReceived": 790168174,
+          "bytesSent": 1159108,
+          "packetsRxDropped": 4,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 3,
+          "packetsReceived": 564,
+          "packetsSent": 519511,
+          "bytesReceived": 62302,
+          "bytesSent": 635559410,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 4,
+          "packetsReceived": 1101,
+          "packetsSent": 909627,
+          "bytesReceived": 119361,
+          "bytesSent": 1119448539,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        }
+      ]
+    },
+    {
+      "device": "of:0000000000005401",
+      "ports": [
+        {
+          "port": 1,
+          "packetsReceived": 1075009,
+          "packetsSent": 9305,
+          "bytesReceived": 1333842343,
+          "bytesSent": 1282264,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 2,
+          "packetsReceived": 641883,
+          "packetsSent": 8738,
+          "bytesReceived": 796553510,
+          "bytesSent": 1210539,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 3,
+          "packetsReceived": 9787,
+          "packetsSent": 785495,
+          "bytesReceived": 1333475,
+          "bytesSent": 964823481,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        },
+        {
+          "port": 4,
+          "packetsReceived": 8254,
+          "packetsSent": 643452,
+          "bytesReceived": 1159108,
+          "bytesSent": 790157599,
+          "packetsRxDropped": 0,
+          "packetsTxDropped": 0,
+          "packetsRxErrors": 0,
+          "packetsTxErrors": 0,
+          "durationSec": 12706
+        }
+      ]
+    }
+  ]
+}
