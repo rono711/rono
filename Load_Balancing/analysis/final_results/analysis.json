@@ -1,0 +1,151 @@
+{
+  "scope": "Descriptive pilot analysis only",
+  "evaluation_runs": 7,
+  "complete_six_strategy_runs": 2,
+  "run_metadata": [
+    {
+      "run": "20261025T135947243268Z-evaluation",
+      "seed": 20261025,
+      "horizon": 2,
+      "model_sha256": "7b0c6fcfc429a5ef3d7f251c626441d8bc692639e541c35ba988f1f7cefc72eb",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    },
+    {
+      "run": "20261025T170038745277Z-evaluation",
+      "seed": 20261026,
+      "horizon": 8,
+      "model_sha256": "7b0c6fcfc429a5ef3d7f251c626441d8bc692639e541c35ba988f1f7cefc72eb",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    },
+    {
+      "run": "20261025T174229486018Z-evaluation",
+      "seed": 20261027,
+      "horizon": 8,
+      "model_sha256": "7b0c6fcfc429a5ef3d7f251c626441d8bc692639e541c35ba988f1f7cefc72eb",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    },
+    {
+      "run": "20261026T010457755795Z-evaluation",
+      "seed": 20261028,
+      "horizon": 8,
+      "model_sha256": "29275be3cb8cd14569cbdbb84f9ec82ecf20b149ce8952cbe19e0927962619b9",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    },
+    {
+      "run": "20261026T013119401626Z-evaluation",
+      "seed": 20261028,
+      "horizon": 8,
+      "model_sha256": "7b0c6fcfc429a5ef3d7f251c626441d8bc692639e541c35ba988f1f7cefc72eb",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    },
+    {
+      "run": "20261026T021955563028Z-evaluation",
+      "seed": 20261029,
+      "horizon": 8,
+      "model_sha256": "29275be3cb8cd14569cbdbb84f9ec82ecf20b149ce8952cbe19e0927962619b9",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "fixed_split",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    },
+    {
+      "run": "20261026T024238554925Z-evaluation",
+      "seed": 20261030,
+      "horizon": 8,
+      "model_sha256": "29275be3cb8cd14569cbdbb84f9ec82ecf20b149ce8952cbe19e0927962619b9",
+      "methods": [
+        "ecmp",
+        "fixed",
+        "fixed_split",
+        "greedy_demand",
+        "least_utilized",
+        "ppo"
+      ]
+    }
+  ],
+  "six_strategy_summary": [
+    {
+      "method": "ecmp",
+      "runs": 2,
+      "mean_controlled_mbps": 25.74610014556909,
+      "mean_satisfaction": 0.8319380966831178,
+      "mean_reward": 0.8306880966831178
+    },
+    {
+      "method": "fixed",
+      "runs": 2,
+      "mean_controlled_mbps": 15.499628335088616,
+      "mean_satisfaction": 0.5251773919669296,
+      "mean_reward": 0.5251773919669296
+    },
+    {
+      "method": "fixed_split",
+      "runs": 2,
+      "mean_controlled_mbps": 26.223063639741063,
+      "mean_satisfaction": 0.8308338955865859,
+      "mean_reward": 0.8295838955865859
+    },
+    {
+      "method": "greedy_demand",
+      "runs": 2,
+      "mean_controlled_mbps": 27.112857126209995,
+      "mean_satisfaction": 0.9079728873345947,
+      "mean_reward": 0.8979728873345947
+    },
+    {
+      "method": "least_utilized",
+      "runs": 2,
+      "mean_controlled_mbps": 26.06789919667122,
+      "mean_satisfaction": 0.8450749602187814,
+      "mean_reward": 0.8338249602187813
+    },
+    {
+      "method": "ppo",
+      "runs": 2,
+      "mean_controlled_mbps": 26.024672752892833,
+      "mean_satisfaction": 0.8371013513415313,
+      "mean_reward": 0.8358513513415313
+    }
+  ],
+  "limitations": [
+    "Runs may reuse models or seeds.",
+    "Workloads and scenario distributions may differ.",
+    "Run means are not independent scenario samples.",
+    "No statistical superiority claim.",
+    "ECMP uses limited fixed flow tuples."
+  ]
+}
