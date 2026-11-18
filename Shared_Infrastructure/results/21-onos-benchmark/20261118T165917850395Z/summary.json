@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "cycles_requested": 30,
+  "transitions_recorded": 60,
+  "passed": 60,
+  "restoration": "PASS",
+  "error": "",
+  "summary": [
+    {
+      "action": "disconnect",
+      "passed": 30,
+      "median_ms": 8103.791,
+      "p95_ms": 8415.792
+    },
+    {
+      "action": "connect",
+      "passed": 30,
+      "median_ms": 4366.496,
+      "p95_ms": 4476.082
+    }
+  ],
+  "metric": "CLI DDS command duration plus subsequent BGP/data-plane verification duration",
+  "limitations": "Includes Docker sender startup, DDS discovery, two-second sender hold and polling. Not pure DDS or ONOS latency."
+}

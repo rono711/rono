@@ -1,0 +1,17 @@
+{
+  "event": "onos_intent_applied",
+  "request_id": "317b4f58666649d9be56306e35667842",
+  "action": "disconnect",
+  "status": "PASS",
+  "intents": [
+    {
+      "type": "PointToPointIntent",
+      "id": "0x9f",
+      "key": "rono-frr-demo-ba-arp",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "WITHDRAWN"
+    }
+  ]
+}
+Evidence: /home/ubuntu/RONO/Unified_Workspace/Shared_Infrastructure/results/20-onos-integration/20261118T170033980303Z

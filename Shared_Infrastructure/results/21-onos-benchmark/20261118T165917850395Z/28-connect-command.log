@@ -1,0 +1,41 @@
+{
+  "event": "onos_intent_applied",
+  "request_id": "0316951ad337456cad8b1d7ac285226a",
+  "action": "connect",
+  "status": "PASS",
+  "intents": [
+    {
+      "type": "PointToPointIntent",
+      "id": "0x1b0",
+      "key": "rono-frr-demo-ab",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "INSTALLED"
+    },
+    {
+      "type": "PointToPointIntent",
+      "id": "0x1b2",
+      "key": "rono-frr-demo-ab-arp",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "INSTALLED"
+    },
+    {
+      "type": "PointToPointIntent",
+      "id": "0x1b1",
+      "key": "rono-frr-demo-ba",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "INSTALLED"
+    },
+    {
+      "type": "PointToPointIntent",
+      "id": "0x1b3",
+      "key": "rono-frr-demo-ba-arp",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "INSTALLED"
+    }
+  ]
+}
+Evidence: /home/ubuntu/RONO/Unified_Workspace/Shared_Infrastructure/results/20-onos-integration/20261118T170558867572Z
