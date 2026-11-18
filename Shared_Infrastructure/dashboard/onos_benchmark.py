@@ -124,7 +124,17 @@ lab. No network configuration changes are performed here.</p>
 <pre id="rono-onos-status">Loading...</pre>
 
 <h3>Latest Verified Benchmark</h3>
+
+<div id="rono-onos-metrics"
+     style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0">
+</div>
+
+<div id="rono-onos-table"></div>
+
+<details style="margin-top:16px">
+<summary>View raw experimental evidence</summary>
 <pre id="rono-onos-results">Loading...</pre>
+</details>
 
 <p>Timing includes DDS sender startup, discovery, fixed hold,
 and subsequent BGP/data-plane verification. It is not pure
@@ -150,6 +160,70 @@ async function refreshOnosPanel() {
     const response = await fetch("/api/onos-results");
     const data = await response.json();
     results.textContent = JSON.stringify(data, null, 2);
+
+    const metrics = document.getElementById("rono-onos-metrics");
+    const table = document.getElementById("rono-onos-table");
+
+    if (response.ok && data.status === "PASS" && data.summary) {
+      const summary = data.summary;
+      const actions = summary.summary || [];
+
+      const cards = [
+        ["Transitions", `${summary.passed}/${summary.transitions_recorded}`],
+        ["Restoration", summary.restoration],
+        ...actions.map(a => [
+          `${a.action} median`,
+          a.median_ms == null ? "N/A" : `${a.median_ms.toFixed(2)} ms`
+        ])
+      ];
+
+      metrics.replaceChildren();
+
+      cards.forEach(([label, value]) => {
+        const card = document.createElement("div");
+        card.style.cssText =
+          "background:#101b2d;border:1px solid #33445e;border-radius:8px;padding:14px";
+
+        const heading = document.createElement("div");
+        heading.textContent = label;
+        heading.style.cssText = "font-size:12px;color:#a8b8cc";
+
+        const number = document.createElement("strong");
+        number.textContent = value;
+        number.style.cssText = "display:block;font-size:19px;margin-top:7px";
+
+        card.append(heading, number);
+        metrics.appendChild(card);
+      });
+
+      const stats = data.statistics?.actions || {};
+      const rows = Object.entries(stats);
+
+      if (rows.length) {
+        const format = v =>
+          typeof v === "number" ? v.toFixed(2) : "N/A";
+
+        const header =
+          "<tr><th>Action</th><th>Mean (ms)</th><th>SD (ms)</th>" +
+          "<th>95% CI (ms)</th></tr>";
+
+        const body = rows.map(([action, value]) => {
+          const ci = value.ci95_mean_ms || [];
+          return `<tr><td>${action}</td><td>${format(value.mean_ms)}</td>` +
+                 `<td>${format(value.std_ms)}</td>` +
+                 `<td>[${format(ci[0])}, ${format(ci[1])}]</td></tr>`;
+        }).join("");
+
+        table.innerHTML =
+          `<div style="overflow-x:auto"><table style="width:100%;text-align:left">` +
+          header + body + "</table></div>";
+      } else {
+        table.textContent = "Statistical analysis unavailable";
+      }
+    } else {
+      metrics.replaceChildren();
+      table.textContent = "No verified benchmark available";
+    }
   } catch (error) {
     results.textContent = "Results unavailable";
   }
