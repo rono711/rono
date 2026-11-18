@@ -517,6 +517,9 @@ install_path_dashboard(base, APP_DIR)
 from path_benchmark import install as install_path_benchmark
 install_path_benchmark(base, __file__)
 
+from onos_benchmark import install as install_onos_benchmark
+install_onos_benchmark(base, __file__)
+
 if __name__ == "__main__":
     print(
         f"RONO Policy dashboard: http://127.0.0.1:{PORT}",
