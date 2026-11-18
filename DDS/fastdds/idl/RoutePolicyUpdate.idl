@@ -1,0 +1,11 @@
+module RONO
+{
+    struct RoutePolicyUpdate
+    {
+        @key unsigned long customer_asn;
+        @key unsigned long provider_asn;
+        boolean authorized;
+        unsigned long long version;
+        unsigned long long published_timestamp_ns;
+    };
+};

@@ -1,0 +1,18 @@
+FROM rono/policy-builder:0.1
+
+WORKDIR /opt/rono/policy
+COPY idl/RoutePolicyUpdate.idl ./RoutePolicyUpdate.idl
+
+RUN source /opt/fastdds-python/install/setup.bash \
+    && fastddsgen -python -d . RoutePolicyUpdate.idl \
+    && cmake -S . -B build \
+       -DCMAKE_BUILD_TYPE=Release \
+       -DPython3_EXECUTABLE=/usr/bin/python3 \
+    && cmake --build build --parallel 2
+
+RUN source /opt/fastdds-python/install/setup.bash \
+        && PYTHONPATH="/opt/rono/policy/build:${PYTHONPATH:-}" \
+       /usr/bin/python3 -c \
+       "import RoutePolicyUpdate; print('Policy type import OK'); print([n for n in dir(RoutePolicyUpdate) if not n.startswith('_')])"
+
+CMD ["bash"]
