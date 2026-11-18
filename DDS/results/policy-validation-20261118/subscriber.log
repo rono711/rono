@@ -1,0 +1,6 @@
+{"event": "qos_configured", "role": "subscriber", "reliability": "reliable", "durability": "transient_local", "history_depth": 20}
+Policy subscriber ready; Ctrl+C to stop
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": true, "version": 10, "cache_entries": 1}
+{"event": "cache_updated", "customer_asn": 65005, "provider_asn": 65002, "authorized": false, "version": 11, "cache_entries": 1}
+{"event": "ignored_old_or_duplicate", "customer_asn": 65005, "provider_asn": 65002, "version": 9}
+{"event": "ignored_old_or_duplicate", "customer_asn": 65005, "provider_asn": 65002, "version": 11}
