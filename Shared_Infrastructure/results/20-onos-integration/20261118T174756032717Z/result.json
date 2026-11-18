@@ -1,0 +1,16 @@
+{
+  "event": "onos_intent_applied",
+  "request_id": "23893833d45a43589b4779c9b091c7e2",
+  "action": "disconnect",
+  "status": "PASS",
+  "intents": [
+    {
+      "type": "PointToPointIntent",
+      "id": "0x1cb",
+      "key": "rono-frr-demo-ba-arp",
+      "appId": "org.onosproject.cli",
+      "resources": [],
+      "state": "WITHDRAWN"
+    }
+  ]
+}
