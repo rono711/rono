@@ -1,6 +1,8 @@
 """Read-only ONOS monitoring and benchmark evidence panel."""
 
+import hmac
 import json
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -21,6 +23,84 @@ def install(base, app_file):
     parent = base.Handler
 
     class Handler(parent):
+        def do_POST(self):
+            if urlsplit(self.path).path != "/api/onos-verify":
+                return super().do_POST()
+
+            if not hmac.compare_digest(
+                self.headers.get("X-RONO-Token", ""),
+                base.TOKEN
+            ):
+                return self.reply(403, {
+                    "error": "Invalid request token"
+                })
+
+            try:
+                result = subprocess.run(
+                    [
+                        sys.executable,
+                        str(onos_dir / "shared_lab.py"),
+                        "verify-connected"
+                    ],
+                    capture_output=True,
+                    text=True,
+                    timeout=120,
+                )
+
+                if result.returncode:
+                    return self.reply(503, {
+                        "status": "FAIL",
+                        "error": "Connected-state verification failed"
+                    })
+
+                decoder = json.JSONDecoder()
+                payload = None
+
+                for index, char in enumerate(result.stdout):
+                    if char != "{":
+                        continue
+                    try:
+                        candidate, _ = decoder.raw_decode(
+                            result.stdout[index:]
+                        )
+                    except ValueError:
+                        continue
+                    if isinstance(candidate, dict):
+                        payload = candidate
+                        break
+
+                if not isinstance(payload, dict):
+                    raise RuntimeError("Invalid verification response")
+
+                if (
+                    payload.get("status") != "PASS"
+                    or payload.get("expected") != "connected"
+                ):
+                    raise RuntimeError("Connected state not confirmed")
+
+                return self.reply(200, {
+                    "status": "PASS",
+                    "expected": "connected",
+                    "bgp": {
+                        name: {
+                            "state": next(
+                                iter(info.get("peers", {}).values()),
+                                {}
+                            ).get("state")
+                        }
+                        for name, info in payload.get("bgp", {}).items()
+                    },
+                    "route_verified": bool(
+                        payload.get("route", {}).get("paths")
+                    ),
+                })
+
+            except Exception:
+                return self.reply(503, {
+                    "status": "FAIL",
+                    "error": "ONOS verification unavailable"
+                })
+
         def do_GET(self):
             path = urlsplit(self.path).path
 
@@ -119,6 +199,11 @@ def install(base, app_file):
 lab. No network configuration changes are performed here.</p>
 
 <button onclick="refreshOnosPanel()">Refresh ONOS Status</button>
+<button id="rono-onos-verify-btn"
+        onclick="verifyOnosConnected()">
+Verify Connected
+</button>
+<pre id="rono-onos-verification">Not yet verified</pre>
 
 <h3>ONOS Intent Status</h3>
 <pre id="rono-onos-status">Loading...</pre>
@@ -144,6 +229,36 @@ DDS or ONOS latency.</p>
 
     js = '''
 <script>
+async function verifyOnosConnected() {
+  const button = document.getElementById("rono-onos-verify-btn");
+  const output = document.getElementById("rono-onos-verification");
+
+  button.disabled = true;
+  output.textContent = "Verifying BGP and data-plane connectivity...";
+
+  try {
+    const response = await fetch("/api/onos-verify", {
+      method: "POST",
+      headers: {
+        "X-RONO-Token": token
+      }
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || data.status !== "PASS") {
+      throw new Error(data.error || "Verification failed");
+    }
+
+    output.textContent = JSON.stringify(data, null, 2);
+
+  } catch (error) {
+    output.textContent = "Verification failed: " + error.message;
+  } finally {
+    button.disabled = false;
+  }
+}
+
 async function refreshOnosPanel() {
   const status = document.getElementById("rono-onos-status");
   const results = document.getElementById("rono-onos-results");
